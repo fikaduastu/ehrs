@@ -56,7 +56,7 @@ public class Profile {
 	
 	@OneToOne
 	@JoinColumn(name="biologicalDetailId")
-	private BiologicalDetail biologicalDetail;
+	private BiologicalDetail biologicalDetailId;
 	
 	@OneToOne
 	@JoinColumn(name="birthRecordId")
@@ -185,12 +185,12 @@ public class Profile {
 		this.status = status;
 	}
 
-	public BiologicalDetail getBiologicalDetail() {
-		return biologicalDetail;
+	public BiologicalDetail getBiologicalDetailId() {
+		return biologicalDetailId;
 	}
 
-	public void setBiologicalDetail(BiologicalDetail biologicalDetail) {
-		this.biologicalDetail = biologicalDetail;
+	public void setBiologicalDetailId(BiologicalDetail biologicalDetailId) {
+		this.biologicalDetailId = biologicalDetailId;
 	}
 
 	public BirthRecord getBirthRecord() {
@@ -232,6 +232,5 @@ public class Profile {
 	public void setExaminationAssesment(List<ExaminationAssesment> examinationAssesment) {
 		this.examinationAssesment = examinationAssesment;
 	}
-	
 	
 }

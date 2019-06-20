@@ -30,8 +30,6 @@ public class BiologicalDetail {
 	@Column(name="bloodType")
 	private String bloodType;
 	
-	@Column(name="fingerPrint")
-	private String fingerPrint;
 	
 	@Column(name="height")
 	private float height;
@@ -50,13 +48,12 @@ public class BiologicalDetail {
 		
 	}
 
-	public BiologicalDetail(String eyeColor, String skinColor, String hairColor, String bloodType, String fingerPrint,
+	public BiologicalDetail(String eyeColor, String skinColor, String hairColor, String bloodType,
 			float height, float weight, String disability) {
 		this.eyeColor = eyeColor;
 		this.skinColor = skinColor;
 		this.hairColor = hairColor;
 		this.bloodType = bloodType;
-		this.fingerPrint = fingerPrint;
 		this.height = height;
 		this.weight = weight;
 		this.disability = disability;
@@ -102,14 +99,6 @@ public class BiologicalDetail {
 		this.bloodType = bloodType;
 	}
 
-	public String getFingerPrint() {
-		return fingerPrint;
-	}
-
-	public void setFingerPrint(String fingerPrint) {
-		this.fingerPrint = fingerPrint;
-	}
-
 	public float getHeight() {
 		return height;
 	}
@@ -144,5 +133,3 @@ public class BiologicalDetail {
 	
 	
 }
-
-

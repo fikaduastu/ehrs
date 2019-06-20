@@ -25,7 +25,7 @@
 			<bean id="myDataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource" destroy-method="close">
 			
 				<property name="driverClass" value="com.microsoft.sqlserver.jdbc.SQLServerDriver" />
-				<property name="jdbcUrl" value="jdbc:sqlserver://localhost//ehrs_db" />
+				<property name="jdbcUrl" value="jdbc:sqlserver://localhost:1433;databaseName=ehrs_db" />
 				<property name="user" value="DESKTOP-H5NI3P9//FIKA" />
 				<property name="password" value="" />
 				

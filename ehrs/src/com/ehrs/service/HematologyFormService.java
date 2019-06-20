@@ -2,23 +2,27 @@ package com.ehrs.service;
 
 import org.springframework.stereotype.Service;
 
+import com.ehrs.entity.HematologyForm;
+
 @Service
 public class HematologyFormService {
 	
-	public void createHematologyForm()
+
+
+	public void updateHematologyForm(HematologyForm hematologyForm)
 	{
 		
 	}
-	public void readHematologyForm()
+	public void deleteHematologyForm(HematologyForm hematologyForm)
 	{
 		
 	}
-	public void updateHematologyForm()
-	{
+	public void addHematologyForm(HematologyForm hematologyForm) {
+		// TODO Auto-generated method stub
 		
 	}
-	public void deleteHematologyForm()
-	{
+	public void showHematologyForm(HematologyForm hematologyForm) {
+		// TODO Auto-generated method stub
 		
 	}
 }

@@ -1,24 +1,60 @@
 package com.ehrs.controller;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.ehrs.entity.HealthCenter;
+import com.ehrs.service.HealthCenterService;
 
 @Controller
+@RequestMapping("/healthCenter")
 public class HealthCenterController {
 
-	public void createHealthCenter()
+	private HealthCenter healthCenter;
+	
+	@Autowired
+	private HealthCenterService healthCenterService;
+	
+	@RequestMapping("/addHealthCenter")
+	public void addHealthCenter(HttpServletRequest request, HttpServletResponse response)
 	{
+		healthCenter.setName(request.getParameter("name"));
+		healthCenter.setType(request.getParameter("type"));
+		healthCenter.setPhoneNumber(request.getParameter("phoneNumber"));
+		healthCenter.setEmail(request.getParameter("email"));
+		healthCenter.setWebsite(request.getParameter("website"));
 		
+		healthCenterService.addHealthCenter(healthCenter);
 	}
-	public void readHealthCenter()
+	
+	@RequestMapping("/showHealthCenter")
+	public void showHealthCenter(HttpServletRequest request, HttpServletResponse response)
 	{
-		
+		healthCenter.setId(Integer.parseInt(request.getParameter("name")));	
+		healthCenterService.showHealthCenter(healthCenter);
 	}
-	public void updateHealthCenter()
+	
+	@RequestMapping("/updateHealthCenter")
+	public void updateHealthCenter(HttpServletRequest request, HttpServletResponse response)
 	{
+		healthCenter.setId(Integer.parseInt(request.getParameter("name")));
+		healthCenter.setName(request.getParameter("name"));
+		healthCenter.setType(request.getParameter("type"));
+		healthCenter.setPhoneNumber(request.getParameter("phoneNumber"));
+		healthCenter.setEmail(request.getParameter("email"));
+		healthCenter.setWebsite(request.getParameter("website"));
 		
+		healthCenterService.updateHealthCenter(healthCenter);
 	}
-	public void deleteHealthCenter()
+	
+	@RequestMapping("/deleteHealthCenter")
+	public void deleteHealthCenter(HttpServletRequest request, HttpServletResponse response)
 	{
-		
+		healthCenter.setId(Integer.parseInt(request.getParameter("name")));	
+		healthCenterService.deleteHealthCenter(healthCenter);
 	}
 }
