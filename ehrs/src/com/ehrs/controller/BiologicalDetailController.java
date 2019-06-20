@@ -7,7 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.ehrs.entity.BiologicalDetail;
+import com.ehrs.entity.biologicaldetail;
 import com.ehrs.service.BiologicalDetailService;
 
 @Controller
@@ -17,7 +17,7 @@ public class BiologicalDetailController {
 			@Autowired
 			private BiologicalDetailService biologicalDetailService;
 			
-			private BiologicalDetail biologicalDetail;
+			private biologicaldetail biologicalDetail;
 			
 			@RequestMapping("/addBiologicalDetail")
 			public void addBiologicalDetail(HttpServletRequest request,HttpServletResponse response)

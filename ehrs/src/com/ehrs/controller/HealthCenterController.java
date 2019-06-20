@@ -7,14 +7,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.ehrs.entity.HealthCenter;
+import com.ehrs.entity.healthcenter;
 import com.ehrs.service.HealthCenterService;
 
 @Controller
 @RequestMapping("/healthCenter")
 public class HealthCenterController {
 
-	private HealthCenter healthCenter;
+	private healthcenter healthCenter;
 	
 	@Autowired
 	private HealthCenterService healthCenterService;
@@ -35,6 +35,7 @@ public class HealthCenterController {
 	public void showHealthCenter(HttpServletRequest request, HttpServletResponse response)
 	{
 		healthCenter.setId(Integer.parseInt(request.getParameter("name")));	
+		
 		healthCenterService.showHealthCenter(healthCenter);
 	}
 	
@@ -55,6 +56,7 @@ public class HealthCenterController {
 	public void deleteHealthCenter(HttpServletRequest request, HttpServletResponse response)
 	{
 		healthCenter.setId(Integer.parseInt(request.getParameter("name")));	
+		
 		healthCenterService.deleteHealthCenter(healthCenter);
 	}
 }

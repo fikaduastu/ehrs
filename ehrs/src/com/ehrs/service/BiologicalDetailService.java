@@ -2,26 +2,26 @@ package com.ehrs.service;
 
 import org.springframework.stereotype.Service;
 
-import com.ehrs.entity.BiologicalDetail;
+import com.ehrs.entity.biologicaldetail;
 
 @Service
 public class BiologicalDetailService {
 
 
-	public void updateBiologicalDetail(BiologicalDetail biologicalDetail)
+	public void updateBiologicalDetail(biologicaldetail biologicalDetail)
 	{
 		
 	}
-	public void deleteBiologicalDetail(BiologicalDetail biologicalDetail)
+	public void deleteBiologicalDetail(biologicaldetail biologicalDetail)
 	{
 		
 	}
 
-	public void addBiologicalDetail(BiologicalDetail biologicalDetail) {
+	public void addBiologicalDetail(biologicaldetail biologicalDetail) {
 		// TODO Auto-generated method stub
 		
 	}
-	public void showBiologicalDetail(BiologicalDetail biologicalDetail) {
+	public void showBiologicalDetail(biologicaldetail biologicalDetail) {
 		// TODO Auto-generated method stub
 		
 	}

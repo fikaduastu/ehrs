@@ -7,7 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.ehrs.entity.DeathRecord;
+import com.ehrs.entity.deathrecord;
 import com.ehrs.service.DeathRecordService;
 
 
@@ -15,7 +15,7 @@ import com.ehrs.service.DeathRecordService;
 @RequestMapping("/deathRecord")
 public class DeathRecordController {
 	
-	private DeathRecord deathRecord;
+	private deathrecord deathRecord;
 	
 	@Autowired
 	private DeathRecordService deathRecordService;
@@ -31,6 +31,8 @@ public class DeathRecordController {
 		deathRecordService.addDeathRecord(deathRecord);
 		
 	}
+	
+	@RequestMapping("/updateDeathRecord")
 	public void updateDeathRecord(HttpServletRequest request, HttpServletResponse response)
 	{
 		deathRecord.setId(Integer.parseInt(request.getParameter("id")));
@@ -41,12 +43,16 @@ public class DeathRecordController {
 		
 		deathRecordService.updateDeathRecord(deathRecord);
 	}
+	
+	@RequestMapping("/showDeathRecord")
 	public void showDeathRecord(HttpServletRequest request, HttpServletResponse response)
 	{
 		deathRecord.setId(Integer.parseInt(request.getParameter("id")));	
 		
 		deathRecordService.showDeathRecord(deathRecord);
 	}
+	
+	@RequestMapping("/deleteDeathRecord")
 	public void deleteDeathRecord(HttpServletRequest request, HttpServletResponse response)
 	{
 		deathRecord.setId(Integer.parseInt(request.getParameter("id")));

@@ -2,28 +2,28 @@ package com.ehrs.service;
 
 import org.springframework.stereotype.Service;
 
-import com.ehrs.entity.Profile;
+import com.ehrs.entity.profile;
 
 @Service
 public class ProfileService {
 
 
-	public void addProfile(Profile profile) {
+	public void addProfile(profile profile) {
 		// TODO Auto-generated method stub
 		
 	}
 
-	public void showProfile(Profile profile) {
+	public void showProfile(profile profile) {
 		// TODO Auto-generated method stub
 		
 	}
 
-	public void updateProfile(Profile profile) {
+	public void updateProfile(profile profile) {
 		// TODO Auto-generated method stub
 		
 	}
 
-	public void deleteProfile(Profile profile) {
+	public void deleteProfile(profile profile) {
 		// TODO Auto-generated method stub
 		
 	}

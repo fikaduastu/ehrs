@@ -7,19 +7,19 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.ehrs.entity.HematologyForm;
+import com.ehrs.entity.hematologyform;
 import com.ehrs.service.HematologyFormService;
 
 @Controller
 @RequestMapping("/hematologyForm")
 public class HematologyFormController {
 	
-	private HematologyForm hematologyForm;
+	private hematologyform hematologyForm;
 	
 	@Autowired
 	private HematologyFormService hematologyFormService;
 	
-	@RequestMapping("addHematologyForm")
+	@RequestMapping("/addHematologyForm")
 	public void addHematologyForm(HttpServletRequest request,HttpServletResponse response)
 	{
 		hematologyForm.setBloodGroup(request.getParameter("bloodGroup"));
@@ -33,7 +33,7 @@ public class HematologyFormController {
 		hematologyFormService.addHematologyForm(hematologyForm);
 	}
 	
-	@RequestMapping("showHematologyForm")
+	@RequestMapping("/showHematologyForm")
 	public void showHematologyForm(HttpServletRequest request,HttpServletResponse response)
 	{
 		hematologyForm.setId(Integer.parseInt(request.getParameter("id")));
@@ -41,7 +41,7 @@ public class HematologyFormController {
 		hematologyFormService.showHematologyForm(hematologyForm);
 	}
 	
-	@RequestMapping("updateHematologyForm")
+	@RequestMapping("/updateHematologyForm")
 	public void updateHematologyForm(HttpServletRequest request,HttpServletResponse response)
 	{
 		hematologyForm.setId(Integer.parseInt(request.getParameter("id")));
@@ -56,7 +56,7 @@ public class HematologyFormController {
 		hematologyFormService.updateHematologyForm(hematologyForm);
 	}
 	
-	@RequestMapping("deleteHematologyForm")
+	@RequestMapping("/deleteHematologyForm")
 	public void deleteHematologyForm(HttpServletRequest request,HttpServletResponse response)
 	{
 		hematologyForm.setId(Integer.parseInt(request.getParameter("id")));

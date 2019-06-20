@@ -2,25 +2,25 @@ package com.ehrs.service;
 
 import org.springframework.stereotype.Service;
 
-import com.ehrs.entity.HealthCenter;
+import com.ehrs.entity.healthcenter;
 
 @Service
 public class HealthCenterService {
 
 
-	public void updateHealthCenter(HealthCenter healthCenter)
+	public void updateHealthCenter(healthcenter healthCenter)
 	{
 		
 	}
-	public void deleteHealthCenter(HealthCenter healthCenter)
+	public void deleteHealthCenter(healthcenter healthCenter)
 	{
 		
 	}
-	public void addHealthCenter(HealthCenter healthCenter) {
+	public void addHealthCenter(healthcenter healthCenter) {
 		// TODO Auto-generated method stub
 		
 	}
-	public void showHealthCenter(HealthCenter healthCenter) {
+	public void showHealthCenter(healthcenter healthCenter) {
 		// TODO Auto-generated method stub
 		
 	}

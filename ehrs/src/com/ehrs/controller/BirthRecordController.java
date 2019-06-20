@@ -7,7 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.ehrs.entity.BirthRecord;
+import com.ehrs.entity.birthrecord;
 import com.ehrs.service.BirthRecordService;
 
 
@@ -18,7 +18,7 @@ public class BirthRecordController {
 
 	@Autowired
 	private BirthRecordService birthRecordService;
-	private BirthRecord birthRecord;
+	private birthrecord birthRecord;
 	
 	
 	@RequestMapping("/addBirthRecord")

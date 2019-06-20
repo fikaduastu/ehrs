@@ -2,23 +2,25 @@ package com.ehrs.service;
 
 import org.springframework.stereotype.Service;
 
+import com.ehrs.entity.woreda;
+
 @Service
 public class WoredaService {
 
-	public void createWoreda()
+	public void updateWoreda(woreda woreda)
 	{
 		
 	}
-	public void readWoreda()
+	public void deleteWoreda(woreda woreda)
 	{
 		
 	}
-	public void updateWoreda()
-	{
+	public void addWoreda(woreda woreda) {
+		// TODO Auto-generated method stub
 		
 	}
-	public void deleteWoreda()
-	{
+	public void showWoreda(woreda woreda) {
+		// TODO Auto-generated method stub
 		
 	}
 }

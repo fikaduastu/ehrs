@@ -7,7 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.ehrs.entity.PhysicalExamination;
+import com.ehrs.entity.physicalexamination;
 import com.ehrs.service.PhysicalExaminationService;
 
 
@@ -19,10 +19,10 @@ public class PhysicalExaminationController {
 	@Autowired
 	private PhysicalExaminationService physicalExaminationService;
 	
-	private PhysicalExamination physicalExamination;
+	private physicalexamination physicalExamination;
 	
 	
-	@RequestMapping("addPhysicalExamination")
+	@RequestMapping("/addPhysicalExamination")
 	public void addPhysicalExamination(HttpServletRequest request,HttpServletResponse response)
 	{
 		physicalExamination.setVitalSign(request.getParameter("vitalSign"));
@@ -45,7 +45,7 @@ public class PhysicalExaminationController {
 		physicalExaminationService.addPhysicalExamination(physicalExamination);
 	}
 	
-	@RequestMapping("showPhysicalExamination")
+	@RequestMapping("/showPhysicalExamination")
 	public void showPhysicalExamination(HttpServletRequest request,HttpServletResponse response)
 	{
 		physicalExamination.setId(Integer.parseInt(request.getParameter("id")));
@@ -53,7 +53,7 @@ public class PhysicalExaminationController {
 		physicalExaminationService.showPhysicalExamination(physicalExamination);
 	}
 	
-	@RequestMapping("updatePhysicalExamination")
+	@RequestMapping("/updatePhysicalExamination")
 	public void updatePhysicalExamination(HttpServletRequest request,HttpServletResponse response)
 	{
 		physicalExamination.setId(Integer.parseInt(request.getParameter("id")));
@@ -77,7 +77,7 @@ public class PhysicalExaminationController {
 		physicalExaminationService.updatePhysicalExamination(physicalExamination);
 	}
 	
-	@RequestMapping("deletePhysicalExamination")
+	@RequestMapping("/deletePhysicalExamination")
 	public void deletePhysicalExamination(HttpServletRequest request,HttpServletResponse response)
 	{
 		physicalExamination.setId(Integer.parseInt(request.getParameter("id")));

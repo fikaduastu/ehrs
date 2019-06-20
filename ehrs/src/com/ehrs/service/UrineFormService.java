@@ -2,23 +2,26 @@ package com.ehrs.service;
 
 import org.springframework.stereotype.Service;
 
+import com.ehrs.entity.urineform;
+
 @Service
 public class UrineFormService {
 
-	public void createUrineForm()
+
+	public void updateUrineForm(urineform urineForm)
 	{
 		
 	}
-	public void readUrineForm()
+	public void deleteUrineForm(urineform urineForm)
 	{
 		
 	}
-	public void updateUrineForm()
-	{
+	public void addUrineForm(urineform urineForm) {
+		// TODO Auto-generated method stub
 		
 	}
-	public void deleteUrineForm()
-	{
+	public void showUrineForm(urineform urineForm) {
+		// TODO Auto-generated method stub
 		
 	}
 }

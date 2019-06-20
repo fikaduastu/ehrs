@@ -7,7 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.ehrs.entity.Profile;
+import com.ehrs.entity.profile;
 import com.ehrs.service.ProfileService;
 
 @Controller
@@ -15,7 +15,7 @@ import com.ehrs.service.ProfileService;
 public class ProfileController {
 	
 	
-	private Profile profile;
+	private profile profile;
 	
 	@Autowired
 	private ProfileService profileService;

@@ -1,23 +1,18 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>add admin</title>
 </head>
 <body>
-
-	<form action="admin/addAdmin">
-	
-			Type Of admin:<input type="text" name="type"><br /><br />
-			Username : <input type="text" name="userName"><br /><br />
-			Email:<input type="text" name="email"><br /><br />
-			Password:<input type="text" name="password"><br /><br />
-			Region:<input type="text" name="region"><br /><br />
-			
-			<input type="submit">
-	</form>
-
+	<form action="admin/addAdmin" >
+		type: <input type="text" name="type"/> <br>
+		email: <input type="text" name="email"/> <br>
+		userName: <input type="text" name="userName"/> <br>
+		password: <input type="text" name="password"/> <br>
+		region: <input type="text" name="region"/> <br>
+		<input type="submit" value="addAdmin" >
+	</form> 
 </body>
 </html>

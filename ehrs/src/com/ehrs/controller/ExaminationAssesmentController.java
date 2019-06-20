@@ -5,19 +5,23 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.ehrs.entity.ExaminationAssesment;
+import com.ehrs.entity.examinationassesment;
 import com.ehrs.service.ExaminationAssesmentService;
 
 @Controller
+@RequestMapping("/examinationAssesment")
 public class ExaminationAssesmentController {
 
 	
-	private ExaminationAssesment examinationAssesment;
+	private examinationassesment examinationAssesment;
 	
 	@Autowired
 	private ExaminationAssesmentService examinationAssesmentService;
 	
+	
+	@RequestMapping("/addExaminationAssesment")
 	public void addExaminationAssesment(HttpServletRequest request, HttpServletResponse response)
 	{
 		examinationAssesment.setMrn(request.getParameter("mrn"));
@@ -32,12 +36,16 @@ public class ExaminationAssesmentController {
 		examinationAssesmentService.addExaminationAssesment(examinationAssesment);
 
 	}
+	
+	@RequestMapping("/showExaminationAssesment")
 	public void showExaminationAssesment(HttpServletRequest request, HttpServletResponse response)
 	{
 		examinationAssesment.setId(Integer.parseInt(request.getParameter("id")));
 		
 		examinationAssesmentService.showExaminationAssesment(examinationAssesment);
 	}
+	
+	@RequestMapping("/updateExaminationAssesment")
 	public void updateExaminationAssesment(HttpServletRequest request, HttpServletResponse response)
 	{
 		examinationAssesment.setId(Integer.parseInt(request.getParameter("id")));
@@ -52,6 +60,8 @@ public class ExaminationAssesmentController {
 		
 		examinationAssesmentService.updateExaminationAssesment(examinationAssesment);
 	}
+	
+	@RequestMapping("/deleteExaminationAssesment")
 	public void deleteExaminationAssesment(HttpServletRequest request, HttpServletResponse response)
 	{
 		examinationAssesment.setId(Integer.parseInt(request.getParameter("id")));

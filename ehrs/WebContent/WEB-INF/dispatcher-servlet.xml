@@ -9,25 +9,24 @@
 		http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd
 		http://www.springframework.org/schema/tx 
 		http://www.springframework.org/schema/tx/spring-tx.xsd">
-	
-			<context:component-scan base-package="com.ehrs.controller"/>
-			<context:component-scan base-package="com.ehrs.service"/>
-			<context:component-scan base-package="com.ehrs.dao"/>
-			<context:component-scan base-package="com.ehrs.entity"/>
+		
 			<mvc:annotation-driven />
+			<context:component-scan base-package="com.ehrs" />
+			 
+			<!-- <context:annotation-config/> -->
 			
 			 <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
-			      <property name="prefix" value="/WEB-INF/" />
+			      <property name="prefix" value="/WEB-INF/view/" />
 			      <property name="suffix" value=".jsp" />
   			 </bean>
  
-			
+	
 			<bean id="myDataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource" destroy-method="close">
 			
-				<property name="driverClass" value="com.microsoft.sqlserver.jdbc.SQLServerDriver" />
-				<property name="jdbcUrl" value="jdbc:sqlserver://localhost:1433;databaseName=ehrs_db" />
-				<property name="user" value="DESKTOP-H5NI3P9//FIKA" />
-				<property name="password" value="" />
+				<property name="driverClass" value="com.mysql.cj.jdbc.Driver" />
+				<property name="jdbcUrl" value="jdbc:mysql://localhost:3306/ehrs_db" />
+				<property name="user" value="fika" />
+				<property name="password" value="password" />
 				
 				<property name="minPoolSize" value="5" />
 				<property name="maxPoolSize" value="10" />
@@ -45,12 +44,13 @@
 					</props>
 				</property>
 			</bean>
-
-
 			<bean id="myTransactionManager" class="org.springframework.orm.hibernate5.HibernateTransactionManager">
 				<property name="sessionFactory" ref="sessionFactory" />
 			</bean>
 	
-				<tx:annotation-driven transaction-manager="myTransactionManager" />
-	
-	</beans>
+					<tx:annotation-driven transaction-manager="myTransactionManager" />
+
+
+	</beans>		
+				
+				

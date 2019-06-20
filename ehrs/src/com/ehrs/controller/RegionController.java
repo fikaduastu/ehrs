@@ -1,24 +1,56 @@
 package com.ehrs.controller;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.ehrs.entity.region;
+import com.ehrs.service.RegionService;
 
 @Controller
+@RequestMapping("/region")
 public class RegionController {
 
-	public void createRegion()
+	private region region;
+	
+	
+	@Autowired
+	private RegionService regionService;
+	
+	@RequestMapping("/addRegion")
+	public void addRegion(HttpServletRequest request,HttpServletResponse response)
 	{
 		
+		region.setName(request.getParameter("name"));
+		
+		regionService.addRegion(region);
 	}
-	public void readRegion()
+	
+	@RequestMapping("/showRegion")
+	public void showRegion(HttpServletRequest request,HttpServletResponse response)
 	{
+		region.setId(Integer.parseInt(request.getParameter("id")));
 		
+		regionService.showRegion(region);
 	}
-	public void updateRegion()
+	
+	@RequestMapping("/updateRegion")
+	public void updateRegion(HttpServletRequest request,HttpServletResponse response)
 	{
+		region.setId(Integer.parseInt(request.getParameter("id")));
+		region.setName(request.getParameter("name"));
 		
+		regionService.updateRegion(region);
 	}
-	public void deleteRegion()
+	
+	@RequestMapping("/deleteRegion")
+	public void deleteRegion(HttpServletRequest request,HttpServletResponse response)
 	{
+		region.setId(Integer.parseInt(request.getParameter("id")));
 		
+		regionService.deleteRegion(region);
 	}
 }

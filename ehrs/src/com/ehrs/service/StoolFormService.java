@@ -2,23 +2,27 @@ package com.ehrs.service;
 
 import org.springframework.stereotype.Service;
 
+import com.ehrs.entity.stoolform;
+
 @Service
 public class StoolFormService {
 
-	public void createStoolForm()
+
+
+	public void updateStoolForm(stoolform stoolForm)
 	{
 		
 	}
-	public void readStoolForm()
+	public void deleteStoolForm(stoolform stoolForm)
 	{
 		
 	}
-	public void updateStoolForm()
-	{
+	public void addStoolForm(stoolform stoolForm) {
+		// TODO Auto-generated method stub
 		
 	}
-	public void deleteStoolForm()
-	{
+	public void showStoolForm(stoolform stoolForm) {
+		// TODO Auto-generated method stub
 		
 	}
 
