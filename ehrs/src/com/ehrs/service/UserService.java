@@ -14,14 +14,14 @@ public class UserService {
 
 	public void updateUser(user user)
 	{
-		
+		userDao.updateUser(user);
 	}
 	public void deleteUser(user user)
 	{
-		
+		userDao.deleteUser(user);
 	}
 	public void addUser(user user) {
-		// TODO Auto-generated method stub
+		userDao.addUser(user);
 		
 	}
 	public void showUser(user user) {

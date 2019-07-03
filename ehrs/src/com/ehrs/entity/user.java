@@ -124,6 +124,4 @@ public class user {
 				+ createdAt + ", updatedAt=" + updatedAt + ", position=" + position + ", status=" + status
 				+ ", organizationId=" + organizationId + "]";
 	}
-
-
 }

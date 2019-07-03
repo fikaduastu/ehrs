@@ -9,17 +9,17 @@
 Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
  <!-- Bootstrap Core CSS -->
-<link href="css/bootstrap.min.css" rel='stylesheet' type='text/css' />
+<link href="resources/css/bootstrap.min.css" rel='stylesheet' type='text/css' />
 	<!-- Custom CSS -->
-<link href="css/style.css" rel='stylesheet' type='text/css' />
+<link href="resources/css/style.css" rel='stylesheet' type='text/css' />
 	<!-- Graph CSS -->
-<link href="css/font-awesome.css" rel="stylesheet"> 
+<link href="resources/css/font-awesome.css" rel="stylesheet"> 
 	<!-- jQuery -->
 <link href='//fonts.googleapis.com/css?family=Roboto:700,500,300,100italic,100,400' rel='stylesheet' type='text/css'>
 	<!-- lined-icons -->
-<link rel="stylesheet" href="css/icon-font.min.css" type='text/css' />
+<link rel="stylesheet" href="resources/css/icon-font.min.css" type='text/css' />
 	<!-- /js -->
-<script src="js/jquery-1.10.2.min.js"></script>
+<script src="resources/js/jquery-1.10.2.min.js"></script>
 <!-- //js-->
 </head> 
 <body>
@@ -32,7 +32,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						<!--menu-right-->
 						<div class="top_menu">
 						        <div class="main-search">
-											<form action="search.html">
+											<form action="search.jsp">
 											   <input type="text" value="Search" onFocus="this.value = '';" onBlur="if (this.value == '') {this.value = 'Search';}" class="text"/>
 												<input type="submit" value=""/>
 											</form>
@@ -252,7 +252,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 									<!--sub-heard-part-->
 									  <div class="sub-heard-part">
 									   <ol class="breadcrumb m-b-0">
-											<li><a href="index.html">Home</a></li>
+											<li><a href="index.jsp">Home</a></li>
 											<li class="active">User Table</li>
 										</ol>
 									   </div>
@@ -285,7 +285,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			<!--/sidebar-menu-->
 				<div class="sidebar-menu">
 					<header class="logo">
-					<a href="#" class="sidebar-icon"> <span class="fa fa-bars"></span> </a> <a href="index.html"> <span id="logo"> <h1>EHRs</h1></span> 
+					<a href="#" class="sidebar-icon"> <span class="fa fa-bars"></span> </a> <a href="index.jsp"> <span id="logo"> <h1>EHRs</h1></span> 
 					<!--<img id="logo" src="" alt="Logo"/>--> 
 				  </a> 
 				</header>
@@ -294,13 +294,13 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
 			<!--/down-->
 							<div class="down">	
-									  <a href="index.html"><img src="images/admin.jpg"></a>
-									  <a href="index.html"><span class=" name-caret">Admin Name</span></a>
+									  <a href="index.jsp"><img src="images/admin.jpg"></a>
+									  <a href="index.jsp"><span class=" name-caret">Admin Name</span></a>
 									 <p>System Administrator in EHRs</p>
 									<ul>
-									<li><a class="tooltips" href="index.html"><span>Profile</span><i class="lnr lnr-user"></i></a></li>
-										<li><a class="tooltips" href="index.html"><span>Settings</span><i class="lnr lnr-cog"></i></a></li>
-										<li><a class="tooltips" href="index.html"><span>Log out</span><i class="lnr lnr-power-switch"></i></a></li>
+									<li><a class="tooltips" href="index.jsp"><span>Profile</span><i class="lnr lnr-user"></i></a></li>
+										<li><a class="tooltips" href="index.jsp"><span>Settings</span><i class="lnr lnr-cog"></i></a></li>
+										<li><a class="tooltips" href="index.jsp"><span>Log out</span><i class="lnr lnr-power-switch"></i></a></li>
 										</ul>
 									</div>
 							   <!--//down-->
@@ -310,10 +310,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 								<div class="menu">
 									<ul id="menu" >
 										
-										<li id="menu-academico" ><a href="Create_user.html"><i class="fa fa-plus"></i> <span> Create User</span></a></li>
-										<li id="menu-academico" ><a href="Update_user.html"><i class="fa fa-edit"></i> <span> Update User</span></a></li>
-										<li id="menu-academico" ><a href="Delete_user.html"><i class="fa fa-trash-o"></i> <span> Delete User</span></a></li>
-										<li id="menu-academico" ><a href="Search_user.html"><i class="fa fa-search"></i> <span> Search User</span></a></li>
+										<li id="menu-academico" ><a href="Create_user.jsp"><i class="fa fa-plus"></i> <span> Create User</span></a></li>
+										<li id="menu-academico" ><a href="Update_user.jsp"><i class="fa fa-edit"></i> <span> Update User</span></a></li>
+										<li id="menu-academico" ><a href="Delete_user.jsp"><i class="fa fa-trash-o"></i> <span> Delete User</span></a></li>
+										<li id="menu-academico" ><a href="Search_user.jsp"><i class="fa fa-search"></i> <span> Search User</span></a></li>
 								 
 		
 								  </ul>

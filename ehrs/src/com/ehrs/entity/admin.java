@@ -1,5 +1,9 @@
 package com.ehrs.entity;
 
+
+
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -9,15 +13,17 @@ import javax.persistence.Table;
 
 import org.springframework.stereotype.Component;
 
+
+
 @Component
 @Entity
 @Table(name="admin")
-public class admin {
+public class admin{
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name="id")
-	private int id;
+	private Integer id;
 	
 
 
@@ -38,11 +44,11 @@ public class admin {
 	@Column(name="region")
 	private String region;
 
-	public int getId() {
+	public Integer getId() {
 		return id;
 	}
 
-	public void setId(int id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 
@@ -88,6 +94,11 @@ public class admin {
 	}
 	public void setRegion(String region) {
 		this.region = region;
+	}
+
+	public List<admin> list() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 	
 	

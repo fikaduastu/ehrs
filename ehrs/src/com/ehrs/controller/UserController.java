@@ -1,14 +1,17 @@
 package com.ehrs.controller;
 
+import java.util.List;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-
+import com.ehrs.dao.UserDao;
 import com.ehrs.entity.user;
 import com.ehrs.service.UserService;
 
@@ -21,6 +24,9 @@ public class UserController {
 	
 	@Autowired
 	private user user;
+	
+	@Autowired
+	private UserDao userDao;
 	
 	@RequestMapping("/showUserLoginForm")
 	public String showUserLoginForm()
@@ -57,6 +63,7 @@ public class UserController {
 		   HttpSession session = (HttpSession) request.getSession();
 		   String email =request.getParameter("email");
 		   String password = request.getParameter("password");
+		   System.out.println(email+""+password);
 		   user = userService.login(email,password);
 		   if (user.equals(null))
 		   {
@@ -88,6 +95,11 @@ public class UserController {
 			   session.setAttribute("user", user);
 			   return "user/laboratoristIndex";
 		   }
+		   else if(user.getPosition().equals("health center admin"))
+		   {
+			   session.setAttribute("user", user);
+			   return "user/healthCenterAdminIndex";
+		   }
 		   else {
 			   return "userLoginForm";
 		   }
@@ -117,7 +129,7 @@ public class UserController {
 	}
 	
 	@RequestMapping("/updateUser")
-	public void updateUser(HttpServletRequest request,HttpServletResponse response)
+	public String updateUser(HttpServletRequest request,HttpServletResponse response)
 	{
 		user.setId(Integer.parseInt(request.getParameter("id")));
 		user.setName(request.getParameter("name"));
@@ -129,6 +141,8 @@ public class UserController {
 		user.setStatus(request.getParameter("status"));
 		
 		userService.updateUser(user);
+		
+		return null;
 	}
 	
 	@RequestMapping("/deleteUser")
@@ -137,5 +151,16 @@ public class UserController {
 		user.setId(Integer.parseInt(request.getParameter("id")));
 		
 		userService.deleteUser(user);
+		
+		// finished
+	}
+	
+	@RequestMapping("/showHealthCenterAdmins")
+	public String showHealthCenterAdmins(Model theModel)
+	{
+		List<user> ad = userDao.showHealthCenterAdmins();
+		theModel.addAttribute("users", ad);
+		return "showHealthCenterAdmins";
+		// this is for regional admins
 	}
 }

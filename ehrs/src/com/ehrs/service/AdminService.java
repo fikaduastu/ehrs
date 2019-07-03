@@ -20,7 +20,7 @@ public class AdminService {
 	}
 
 	public void deleteAdmin(admin admin) {
-		// TODO Auto-generated method stub
+		adminDao.deleteAdmin(admin);
 		
 	}
 
@@ -39,7 +39,7 @@ public class AdminService {
 	}
 
 	public void updateAdmin(admin admin) {
-		// TODO Auto-generated method stub
+		adminDao.adminUpdate(admin);
 		
 	}
 
