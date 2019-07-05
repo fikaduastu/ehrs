@@ -37,9 +37,9 @@ public class AdminController {
 		   	}
 		   	
 		   	@RequestMapping(value="/adminLogin", method=RequestMethod.POST)
-		   	public String adminLogin(HttpServletRequest request,HttpServletResponse response)
+		   	public String adminLogin(HttpServletRequest request,HttpServletResponse response,HttpSession session)
 		   	{	
-		   		HttpSession session = (HttpSession) request.getSession();
+		   		//HttpSession session = (HttpSession) request.getSession();
 		   		String email = request.getParameter("email");
 		   		String password = request.getParameter("password");
 		   		adm = adminService.adminLogin(email,password);
@@ -51,13 +51,13 @@ public class AdminController {
 		   		}
 		   		
 		   		else if(adm.getType().equals("federal system admin")){
-		   			session.setAttribute("admin", adm);
-		   			System.out.println("federal system admin");
+		   			addAdminInSession(adm, session);
+		   			//System.out.println("federal system admin");
 		   			return "federalAdminIndex";
 		   		}
 		   		
 		   		else if(adm.getType().equals("regional system admin")){
-		   			session.setAttribute("admin", adm);
+		   			addAdminInSession(adm, session);
 		   			return "regionalAdminIndex";
 		   		}
 		   		
@@ -99,23 +99,27 @@ public class AdminController {
 			}  
 		   	
 				
-			@RequestMapping(value="/addAdmin", method=RequestMethod.POST)
+			@RequestMapping(value="/addAdmin", method=RequestMethod.GET)
 			public String addAdmin(HttpServletRequest request,HttpServletResponse response)
 			{	
-				adm.setType(request.getParameter("type"));;
+				//String type = request.getParameter("type");
+				adm.setType(request.getParameter("type"));
 				adm.setUserName(request.getParameter("userName"));
 				adm.setEmail(request.getParameter("email"));
 				adm.setPassword(request.getParameter("password"));
 				adm.setRegion(request.getParameter("region"));
+				//System.out.println(type);
 				adminService.addAdmin(adm);
-				return "showAdmin";
+				return "redirect:/admin/listadmin";
 				
 				// FINISHED
 			}
 			
-			@RequestMapping(value="/updateAdmin", method=RequestMethod.POST)
-			public String updateAdmin(HttpServletRequest request,HttpServletResponse response)
+			@RequestMapping(value="/updateAdmin", method=RequestMethod.GET)
+			public String updateAdmin(HttpServletRequest request,HttpServletResponse response,HttpSession session)
 			{
+				adm.setId(Integer.parseInt(request.getParameter("id")));
+				//int id =  (int) session.getAttribute("id");
 				adm.setType(request.getParameter("type"));;
 				adm.setUserName(request.getParameter("userName"));
 				adm.setEmail(request.getParameter("email"));
@@ -123,7 +127,8 @@ public class AdminController {
 				adm.setRegion(request.getParameter("region"));
 				
 				adminService.updateAdmin(adm);
-				return "adminIndex";
+				//return "redirect:/admin/listadmin";
+				return null;
 				
 				//finished
 			}
@@ -134,7 +139,8 @@ public class AdminController {
 				adm.setId(Integer.parseInt(request.getParameter("id")));
 				
 				adminService.deleteAdmin(adm);
-				return "adminIndex";
+				//return "adminIndex";
+				return null;
 				// finished
 			}
 			
@@ -157,5 +163,13 @@ public class AdminController {
 				return "showFederalAdmins";
 				// finished
 			}
-	
+			public void addAdminInSession(admin ad,HttpSession session) {
+				
+				session.setAttribute("admin", ad);
+				session.setAttribute("id", ad.getId());
+				session.setAttribute("email", ad.getEmail());
+				session.setAttribute("password", ad.getPassword());
+				session.setAttribute("type", ad.getType());
+				session.setAttribute("region", ad.getRegion());
+			}
 }

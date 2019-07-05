@@ -14,11 +14,35 @@ import com.ehrs.service.ProfileService;
 @RequestMapping("/profile")
 public class ProfileController {
 	
-	
+	@Autowired
 	private profile profile;
 	
 	@Autowired
 	private ProfileService profileService;
+	
+	@RequestMapping("/showAddProfile")
+	public String showAddProfile()
+	{
+		return "addProfile";
+	}
+	
+	@RequestMapping("/showUpdateProfile")
+	public String showUpdateProfile()
+	{
+		return "updateProfile";
+	}
+	
+	@RequestMapping("/showDeleteProfile")
+	public String showDeleteProfile()
+	{
+		return "deleteProfile";
+	}
+	
+	@RequestMapping("/showAllProfile")
+	public String showAllProfile()
+	{
+		return "showAllProfile";
+	}
 	
 	@RequestMapping("/addProfile")
 	public void addProfile(HttpServletRequest request,HttpServletResponse response)

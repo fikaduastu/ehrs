@@ -1,5 +1,6 @@
 package com.ehrs.dao;
 
+import java.util.Iterator;
 import java.util.List;
 
 import org.hibernate.Session;
@@ -20,9 +21,23 @@ public class UserDao {
 
 	@Transactional
 	public user login(String email, String password) {
+		user ad;
 		Session session = sessionFactory.getCurrentSession();
-		Query<user> theQuery = session.createQuery("from admin where email='email' & password='password' ",user.class);
-		user ad = (user)theQuery.uniqueResult();
+		List<?> lst = session.createQuery("FROM user").list(); 
+		
+		for (Iterator<?> iterator = lst.iterator(); iterator.hasNext();)
+		{
+				 ad = (user) iterator.next(); 
+				//System.out.println(ad);
+        
+				if(ad.getPassword().equals(password) && ad.getEmail().equals(email))
+				{
+				//System.out.println(ad);
+					return ad;
+					
+				}
+		}	
+		ad = null;
 		return ad;
 		//finished
 	}

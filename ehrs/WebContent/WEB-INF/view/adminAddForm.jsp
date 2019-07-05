@@ -1,27 +1,27 @@
-
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>  
 <!DOCTYPE HTML>
 <html>
 <head>
-<title>Electronic Health Record System</title>
+<title>federal admin index</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="keywords" content="Augment Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
 Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
  <!-- Bootstrap Core CSS -->
-<link href="css/bootstrap.min.css" rel='stylesheet' type='text/css' />
-	<!-- Custom CSS -->
-<link href="css/style.css" rel='stylesheet' type='text/css' />
+<link href="${pageContext.request.contextPath}/resources/css/bootstrap.min.css" rel='stylesheet' type='text/css' />
+<link href="${pageContext.request.contextPath}/resources/css/style.css" rel='stylesheet' type='text/css' />
 	<!-- Graph CSS -->
-<link href="css/font-awesome.css" rel="stylesheet"> 
+<link href="${pageContext.request.contextPath}/resources/css/font-awesome.css" rel="stylesheet" /> 
 	<!-- jQuery -->
 <link href='//fonts.googleapis.com/css?family=Roboto:700,500,300,100italic,100,400' rel='stylesheet' type='text/css'>
 	<!-- lined-icons -->
-<link rel="stylesheet" href="css/icon-font.min.css" type='text/css' />
+<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/icon-font.min.css" type='text/css' />
 	<!-- /js -->
-<script src="js/jquery-1.10.2.min.js"></script>
+<script src="${pageContext.request.contextPath}/resources/js/jquery-1.10.2.min.js"></script>
 <!-- //js-->
-</head> 
+</head>
 <body>
    <div class="page-container">
    <!--/content-inner-->
@@ -204,7 +204,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 										</a></li>
 										<li><a href="#">
 											<div class="task-info">
-												<span class="task-desc">Dashboard done</span><span class="percentage">90%</span>
+												<span class="task-desc">EHRs done</span><span class="percentage">90%</span>
 											   <div class="clearfix"></div>	
 											</div>
 										   
@@ -253,36 +253,40 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 									  <div class="sub-heard-part">
 									   <ol class="breadcrumb m-b-0">
 											<li><a href="index.html">Home</a></li>
-											<li class="active">Update page</li>
+											<li class="active"> create User</li>
 										</ol>
 									   </div>
 								  <!--//sub-heard-part-->
 									<div class="graph-visual tables-main">
-											<h2 class="inner-tittle">Update page</h2>
+										
 												<div class="graph">
 														 <div class="block-page">
-																	
-                                                        
-																		<div class="set-1">
+														
+
+
+
+                                                                         <div class="set-1">
 																			<div class="graph-2 general">
-																				<h3 class="inner-tittle two">Update user Form  </h3>
+																				<h3 class="inner-tittle two">Create user Form  </h3>
 																					<div class="grid-1">
 																							<div class="form-body">
-																									<form class="form-horizontal">
+																									<form class="form-horizontal" action="addAdmin" method="GET">
 																										<div class="form-group">
-																											<label for="focusedinput" class="col-sm-2 control-label">First Name Input</label>
+																											<label for="focusedinput" class="col-sm-2 control-label">User Name</label>
 																											<div class="col-sm-8">
-																												<input type="text" class="form-control1" id="First Name Input" placeholder="Default Input">
+																												<input type="text" class="form-control1" name="userName" placeholder="Default Input">
 																											</div>
 																											<div class="col-sm-2">
 																												<p class="help-block">erro displaying place</p>
 																											</div>
 																										</div>
+
 																										<div class="form-group">
-																											<label for="focusedinput" class="col-sm-2 control-label">Last Name Input</label>
-																											<div class="col-sm-8">
-																												<input type="text" class="form-control1" id="First Name Input" placeholder="Default Input">
-																											</div>
+																											<label for="selector1" class="col-sm-2 control-label">Position</label>
+																											<div class="col-sm-8"><select name="type" id="type" class="form-control1">
+																												<option>federal system admin</option>
+																												<option>regional system admin</option>
+																											</select></div>
 																											<div class="col-sm-2">
 																												<p class="help-block">erro displaying place</p>
 																											</div>
@@ -295,14 +299,27 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 																												<span class="input-group-addon">
 																													<i class="fa fa-key"></i>
 																												</span>
-																												<input type="password" class="form-control1 icon" id="exampleInputPassword1" placeholder="Password">
+																												<input type="password" class="form-control1 icon" name="password" placeholder="Password">
 																											</div>
 																										</div>
 																										<div class="col-sm-2">
 																												<p class="help-block">erro displaying place</p>
 																											</div>
 																									</div>
-
+																									<div class="form-group">
+																										<label class="col-md-2 control-label">Confirm Password</label>
+																										<div class="col-md-8">
+																											<div class="input-group">
+																												<span class="input-group-addon">
+																													<i class="fa fa-key"></i>
+																												</span>
+																												<input type="password" class="form-control1 icon" id="confirmPassword" placeholder="Password">
+																											</div>
+																										</div>
+																										<div class="col-sm-2">
+																												<p class="help-block">erro displaying place</p>
+																											</div>
+																									</div>
 																									<div class="form-group">
 																										<label class="col-md-2 control-label">Email Address</label>
 																										<div class="col-md-8">
@@ -310,7 +327,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 																												<span class="input-group-addon">
 																													<i class="fa fa-envelope-o"></i>
 																												</span>
-																												<input type="text" class="form-control1 icon" placeholder="Email Address">
+																												<input type="text" name="email" class="form-control1 icon" placeholder="Email Address">
 																											</div>
 																										</div>
 																										<div class="col-sm-2">
@@ -318,43 +335,20 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 																											</div>
 																									</div>
 
-
-
-
-																										<div class="form-group">
-																											<label for="selector1" class="col-sm-2 control-label">Position</label>
-																											<div class="col-sm-8"><select name="selector1" id="selector1" class="form-control1">
-																												<option>Lorem ipsum dolor sit amet.</option>
-																												<option>Dolore, ab unde modi est!</option>
-																												<option>Illum, fuga minus sit eaque.</option>
-																												<option>Consequatur ducimus maiores voluptatum minima.</option>
-																											</select></div>
-																											<div class="col-sm-2">
-																												<p class="help-block">erro displaying place</p>
-																											</div>
-																										</div>
-
-
-																											<div class="form-group">
-																											<label for="selector1" class="col-sm-2 control-label">Organization</label>
-																											<div class="col-sm-8"><select name="selector1" id="selector1" class="form-control1">
-																												<option>Lorem ipsum dolor sit amet.</option>
-																												<option>Dolore, ab unde modi est!</option>
-																												<option>Illum, fuga minus sit eaque.</option>
-																												<option>Consequatur ducimus maiores voluptatum minima.</option>
-																											</select></div>
-																											<div class="col-sm-2">
-																												<p class="help-block">erro displaying place</p>
-																											</div>
-																										</div>
-
 																										<div class="form-group">
 																											<label for="selector1" class="col-sm-2 control-label">Status</label>
-																												<div class="col-sm-8"><select name="selector1" id="selector1" class="form-control1">
-																												<option>Lorem ipsum dolor sit amet.</option>
-																												<option>Dolore, ab unde modi est!</option>
-																												<option>Illum, fuga minus sit eaque.</option>
-																												<option>Consequatur ducimus maiores voluptatum minima.</option>
+																												<div class="col-sm-8"><select name="region" id="region" class="form-control1">
+																												<option>ADDIS ABABA ADMINISTRATION</option>
+																												<option>DIRE DAWA ADMINISTRATION</option>
+																												<option>SNNPR</option>
+																												<option>OROMIYA</option>
+																												<option>AMHARA</option>
+																												<option>TIGRAY</option>
+																												<option>GAMBELA</option>
+																												<option>HARARE</option>
+																												<option>AFAR</option>
+																												<option>BENISHANGUL GUMUZ</option>
+																												<option>SOMALI</option>
 																												</select></div>
 																											<div class="col-sm-2">
 																											<p class="help-block">erro displaying place</p>
@@ -378,6 +372,13 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 																			</div>
 
 
+
+
+
+
+
+                                                        
+														  
 										    </div>
 										</div>
 									</div>
@@ -417,13 +418,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
 								<div class="menu">
 									<ul id="menu" >
-										
-										<li id="menu-academico" ><a href="Create_user.html"><i class="fa fa-plus"></i> <span> Create User</span></a></li>
-										<li id="menu-academico" ><a href="Update_user.html"><i class="fa fa-edit"></i> <span> Update User</span></a></li>
-										<li id="menu-academico" ><a href="Delete_user.html"><i class="fa fa-trash-o"></i> <span> Delete User</span></a></li>
-										<li id="menu-academico" ><a href="Search_user.html"><i class="fa fa-search"></i> <span> Search User</span></a></li>
-								 
-		
+										<li id="menu-academico" ><a href="adminAddForm"><i class="fa fa-plus"></i> <span> Create User</span></a></li>
+										<li id="menu-academico" ><a href="adminUpdateForm"><i class="fa fa-edit"></i> <span> Update User</span></a></li>
+										<li id="menu-academico" ><a href="adminDeleteForm"><i class="fa fa-trash-o"></i> <span> Delete User</span></a></li>
+										<li id="menu-academico" ><a href="Search_user"><i class="fa fa-search"></i> <span> Search User</span></a></li>
+								 			 
 								  </ul>
 								</div>
 							  </div>
@@ -450,9 +449,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 										});
 							</script>
 <!--js -->
-	<script src="js/jquery.nicescroll.js"></script>
-	<script src="js/scripts.js"></script>
+	<script src="${pageContext.request.contextPath}/resources/js/jquery.nicescroll.js"></script>
+	<script src="${pageContext.request.contextPath}/resources/js/scripts.js"></script>
 <!-- Bootstrap Core JavaScript -->
-   <script src="js/bootstrap.min.js"></script>
+   <script src="${pageContext.request.contextPath}/resources/js/bootstrap.min.js"></script>
 </body>
 </html>
