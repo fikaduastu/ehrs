@@ -106,15 +106,8 @@ public class UserController {
 	   }
 	   
 	@RequestMapping("/addUser")
-	public void addUser(HttpServletRequest request,HttpServletResponse response)
+	public void addUser(user user)
 	{
-		user.setName(request.getParameter("name"));
-		user.setEmail(request.getParameter("email"));
-		user.setPassword(request.getParameter("password"));
-		user.setCreatedAt(request.getParameter("createdAt"));
-		user.setUpdatedAt(request.getParameter("updateAt"));
-		user.setPosition(request.getParameter("position"));
-		user.setStatus(request.getParameter("status"));
 		
 		userService.addUser(user);
 

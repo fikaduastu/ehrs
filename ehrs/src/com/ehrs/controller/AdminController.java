@@ -1,5 +1,6 @@
 package com.ehrs.controller;
 
+import java.util.Date;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -13,7 +14,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.ehrs.dao.AdminDao;
+import com.ehrs.dao.HealthCenterDao;
+import com.ehrs.dao.WoredaDao;
 import com.ehrs.entity.admin;
+import com.ehrs.entity.healthcenter;
+import com.ehrs.entity.user;
+import com.ehrs.entity.woreda;
 import com.ehrs.service.AdminService;
 
 @RequestMapping("/admin")
@@ -24,11 +30,32 @@ public class AdminController {
 			private AdminService adminService;
 		   	
 		   	@Autowired
+		   	private UserController userController;
+		   	
+		   	@Autowired
 			private admin adm;
+		   	
+		   	@Autowired
+		   	private user user;
 		   	
 		   	@Autowired
 		   	private AdminDao adminDao;
 		   	
+		   	
+		   	@Autowired
+		   	private healthcenter healthCenter;
+		   	
+		   	
+		   	@Autowired
+		   	private HealthCenterDao healthCenterDao;
+		   	
+		   	@Autowired
+		   	private WoredaDao woredaDao;
+		   	
+		   	@Autowired
+		   	private HealthCenterController healthCenterController;
+		   	
+		   	Date date = new Date();
 		   	
 		   	@RequestMapping("/showAdminLoginForm")
 		   	public String showLoginForm()
@@ -36,7 +63,7 @@ public class AdminController {
 		   		return "login";
 		   	}
 		   	
-		   	@RequestMapping(value="/adminLogin", method=RequestMethod.POST)
+		   	@RequestMapping(value="/adminLogin", method=RequestMethod.GET)
 		   	public String adminLogin(HttpServletRequest request,HttpServletResponse response,HttpSession session)
 		   	{	
 		   		//HttpSession session = (HttpSession) request.getSession();
@@ -66,7 +93,16 @@ public class AdminController {
 		   		}
 		   		
 		   	}
-		   	
+		   	@RequestMapping("/showCreateHospitalAdmin")
+		   	public String showCreateHospitalAdmin()
+		   	{
+		   		return "createHospitalAdmin";
+		   	}
+		   	@RequestMapping("/showCreateHospital")
+		   	public String showCreateHospital()
+		   	{
+		   		return "createHospital";
+		   	}
 		   	@RequestMapping("/federalAdminIndex")
 		   	public String adminIndex()
 		   	{
@@ -145,22 +181,26 @@ public class AdminController {
 			}
 			
 			
-			@RequestMapping("/showRegionalAdmins")
+			@RequestMapping("/showAllRegionalAdmins")
 			public String showRegionalAdmins(Model theModel)
 			{
 				List<admin> ad = adminDao.showRegionalAdmins();
 				theModel.addAttribute("admins", ad);
-				return "showRegionalAdmins";
+				
+				return "showAllRegionalAdmins";
 				// finished
 				// this is for national admin
 				
 			}
 			
+			@RequestMapping("/showAllFederalAdmins")
 			public String showFederalAdmins(Model theModel)
 			{
 				List<admin> ad = adminDao.showFederalAdmins();
 				theModel.addAttribute("admins", ad);
-				return "showFederalAdmins";
+
+				
+				return "showAllFederalAdmins";
 				// finished
 			}
 			public void addAdminInSession(admin ad,HttpSession session) {
@@ -171,5 +211,36 @@ public class AdminController {
 				session.setAttribute("password", ad.getPassword());
 				session.setAttribute("type", ad.getType());
 				session.setAttribute("region", ad.getRegion());
+			}
+			
+			@RequestMapping("/createHospital")
+			public void createHospital(HttpServletRequest request,HttpServletResponse response)
+			{
+				healthCenter.setName(request.getParameter("name"));
+				healthCenter.setEmail(request.getParameter("email"));
+				healthCenter.setPhoneNumber(request.getParameter("phoneNumber"));
+				healthCenter.setWebsite(request.getParameter("website"));
+				healthCenter.setType(request.getParameter("type"));
+				String woreda = request.getParameter("woreda");
+				woreda wor = woredaDao.getWoreda(woreda);
+				healthCenter.setWoredaId(wor);
+				healthCenterController.addHealthCenter(healthCenter);
+			}
+			
+			@RequestMapping("/createHospitalAdmin")
+			public String createHospitalAdmin(HttpServletRequest request,HttpServletResponse response)
+			{
+				user.setEmail(request.getParameter("email"));
+				user.setPassword(request.getParameter("password"));
+				user.setPosition("hospital admin");
+				user.setName(request.getParameter("userName"));
+				user.setStatus("1");
+				String hName = request.getParameter("name");
+				healthcenter hc = healthCenterDao.getHealthCenter(hName);
+				user.setOrganizationId(hc);
+				user.setCreatedAt(date.toString());
+				user.setUpdatedAt("updatedAt");
+				userController.addUser(user);
+				return null;
 			}
 }

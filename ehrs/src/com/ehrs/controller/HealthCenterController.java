@@ -14,20 +14,15 @@ import com.ehrs.service.HealthCenterService;
 @RequestMapping("/healthCenter")
 public class HealthCenterController {
 
+	@Autowired
 	private healthcenter healthCenter;
 	
 	@Autowired
 	private HealthCenterService healthCenterService;
 	
 	@RequestMapping("/addHealthCenter")
-	public void addHealthCenter(HttpServletRequest request, HttpServletResponse response)
+	public void addHealthCenter(healthcenter healthCenter)
 	{
-		healthCenter.setName(request.getParameter("name"));
-		healthCenter.setType(request.getParameter("type"));
-		healthCenter.setPhoneNumber(request.getParameter("phoneNumber"));
-		healthCenter.setEmail(request.getParameter("email"));
-		healthCenter.setWebsite(request.getParameter("website"));
-		
 		healthCenterService.addHealthCenter(healthCenter);
 	}
 	

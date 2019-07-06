@@ -22,7 +22,7 @@
         <div id="Admin">   
           <h1>Log-In System Admin</h1>
           
-          <form action="admin/adminLogin" method="POST" >
+          <form action="admin/adminLogin" method="GET" >
           
             <div class="field-wrap">
             <label>
@@ -48,7 +48,7 @@
         <div id="User">   
           <h1>Log-In Health Center User</h1>
           
-          <form action="user/userLogin" method="POST">
+          <form action="user/userLogin" method="GET">
           
             <div class="field-wrap">
             <label>
