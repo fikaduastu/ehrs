@@ -10,8 +10,10 @@ import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.ehrs.dao.AdminDao;
 import com.ehrs.dao.HealthCenterDao;
@@ -61,6 +63,19 @@ public class AdminController {
 		   	public String showLoginForm()
 		   	{
 		   		return "login";
+		   	}
+		   	
+		   	@RequestMapping("/showAllHospital")
+		   	public String showAllHospital()
+		   	{
+		   		return "showAllHospital";
+		   	}
+		   	
+		   	@RequestMapping("/createRegionalAdmin")
+		   	public String showCreateRegionalAdmin(Model theModel)
+		   	{
+		   		theModel.addAttribute("admins",adm);
+		   		return "createRegionalAdmin";
 		   	}
 		   	
 		   	@RequestMapping(value="/adminLogin", method=RequestMethod.GET)
@@ -117,9 +132,11 @@ public class AdminController {
 			}
 		   	
 		   	@RequestMapping("/adminUpdateForm")
-			public String adminUpdateForm()
+			public String adminUpdateForm(@RequestParam("id") int id,Model theModel)
 			{
-				return "adminUpdateForm";
+		   		admin ad = adminDao.getAdmin(id);
+		   		theModel.addAttribute("admins", ad);
+				return "createRegionalAdmin";
 			}
 		   	
 		   	@RequestMapping("/adminShowForm")
@@ -128,25 +145,22 @@ public class AdminController {
 				return "adminShowForm";
 			}   	
 		   	
-		   	@RequestMapping("/adminDeleteForm")
-			public String adminDeleteForm()
-			{
-				return "adminDeleteForm";
-			}  
-		   	
 				
 			@RequestMapping(value="/addAdmin", method=RequestMethod.GET)
-			public String addAdmin(HttpServletRequest request,HttpServletResponse response)
+			public String addAdmin(@ModelAttribute("admins") admin theAdmin)
 			{	
-				//String type = request.getParameter("type");
-				adm.setType(request.getParameter("type"));
-				adm.setUserName(request.getParameter("userName"));
-				adm.setEmail(request.getParameter("email"));
-				adm.setPassword(request.getParameter("password"));
-				adm.setRegion(request.getParameter("region"));
-				//System.out.println(type);
-				adminService.addAdmin(adm);
-				return "redirect:/admin/listadmin";
+		/*
+		 * //String type = request.getParameter("type");
+		 * adm.setType("regional system admin");
+		 * adm.setUserName(request.getParameter("userName"));
+		 * adm.setEmail(request.getParameter("email"));
+		 * adm.setPassword(request.getParameter("password"));
+		 * adm.setRegion(request.getParameter("region")); //System.out.println(type);
+		 * adminService.addAdmin(adm);
+		 * 
+		 */		theAdmin.setType("regional system admin");
+				adminService.addAdmin(theAdmin);
+				return "redirect:/admin/showAllRegionalAdmins";
 				
 				// FINISHED
 			}
@@ -170,14 +184,13 @@ public class AdminController {
 			}
 			
 			@RequestMapping("/deleteAdmin")
-			public String deleteAdmin(HttpServletRequest request,HttpServletResponse response)
+			public String deleteAdmin(@RequestParam("id") int id,Model theModel)
 			{
-				adm.setId(Integer.parseInt(request.getParameter("id")));
+				adm.setId(id);
 				
 				adminService.deleteAdmin(adm);
-				//return "adminIndex";
-				return null;
-				// finished
+				return "redirect:/admin/showAllRegionalAdmins";
+				
 			}
 			
 			

@@ -703,8 +703,9 @@
 										 <li id="menu-academico" ><a href="showCreateHospitalAdmin"><i class="fa fa-file-text-o"></i> <span>Create hospital admin</span> <span class="" style="float: right"></span></a>
 											 
 										 </li>
-									
-									
+										 <li id="menu-academico" ><a href="showAllRegionalAdmin"><i class="fa fa-file-text-o"></i> <span>show All Hospital</span> <span class="" style="float: right"></span></a>
+											 
+										 </li>						
 									
 								 
 							<script>

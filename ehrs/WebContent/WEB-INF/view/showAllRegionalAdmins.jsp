@@ -1,4 +1,5 @@
-
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %> 
 <!DOCTYPE HTML>
 <html>
 <head>
@@ -13,6 +14,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link type="text/css"
+		  rel="stylesheet"
+		  href="${pageContext.request.contextPath}/resources/css/style1.css" />
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
@@ -389,38 +393,57 @@ $(document).ready(function(){
 </script>
 </head>
 <body>
-    <div class="container">
-        <div class="table-wrapper">
-            <div class="table-title">
-                <div class="row">
-                    <div class="col-sm-8"><h2>Employee <b>Details</b></h2></div>
-                    <div class="col-sm-4">
-                        <button type="button" class="btn btn-info add-new"><i class="fa fa-plus"></i> Add New</button>
-                    </div>
-                </div>
-            </div>
-            <table class="table table-bordered">
-                <thead>
-                    <tr>
-                        <th>Name</th>
-                        <th>Email</th>
-                        <th>Password</th>
-                        <th>Position</th>
-                        <th>Type</th>
-                        <th>Region</th>
-                        <th>Actions</th>
 
-						<td>
-							<a class="add" title="Add" data-toggle="tooltip"><i class="material-icons">&#xE03B;</i></a>
-                            <a class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
-                            <a class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></a>
-                        </td>
-                    </tr>
-                </thead>
-               
-            </table>
-        </div>
-    </div>     
+	
+	<div id="container">
+	
+		<div id="content">
+		
+			<!--  add our html table here -->
+		
+			<table>
+				<tr>
+					<th>User Name</th>
+					<th>Region </th>
+					<th>Email</th>
+					<th>Role of the admin</th>
+					<th>Password</th>
+					<th>Action</th>
+				</tr>
+				
+				<!-- loop over and print our customers -->
+				<c:forEach var="tempAdmin" items="${admins}">
+					
+					<c:url var="updateLink" value="/admin/adminUpdateForm">
+						<c:param name="id" value="${tempAdmin.id}" />
+					</c:url>					
+
+					<!-- construct an "delete" link with customer id -->
+					<c:url var="deleteLink" value="/admin/deleteAdmin">
+						<c:param name="id" value="${tempAdmin.id}" />
+					</c:url>
+					<tr>
+						<td> ${tempAdmin.userName} </td>
+						<td> ${tempAdmin.region} </td>
+						<td> ${tempAdmin.email} </td>
+						<td> ${tempAdmin.type} </td>
+						<td> ${tempAdmin.password} </td>
+						<td> 
+								<a href="${updateLink}">Update</a> |
+								<a href="${deleteLink}"
+							   onclick="if (!(confirm('Are you sure you want to delete this Admin?'))) return false">Delete</a>
+						
+						
+						 </td>
+					</tr>
+				
+				</c:forEach>
+						
+			</table>
+				
+		</div>
+	
+	</div>   
 
 
 

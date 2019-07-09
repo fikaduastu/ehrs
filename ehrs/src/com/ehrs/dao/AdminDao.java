@@ -23,7 +23,7 @@ public class AdminDao {
 	public void addAdmin(admin admin) {
 
 		Session session = sessionFactory.getCurrentSession();
-		session.save(admin);
+		 session.saveOrUpdate(admin);
 
 	}
 
@@ -81,5 +81,21 @@ public class AdminDao {
 		Query<admin> theQuery = session.createQuery("from admin where type='regional system admin'", admin.class);
 		List<admin> admins = theQuery.getResultList();
 		return admins;
+	}
+
+	@Transactional
+	public admin getAdmin(int id) {
+		Session session = sessionFactory.getCurrentSession();
+		admin ad = null;
+		List<?> lst = session.createQuery("FROM admin").list(); 
+		
+		for (Iterator<?> iterator = lst.iterator(); iterator.hasNext();)
+		{
+			ad =(admin)iterator.next();
+			if (ad.getId().equals(id))
+				return ad;
+		}
+		ad = null;
+		return ad;
 	}
 }
