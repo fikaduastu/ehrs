@@ -411,7 +411,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							   <!--//down-->
                            <div class="menu">
 									<ul id="menu" >
-										<li><a href="regionalAdminIndex"><i class="fa fa-tachometer"></i> <span>Home</span></a></li>
+<li><a href="regionalAdminIndex"><i class="fa fa-tachometer"></i> <span>Home</span></a></li>
 										 <li id="menu-academico" ><a href="showCreateHospital"><i class="fa fa-table"></i> <span>Create Hospital</span> <span class="" style="float: right"></span></a>
 										   <ul id="menu-academico-sub" >
 											
@@ -420,7 +420,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 										 <li id="menu-academico" ><a href="showCreateHospitalAdmin"><i class="fa fa-file-text-o"></i> <span>Create hospital admin</span> <span class="" style="float: right"></span></a>
 											 
 										 </li>
-									
+										 <li id="menu-academico" ><a href="showAllRegionalAdmin"><i class="fa fa-file-text-o"></i> <span>show All Hospital</span> <span class="" style="float: right"></span></a>
+											 
+										 </li>			
 									
 									
 								 

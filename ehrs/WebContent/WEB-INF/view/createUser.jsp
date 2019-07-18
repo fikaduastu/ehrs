@@ -267,10 +267,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
                                                                          <div class="set-1">
 																			<div class="graph-2 general">
-																				<h3 class="inner-tittle two">Create user Form  </h3>
+																				<h3 class="inner-tittle two">Create user For hospital  </h3>
 																					<div class="grid-1">
 																							<div class="form-body">
-																									<form class="form-horizontal"  action="createHospitalAdmin" method="GET">
+																									<form class="form-horizontal"  action="addUser" method="GET">
 																										<div class="form-group">
 																											<label for="focusedinput" class="col-sm-2 control-label">User Name</label>
 																											<div class="col-sm-8">
@@ -338,15 +338,24 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 																												<p class="help-block">erro displaying place</p>
 																											</div>
 																											</div>
-																										
+																										<div class="form-group">
+																											<label for="selector1" class="col-sm-2 control-label">Position</label>
+																												<div class="col-sm-8"><select path="position" name="position" id="region" class="form-control1" >
+																												<option>doctor</option>
+																												<option>nurse</option>
+																												<option>ho</option>
+																												<option>laboratorist</option>
+																												<option>pharmacist</option>
+																												</select></div>
+																											<div class="col-sm-2">
+																											<p class="help-block">erro displaying place</p>
+																											</div>
+																										</div>
 
 																						<div class="form-group button-2">
 																						  <button type="submit" class="btn btn-primary">Submit</button>
 																						  <button type="reset" class="btn btn-default">Reset</button>
 																						</div>
-
-
-
 
 																									</form>
 																							</div>
@@ -377,40 +386,36 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				<!--//content-inner-->
 				<div class="sidebar-menu">
 					<header class="logo">
-					<a href="#" class="sidebar-icon"> <span class="fa fa-bars"></span> </a> <a href="regionalAdminIndex"> <span id="logo"> <h1>NWEHR</h1></span> 
+					<a href="#" class="sidebar-icon"> <span class="fa fa-bars"></span> </a> <a href="hospitalAdmin"> <span id="logo"> <h1>NWEHR</h1></span> 
 					<!--<img id="logo" src="" alt="Logo"/>--> 
 				  </a> 
 				</header>
 			<div style="border-top:1px solid rgba(69, 74, 84, 0.7)"></div>
 			<!--/down-->
 							<div class="down">	
-									  <a href="regionalAdminIndex"><img src="${pageContext.request.contextPath}/resources/images/in10.jpg"></a>
-									  <a href="regionalAdminIndex"><span class=" name-caret">regional system admin</span></a>
+									  <a href="hospitalAdmin"><img src="${pageContext.request.contextPath}/resources/images/in10.jpg"></a>
+									  <a href="hospitalAdmin"><span class=" name-caret">hospital admin</span></a>
 									 <p>System Administrator in NWEHR</p>
 									<ul>
-									<li><a class="tooltips" href="regionalAdminIndex"><span>Profile</span><i class="lnr lnr-user"></i></a></li>
-										<li><a class="tooltips" href="regionalAdminIndex"><span>Settings</span><i class="lnr lnr-cog"></i></a></li>
-										<li><a class="tooltips" href="regionalAdminIndex"><span>Log out</span><i class="lnr lnr-power-switch"></i></a></li>
+									<li><a class="tooltips" href="hospitalAdmin"><span>Profile</span><i class="lnr lnr-user"></i></a></li>
+										<li><a class="tooltips" href="hospitalAdmin"><span>Settings</span><i class="lnr lnr-cog"></i></a></li>
+										<li><a class="tooltips" href="hospitalAdmin"><span>Log out</span><i class="lnr lnr-power-switch"></i></a></li>
 										</ul>
 									</div>
 							   <!--//down-->
                            <div class="menu">
 									<ul id="menu" >
-										<li><a href="regionalAdminIndex"><i class="fa fa-tachometer"></i> <span>Home</span></a></li>
-										 <li id="menu-academico" ><a href="showCreateHospital"><i class="fa fa-table"></i> <span>Create Hospital</span> <span class="" style="float: right"></span></a>
+										<li><a href="hospitalAdmin"><i class="fa fa-tachometer"></i> <span>Home</span></a></li>
+										 <li id="menu-academico" ><a href="createUser"><i class="fa fa-table"></i> <span>Create hospital user</span> <span class="" style="float: right"></span></a>
 										   <ul id="menu-academico-sub" >
 											
 										  </ul>
 										</li>
-										 <li id="menu-academico" ><a href="showCreateHospitalAdmin"><i class="fa fa-file-text-o"></i> <span>Create hospital admin</span> <span class="" style="float: right"></span></a>
+										 <li id="menu-academico" ><a href="showAllHospitalUser"><i class="fa fa-file-text-o"></i> <span>show all hospital user</span> <span class="" style="float: right"></span></a>
 											 
-										 </li>
-										 <li id="menu-academico" ><a href="showAllHospitals"><i class="fa fa-file-text-o"></i> <span>show All Hospital</span> <span class="" style="float: right"></span></a>
-											 
-										 </li>			
+										 </li>					
 									
-									
-									</ul>
+								 </ul>
 								 
 							<script>
 							var toggle = true;

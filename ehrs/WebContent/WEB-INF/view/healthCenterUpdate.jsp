@@ -267,63 +267,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
                                                                          <div class="set-1">
 																			<div class="graph-2 general">
-																				<h3 class="inner-tittle two">Create user Form  </h3>
+																				<h3 class="inner-tittle two">Update hospital  </h3>
 																					<div class="grid-1">
 																							<div class="form-body">
-																									<form class="form-horizontal"  action="createHospitalAdmin" method="GET">
-																										<div class="form-group">
-																											<label for="focusedinput" class="col-sm-2 control-label">User Name</label>
-																											<div class="col-sm-8">
-																												<input type="text" class="form-control1" name="userName" placeholder="Default Input">
-																											</div>
-																											<div class="col-sm-2">
-																												<p class="help-block">erro displaying place</p>
-																											</div>
-																										</div>
-
-																									<div class="form-group">
-																										<label class="col-md-2 control-label">Password</label>
-																										<div class="col-md-8">
-																											<div class="input-group">
-																												<span class="input-group-addon">
-																													<i class="fa fa-key"></i>
-																												</span>
-																												<input type="password" class="form-control1 icon" name="password" placeholder="Password">
-																											</div>
-																										</div>
-																										<div class="col-sm-2">
-																												<p class="help-block">erro displaying place</p>
-																											</div>
-																									</div>
-																									<div class="form-group">
-																										<label class="col-md-2 control-label">Confirm Password</label>
-																										<div class="col-md-8">
-																											<div class="input-group">
-																												<span class="input-group-addon">
-																													<i class="fa fa-key"></i>
-																												</span>
-																												<input type="password" class="form-control1 icon" id="confirmPassword" placeholder="Password">
-																											</div>
-																										</div>
-																										<div class="col-sm-2">
-																												<p class="help-block">erro displaying place</p>
-																											</div>
-																									</div>
-																									<div class="form-group">
-																										<label class="col-md-2 control-label">Email Address</label>
-																										<div class="col-md-8">
-																											<div class="input-group">							
-																												<span class="input-group-addon">
-																													<i class="fa fa-envelope-o"></i>
-																												</span>
-																												<input type="text" name="email" class="form-control1 icon" placeholder="Email Address">
-																											</div>
-																										</div>
-																										<div class="col-sm-2">
-																												<p class="help-block">erro displaying place</p>
-																											</div>
-																									</div>
-
+																									<form:form class="form-horizontal" modelAttribute="healthcenter" action="healthCenterUpdate" method="GET">
+																										<form:hidden path="id"/>
 																									<div class="form-group">
 																										<label class="col-md-2 control-label">Hospital Name</label>
 																										<div class="col-md-8">
@@ -331,24 +279,93 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 																												<span class="input-group-addon">
 																													
 																												</span>
-																												<input type="text" name="name" class="form-control1 icon" placeholder="Name">
+																												<form:input type="text" path="name" name="name" class="form-control1 icon" placeholder="Name" />
 																											</div>
 																										</div>
 																										<div class="col-sm-2">
 																												<p class="help-block">erro displaying place</p>
 																											</div>
 																											</div>
-																										
+																									<div class="form-group">
+																										<label class="col-md-2 control-label">Email Address</label>
+																										<div class="col-md-8">
+																											<div class="input-group">							
+																												<span class="input-group-addon">
+																													<i class="fa fa-envelope-o"></i>
+																												</span>
+																												<form:input path="email" type="text" name="email" class="form-control1 icon" placeholder="Email Address" />
+																											</div>
+																										</div>
+																										<div class="col-sm-2">
+																												<p class="help-block">erro displaying place</p>
+																											</div>
+																									</div>
 
+																									<div class="form-group">
+																										<label class="col-md-2 control-label">Phone Number</label>
+																										<div class="col-md-8">
+																											<div class="input-group">							
+																												<span class="input-group-addon">
+																													
+																												</span>
+																												<form:input path="phoneNumber" type="text" name="phoneNumber" class="form-control1 icon" placeholder="Phone Number" />
+																											</div>
+																										</div>
+																										<div class="col-sm-2">
+																												<p class="help-block">erro displaying place</p>
+																											</div>
+																									</div>	
+																									<div class="form-group">
+																										<label class="col-md-2 control-label">Website</label>
+																										<div class="col-md-8">
+																											<div class="input-group">							
+																												<span class="input-group-addon">
+																													
+																												</span>
+																												<form:input path="website" type="text" name="website" class="form-control1 icon" placeholder="Website" />
+																											</div>
+																										</div>
+																										<div class="col-sm-2">
+																												<p class="help-block">erro displaying place</p>
+																											</div>
+																									</div>	
+																									<div class="form-group">
+																										<label class="col-md-2 control-label">Woreda</label>
+																										<div class="col-md-8">
+																											<div class="input-group">							
+																												<span class="input-group-addon">
+																													
+																												</span>
+																												<form:input path="woreda" type="text" name="woreda" class="form-control1 icon" placeholder="Woreda" />
+																											</div>
+																										</div>
+																										<div class="col-sm-2">
+																												<p class="help-block">erro displaying place</p>
+																											</div>
+																									</div>																											
+																									
+																										<div class="form-group">
+																											<label for="selector1" class="col-sm-2 control-label">Type of Hospital</label>
+																												<div class="col-sm-8"><form:select path="type" name="type" id="type" class="form-control1">
+																												<form:option value="primary level" /> 
+																												<form:option value="secondary level" />
+																												<form:option value="tertiary level" />
+																										
+																												</form:select></div>
+																											<div class="col-sm-2">
+																											<p class="help-block">erro displaying place</p>
+																											</div>
+																										</div>
+																										
 																						<div class="form-group button-2">
 																						  <button type="submit" class="btn btn-primary">Submit</button>
 																						  <button type="reset" class="btn btn-default">Reset</button>
 																						</div>
 
 
+			
 
-
-																									</form>
+																									</form:form>
 																							</div>
 
 																					</div>
@@ -396,7 +413,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							   <!--//down-->
                            <div class="menu">
 									<ul id="menu" >
-										<li><a href="regionalAdminIndex"><i class="fa fa-tachometer"></i> <span>Home</span></a></li>
+<li><a href="regionalAdminIndex"><i class="fa fa-tachometer"></i> <span>Home</span></a></li>
 										 <li id="menu-academico" ><a href="showCreateHospital"><i class="fa fa-table"></i> <span>Create Hospital</span> <span class="" style="float: right"></span></a>
 										   <ul id="menu-academico-sub" >
 											
@@ -405,12 +422,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 										 <li id="menu-academico" ><a href="showCreateHospitalAdmin"><i class="fa fa-file-text-o"></i> <span>Create hospital admin</span> <span class="" style="float: right"></span></a>
 											 
 										 </li>
-										 <li id="menu-academico" ><a href="showAllHospitals"><i class="fa fa-file-text-o"></i> <span>show All Hospital</span> <span class="" style="float: right"></span></a>
+										 <li id="menu-academico" ><a href="showAllRegionalAdmin"><i class="fa fa-file-text-o"></i> <span>show All Hospital</span> <span class="" style="float: right"></span></a>
 											 
 										 </li>			
 									
 									
-									</ul>
 								 
 							<script>
 							var toggle = true;

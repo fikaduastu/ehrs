@@ -72,5 +72,12 @@ public class UserDao {
 		session.save(user);
 		
 	}
+	@Transactional
+	public List<user> showAllUser() {
+		Session session = sessionFactory.getCurrentSession();
+		Query<user> theQuery = session.createQuery("from user where organizationId='1' ",user.class);
+		List<user> us = theQuery.getResultList();
+		return us;
+	}
 
 }

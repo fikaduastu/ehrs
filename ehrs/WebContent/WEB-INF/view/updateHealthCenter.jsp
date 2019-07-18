@@ -3,25 +3,57 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-<title>federal admin index</title>
+<title>Nation Wide Electronic Health Record System</title>
+
+
+<!-- Required meta tags -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link rel="icon" href="${pageContext.request.contextPath}/resources/img/favicon.png" type="image/png">
+	<title>Medicare Medical</title>
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css1/bootstrap.css">
+	<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/vendors1/linericon/style.css">
+	<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css1/font-awesome.min.css">
+	<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/vendors1/owl-carousel/owl.carousel.min.css">
+	<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/vendors1/lightbox/simpleLightbox.css">
+	<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/vendors1/nice-select/css/nice-select.css">
+	<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/vendors1/animate-css/animate.css">
+	<!-- main css -->
+	<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css1/style.css">
+
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="keywords" content="Augment Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
-Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
  <!-- Bootstrap Core CSS -->
 <link href="${pageContext.request.contextPath}/resources/css/bootstrap.min.css" rel='stylesheet' type='text/css' />
+<!-- Custom CSS -->
 <link href="${pageContext.request.contextPath}/resources/css/style.css" rel='stylesheet' type='text/css' />
-	<!-- Graph CSS -->
-<link href="${pageContext.request.contextPath}/resources/css/font-awesome.css" rel="stylesheet" /> 
-	<!-- jQuery -->
+<!-- Graph CSS -->
+<link href="${pageContext.request.contextPath}/resources/css/font-awesome.css" rel="stylesheet"> 
+<!-- jQuery -->
 <link href='//fonts.googleapis.com/css?family=Roboto:700,500,300,100italic,100,400' rel='stylesheet' type='text/css'>
-	<!-- lined-icons -->
+<!-- lined-icons -->
 <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/icon-font.min.css" type='text/css' />
-	<!-- /js -->
+<!-- //lined-icons -->
 <script src="${pageContext.request.contextPath}/resources/js/jquery-1.10.2.min.js"></script>
-<!-- //js-->
-</head>
+<script src="${pageContext.request.contextPath}/resources/js/amcharts.js"></script>	
+<script src="${pageContext.request.contextPath}/resources/js/serial.js"></script>	
+<script src="${pageContext.request.contextPath}/resources/js/light.js"></script>	
+<script src="${pageContext.request.contextPath}/resources/js/radar.js"></script>	
+<link href="${pageContext.request.contextPath}/resources/css/barChart.css" rel='stylesheet' type='text/css' />
+<link href="${pageContext.request.contextPath}/resources/css/fabochart.css" rel='stylesheet' type='text/css' />
+<!--clock init-->
+<script src="${pageContext.request.contextPath}/resources/js/css3clock.js"></script>
+<!--Easy Pie Chart-->
+<!--skycons-icons-->
+<script src="${pageContext.request.contextPath}/resources/js/skycons.js"></script>
+
+<script src="js/jquery.easydropdown.js"></script>
+
+<!--//skycons-icons-->
+</head> 
 <body>
    <div class="page-container">
    <!--/content-inner-->
@@ -31,29 +63,20 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			<div class="header-section">
 						<!--menu-right-->
 						<div class="top_menu">
-						        <div class="main-search">
-											<form action="search.html">
-											   <input type="text" value="Search" onFocus="this.value = '';" onBlur="if (this.value == '') {this.value = 'Search';}" class="text"/>
-												<input type="submit" value=""/>
-											</form>
-									<div class="close"><img src="images/cross.png" /></div>
-								</div>
-									<div class="srch"><button></button></div>
-									<script type="text/javascript">
-										 $('.main-search').hide();
-										$('button').click(function (){
-											$('.main-search').show();
-											$('.main-search text').focus();
-										}
-										);
-										$('.close').click(function(){
-											$('.main-search').hide();
-										});
-									</script>
+						       
+								
 							<!--/profile_details-->
 								<div class="profile_details_left">
 									<ul class="nofitications-dropdown">
 											<li class="dropdown note dra-down">
+													   <div id="dd" class="wrapper-dropdown-3" tabindex="1">
+																			<span>English</span>
+																			<ul class="dropdown">
+																				<li><a class="amaharic">Amaharic</a></li>
+																				<li><a class="oromifa">Oromifa</a></li>
+																				<li><a class="tigiregna">Tigiregna</a></li>
+																			</ul>
+																		</div>
 																		<script type="text/javascript">
 			
 																	function DropDown(el) {
@@ -100,10 +123,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 																	});
 
 																</script>
-										
-										</li>
-									
-										<li class="dropdown note">
+										    </li>
+									       <li class="dropdown note">
 											<a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="fa fa-envelope-o"></i> <span class="badge">3</span></a>
 
 												
@@ -113,30 +134,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 																<h3>You have 3 new messages  </h3> 
 															</div>
 														</li>
-														<li><a href="#">
-														   <div class="user_img"><img src="images/1.jpg" alt=""></div>
-														   <div class="notification_desc">
-															<p>Lorem ipsum dolor sit amet</p>
-															<p><span>1 hour ago</span></p>
-															</div>
-														   <div class="clearfix"></div>	
-														 </a></li>
-														 <li class="odd"><a href="#">
-															<div class="user_img"><img src="images/in.jpg" alt=""></div>
-														   <div class="notification_desc">
-															<p>Lorem ipsum dolor sit amet </p>
-															<p><span>1 hour ago</span></p>
-															</div>
-														  <div class="clearfix"></div>	
-														 </a></li>
-														<li><a href="#">
-														   <div class="user_img"><img src="images/in1.jpg" alt=""></div>
-														   <div class="notification_desc">
-															<p>Lorem ipsum dolor sit amet </p>
-															<p><span>1 hour ago</span></p>
-															</div>
-														   <div class="clearfix"></div>	
-														</a></li>
+														
 														<li>
 															<div class="notification_bottom">
 																<a href="#">See all messages</a>
@@ -154,30 +152,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 												<h3>You have 5 new notification</h3>
 											</div>
 										</li>
-										<li><a href="#">
-											<div class="user_img"><img src="images/in.jpg" alt=""></div>
-										   <div class="notification_desc">
-											<p>Lorem ipsum dolor sit amet</p>
-											<p><span>1 hour ago</span></p>
-											</div>
-										  <div class="clearfix"></div>	
-										 </a></li>
-										 <li class="odd"><a href="#">
-											<div class="user_img"><img src="images/in5.jpg" alt=""></div>
-										   <div class="notification_desc">
-											<p>Lorem ipsum dolor sit amet </p>
-											<p><span>1 hour ago</span></p>
-											</div>
-										   <div class="clearfix"></div>	
-										 </a></li>
-										 <li><a href="#">
-											<div class="user_img"><img src="images/in8.jpg" alt=""></div>
-										   <div class="notification_desc">
-											<p>Lorem ipsum dolor sit amet </p>
-											<p><span>1 hour ago</span></p>
-											</div>
-										   <div class="clearfix"></div>	
-										 </a></li>
+										
 										 <li>
 											<div class="notification_bottom">
 												<a href="#">See all notification</a>
@@ -185,58 +160,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 										</li>
 									</ul>
 							</li>	
-						<li class="dropdown note">
-								<a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="fa fa-tasks"></i> <span class="badge blue1">9</span></a>
-										<ul class="dropdown-menu two">
-										<li>
-											<div class="notification_header">
-												<h3>You have 9 pending task</h3>
-											</div>
-										</li>
-										<li><a href="#">
-												<div class="task-info">
-												<span class="task-desc">Database update</span><span class="percentage">40%</span>
-												<div class="clearfix"></div>	
-											   </div>
-												<div class="progress progress-striped active">
-												 <div class="bar yellow" style="width:40%;"></div>
-											</div>
-										</a></li>
-										<li><a href="#">
-											<div class="task-info">
-												<span class="task-desc">EHRs done</span><span class="percentage">90%</span>
-											   <div class="clearfix"></div>	
-											</div>
-										   
-											<div class="progress progress-striped active">
-												 <div class="bar green" style="width:90%;"></div>
-											</div>
-										</a></li>
-										<li><a href="#">
-											<div class="task-info">
-												<span class="task-desc">Mobile App</span><span class="percentage">33%</span>
-												<div class="clearfix"></div>	
-											</div>
-										   <div class="progress progress-striped active">
-												 <div class="bar red" style="width: 33%;"></div>
-											</div>
-										</a></li>
-										<li><a href="#">
-											<div class="task-info">
-												<span class="task-desc">Issues fixed</span><span class="percentage">80%</span>
-											   <div class="clearfix"></div>	
-											</div>
-											<div class="progress progress-striped active">
-												 <div class="bar  blue" style="width: 80%;"></div>
-											</div>
-										</a></li>
-										<li>
-											<div class="notification_bottom">
-												<a href="#">See all pending task</a>
-											</div> 
-										</li>
-									</ul>
-							</li>		   							   		
+						   							   		
 							<div class="clearfix"></div>	
 								</ul>
 							</div>
@@ -247,83 +171,32 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<div class="clearfix"></div>
 				</div>
 					<!-- //header-ends -->
-						<!--outter-wp-->
-							<div class="outter-wp">
-									<!--sub-heard-part-->
-									  <div class="sub-heard-part">
-									   <ol class="breadcrumb m-b-0">
-											<li><a href="index.html">Home</a></li>
-											<li class="active"> create User</li>
-										</ol>
-									   </div>
-								  <!--//sub-heard-part-->
+						<div class="outter-wp">
+								<!--custom-widgets-->
+												
+ 
+
+
+
+	<!--================ Start Header Menu Area =================-->
+	
+	<!--================ End Header Menu Area =================-->
+
+
+	<!--================ End Features Area =================-->
 									<div class="graph-visual tables-main">
 										
 												<div class="graph">
 														 <div class="block-page">
-														
-
-
 
                                                                          <div class="set-1">
 																			<div class="graph-2 general">
-																				<h3 class="inner-tittle two">Create user Form  </h3>
+																				<h3 class="inner-tittle two">update health center </h3>
 																					<div class="grid-1">
 																							<div class="form-body">
-																									<form class="form-horizontal"  action="createHospitalAdmin" method="GET">
-																										<div class="form-group">
-																											<label for="focusedinput" class="col-sm-2 control-label">User Name</label>
-																											<div class="col-sm-8">
-																												<input type="text" class="form-control1" name="userName" placeholder="Default Input">
-																											</div>
-																											<div class="col-sm-2">
-																												<p class="help-block">erro displaying place</p>
-																											</div>
-																										</div>
-
-																									<div class="form-group">
-																										<label class="col-md-2 control-label">Password</label>
-																										<div class="col-md-8">
-																											<div class="input-group">
-																												<span class="input-group-addon">
-																													<i class="fa fa-key"></i>
-																												</span>
-																												<input type="password" class="form-control1 icon" name="password" placeholder="Password">
-																											</div>
-																										</div>
-																										<div class="col-sm-2">
-																												<p class="help-block">erro displaying place</p>
-																											</div>
-																									</div>
-																									<div class="form-group">
-																										<label class="col-md-2 control-label">Confirm Password</label>
-																										<div class="col-md-8">
-																											<div class="input-group">
-																												<span class="input-group-addon">
-																													<i class="fa fa-key"></i>
-																												</span>
-																												<input type="password" class="form-control1 icon" id="confirmPassword" placeholder="Password">
-																											</div>
-																										</div>
-																										<div class="col-sm-2">
-																												<p class="help-block">erro displaying place</p>
-																											</div>
-																									</div>
-																									<div class="form-group">
-																										<label class="col-md-2 control-label">Email Address</label>
-																										<div class="col-md-8">
-																											<div class="input-group">							
-																												<span class="input-group-addon">
-																													<i class="fa fa-envelope-o"></i>
-																												</span>
-																												<input type="text" name="email" class="form-control1 icon" placeholder="Email Address">
-																											</div>
-																										</div>
-																										<div class="col-sm-2">
-																												<p class="help-block">erro displaying place</p>
-																											</div>
-																									</div>
-
+																					<form:form class="form-horizontal" modelAttribute="healthCenter" action="addHealthCenter" method="GET">
+																									
+																									<form:hidden path="id"/>
 																									<div class="form-group">
 																										<label class="col-md-2 control-label">Hospital Name</label>
 																										<div class="col-md-8">
@@ -331,41 +204,101 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 																												<span class="input-group-addon">
 																													
 																												</span>
-																												<input type="text" name="name" class="form-control1 icon" placeholder="Name">
+																												<form:input type="text" path="name" name="name" class="form-control1 icon" placeholder="Name" />
 																											</div>
 																										</div>
 																										<div class="col-sm-2">
 																												<p class="help-block">erro displaying place</p>
 																											</div>
 																											</div>
-																										
+																									<div class="form-group">
+																										<label class="col-md-2 control-label">Email Address</label>
+																										<div class="col-md-8">
+																											<div class="input-group">							
+																												<span class="input-group-addon">
+																													<i class="fa fa-envelope-o"></i>
+																												</span>
+																												<form:input  type="text" name="email" path="email" class="form-control1 icon" placeholder="Email Address" />
+																											</div>
+																										</div>
+																										<div class="col-sm-2">
+																												<p class="help-block">erro displaying place</p>
+																											</div>
+																									</div>
 
+																									<div class="form-group">
+																										<label class="col-md-2 control-label">Phone Number</label>
+																										<div class="col-md-8">
+																											<div class="input-group">							
+																												<span class="input-group-addon">
+																													
+																												</span>
+																												<form:input type="text"  path="phoneNumber" name="phoneNumber" class="form-control1 icon" placeholder="Phone Number" />
+																											</div>
+																										</div>
+																										<div class="col-sm-2">
+																												<p class="help-block">erro displaying place</p>
+																											</div>
+																									</div>	
+																									<div class="form-group">
+																										<label class="col-md-2 control-label">Website</label>
+																										<div class="col-md-8">
+																											<div class="input-group">							
+																												<span class="input-group-addon">
+																													
+																												</span>
+																												<form:input path="website" type="text" name="website" class="form-control1 icon" placeholder="Website" />
+																											</div>
+																										</div>
+																										<div class="col-sm-2">
+																												<p class="help-block">erro displaying place</p>
+																											</div>
+																									</div>	
+																									<div class="form-group">
+																										<label class="col-md-2 control-label">Woreda</label>
+																										<div class="col-md-8">
+																											<div class="input-group">							
+																												<span class="input-group-addon">
+																													
+																												</span>
+																												<form:input path="woreda" type="text" name="woreda" class="form-control1 icon" placeholder="Woreda" />
+																											</div>
+																										</div>
+																										<div class="col-sm-2">
+																												<p class="help-block">erro displaying place</p>
+																											</div>
+																									</div>																											
+																									
+																										<div class="form-group">
+																											<label for="selector1" class="col-sm-2 control-label">Type of Hospital</label>
+																												<div class="col-sm-8"><form:select path="type" name="type" id="type" class="form-control1">
+																												<form:option value="primary level" /> 
+																												<form:option value="secondary level" />
+																												<form:option value="tertiary level" />
+																										
+																												</form:select></div>
+																											<div class="col-sm-2">
+																											<p class="help-block">erro displaying place</p>
+																											</div>
+																										</div>
+																										
 																						<div class="form-group button-2">
 																						  <button type="submit" class="btn btn-primary">Submit</button>
 																						  <button type="reset" class="btn btn-default">Reset</button>
 																						</div>
 
 
+			
 
-
-																									</form>
-																							</div>
+																									</form:form>																</div>
 
 																					</div>
 																				</div>
 																			</div>
-
-
-
-
-
-
-
-                                                        
 														  
 										    </div>
 										</div>
-									</div>
+									
 									<!--//outer-wp-->
 									 <!--footer section start-->
 										<footer>
@@ -373,8 +306,13 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 										</footer>
 									<!--footer section end-->
 								</div>
-							</div>
-				<!--//content-inner-->
+				<div class="sidebar-menu">
+					<header class="logo">
+					<a href="#" class="sidebar-icon"> <span class="fa fa-bars"></span> </a> <a href="regionalAdminIndex"> <span id="logo"> <h1>EHRs</h1></span> 
+					<!--<img id="logo" src="" alt="Logo"/>--> 
+				  </a> 
+				</header>
+			<div style="border-top:1px solid rgba(69, 74, 84, 0.7)"></div>
 				<div class="sidebar-menu">
 					<header class="logo">
 					<a href="#" class="sidebar-icon"> <span class="fa fa-bars"></span> </a> <a href="regionalAdminIndex"> <span id="logo"> <h1>NWEHR</h1></span> 
@@ -385,7 +323,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			<!--/down-->
 							<div class="down">	
 									  <a href="regionalAdminIndex"><img src="${pageContext.request.contextPath}/resources/images/in10.jpg"></a>
-									  <a href="regionalAdminIndex"><span class=" name-caret">regional system admin</span></a>
+									  <a href="regionalAdminIndex"><span class=" name-caret">Federal System admin</span></a>
 									 <p>System Administrator in NWEHR</p>
 									<ul>
 									<li><a class="tooltips" href="regionalAdminIndex"><span>Profile</span><i class="lnr lnr-user"></i></a></li>
@@ -394,7 +332,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 										</ul>
 									</div>
 							   <!--//down-->
-                           <div class="menu">
+
+
+								<div class="menu">
 									<ul id="menu" >
 										<li><a href="regionalAdminIndex"><i class="fa fa-tachometer"></i> <span>Home</span></a></li>
 										 <li id="menu-academico" ><a href="showCreateHospital"><i class="fa fa-table"></i> <span>Create Hospital</span> <span class="" style="float: right"></span></a>
@@ -411,30 +351,52 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 									
 									
 									</ul>
-								 
-							<script>
-							var toggle = true;
-										
-							$(".sidebar-icon").click(function() {                
-							  if (toggle)
-							  {
-								$(".page-container").addClass("sidebar-collapsed").removeClass("sidebar-collapsed-back");
-								$("#menu span").css({"position":"absolute"});
-							  }
-							  else
-							  {
-								$(".page-container").removeClass("sidebar-collapsed").addClass("sidebar-collapsed-back");
-								setTimeout(function() {
-								  $("#menu span").css({"position":"relative"});
-								}, 400);
-							  }
-											
-											toggle = !toggle;
-										});
+								</div>
+							  </div>
+							  <div class="clearfix"></div>		
+							</div>
+							</div>
+							</div></div>
+
+							</div>
+	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+	<script src="${pageContext.request.contextPath}/resources/js1/jquery-3.2.1.min.js"></script>
+	<script src="${pageContext.request.contextPath}/resources/js1/popper.js"></script>
+	<script src="${pageContext.request.contextPath}/resources/js1/bootstrap.min.js"></script>
+	<script src="${pageContext.request.contextPath}/resources/js1/stellar.js"></script>
+	<script src="${pageContext.request.contextPath}/resources/vendors1/lightbox/simpleLightbox.min.js"></script>
+	<script src="${pageContext.request.contextPath}/resources/vendors1/nice-select/js/jquery.nice-select.min.js"></script>
+	<script src="${pageContext.request.contextPath}/resources/vendors1/owl-carousel/owl.carousel.min.js"></script>
+	<script src="${pageContext.request.contextPath}/resources/js1/jquery.ajaxchimp.min.js"></script>
+	<script src="${pageContext.request.contextPath}/resources/vendors1/counter-up/jquery.waypoints.min.js"></script>
+	<script src="${pageContext.request.contextPath}/resources/vendors1/counter-up/jquery.counterup.js"></script>
+	<script src="${pageContext.request.contextPath}/resources/js1/mail-script.js"></script>
+	<!--gmaps Js-->
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCjCGmQ0Uq4exrzdcL6rvxywDDOvfAu6eE"></script>
+	<script src="${pageContext.request.contextPath}/resources/js1/gmaps.min.js"></script>
+	<script src="${pageContext.request.contextPath}/resources/js1/theme.js"></script>
+
+
+
+
+
+
+
+
+													
+																								
+				
+					
+
 							</script>
 <!--js -->
-	<script src="${pageContext.request.contextPath}/resources/js/jquery.nicescroll.js"></script>
-	<script src="${pageContext.request.contextPath}/resources/js/scripts.js"></script>
+<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/vroom.css">
+<script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/vroom.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/TweenLite.min.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/CSSPlugin.min.js"></script>
+<script src="${pageContext.request.contextPath}/resources/js/jquery.nicescroll.js"></script>
+<script src="${pageContext.request.contextPath}/resources/js/scripts.js"></script>
+
 <!-- Bootstrap Core JavaScript -->
    <script src="${pageContext.request.contextPath}/resources/js/bootstrap.min.js"></script>
 </body>

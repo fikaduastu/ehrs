@@ -1,19 +1,31 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>  
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %> 
 <!DOCTYPE HTML>
 <html>
 <head>
-<title>federal admin index</title>
+<title>Electronic Health Record System</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="keywords" content="Augment Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
 Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round|Open+Sans">
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link type="text/css"
+		  rel="stylesheet"
+		  href="${pageContext.request.contextPath}/resources/css/style1.css" />
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
  <!-- Bootstrap Core CSS -->
 <link href="${pageContext.request.contextPath}/resources/css/bootstrap.min.css" rel='stylesheet' type='text/css' />
+	<!-- Custom CSS -->
 <link href="${pageContext.request.contextPath}/resources/css/style.css" rel='stylesheet' type='text/css' />
 	<!-- Graph CSS -->
-<link href="${pageContext.request.contextPath}/resources/css/font-awesome.css" rel="stylesheet" /> 
+<link href="${pageContext.request.contextPath}/resources/css/font-awesome.css" rel="stylesheet"> 
 	<!-- jQuery -->
 <link href='//fonts.googleapis.com/css?family=Roboto:700,500,300,100italic,100,400' rel='stylesheet' type='text/css'>
 	<!-- lined-icons -->
@@ -21,7 +33,92 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	<!-- /js -->
 <script src="${pageContext.request.contextPath}/resources/js/jquery-1.10.2.min.js"></script>
 <!-- //js-->
-</head>
+<style type="text/css">
+    body {
+        color: #404E67;
+        background: #F5F7FA;
+		font-family: 'Open Sans', sans-serif;
+	}
+	.table-wrapper {
+		width: 1100px;
+		margin: 30px auto;
+        background: #fff;
+        padding: 20px;	
+        box-shadow: 0 1px 1px rgba(0,0,0,.05);
+    }
+    .table-title {
+        padding-bottom: 10px;
+        margin: 0 0 10px;
+    }
+    .table-title h2 {
+        margin: 6px 0 0;
+        font-size: 22px;
+    }
+    .table-title .add-new {
+        float: right;
+		height: 30px;
+		font-weight: bold;
+		font-size: 12px;
+		text-shadow: none;
+		min-width: 100px;
+		border-radius: 50px;
+		line-height: 13px;
+    }
+	.table-title .add-new i {
+		margin-right: 4px;
+	}
+    table.table {
+        table-layout: fixed;
+    }
+    table.table tr th, table.table tr td {
+        border-color: #e9e9e9;
+    }
+    table.table th i {
+        font-size: 13px;
+        margin: 0 5px;
+        cursor: pointer;
+    }
+    table.table th:last-child {
+        width: 100px;
+    }
+    table.table td a {
+		cursor: pointer;
+        display: inline-block;
+        margin: 0 5px;
+		min-width: 24px;
+    }    
+	table.table td a.add {
+        color: #27C46B;
+    }
+    table.table td a.edit {
+        color: #FFC107;
+    }
+    table.table td a.delete {
+        color: #E34724;
+    }
+    table.table td i {
+        font-size: 19px;
+    }
+	table.table td a.add i {
+        font-size: 24px;
+    	margin-right: -1px;
+        position: relative;
+        top: 3px;
+    }    
+    table.table .form-control {
+        height: 32px;
+        line-height: 32px;
+        box-shadow: none;
+        border-radius: 2px;
+    }
+	table.table .form-control.error {
+		border-color: #f50000;
+	}
+	table.table td .add {
+		display: none;
+	}
+</style>
+</head> 
 <body>
    <div class="page-container">
    <!--/content-inner-->
@@ -31,25 +128,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			<div class="header-section">
 						<!--menu-right-->
 						<div class="top_menu">
-						        <div class="main-search">
-											<form action="search.html">
-											   <input type="text" value="Search" onFocus="this.value = '';" onBlur="if (this.value == '') {this.value = 'Search';}" class="text"/>
-												<input type="submit" value=""/>
-											</form>
-									<div class="close"><img src="images/cross.png" /></div>
-								</div>
-									<div class="srch"><button></button></div>
-									<script type="text/javascript">
-										 $('.main-search').hide();
-										$('button').click(function (){
-											$('.main-search').show();
-											$('.main-search text').focus();
-										}
-										);
-										$('.close').click(function(){
-											$('.main-search').hide();
-										});
-									</script>
+						        
+								
 							<!--/profile_details-->
 								<div class="profile_details_left">
 									<ul class="nofitications-dropdown">
@@ -251,110 +331,112 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							<div class="outter-wp">
 									<!--sub-heard-part-->
 									  <div class="sub-heard-part">
-									   <ol class="breadcrumb m-b-0">
-											<li><a href="index.html">Home</a></li>
-											<li class="active"> create User</li>
-										</ol>
+									    <ol class="breadcrumb m-b-0">
+                      <li><a href="regionalAdminIndex">Home</a></li>
+                      <li class="active">Show all regional admins</li>
+                    </ol>
 									   </div>
 								  <!--//sub-heard-part-->
-									<div class="graph-visual tables-main">
-										
-												<div class="graph">
-														 <div class="block-page">
-														
+									<script type="text/javascript">
+$(document).ready(function(){
+	$('[data-toggle="tooltip"]').tooltip();
+	var actions = $("table td:last-child").html();
+	// Append table with add row form on add new button click
+    $(".add-new").click(function(){
+		$(this).attr("disabled", "disabled");
+		var index = $("table tbody tr:last-child").index(); 
+						
+        var row = '<tr>' +
+            '<td><input type="text" class="form-control" name="FirstName" id="fname"></td>' + '<td><input type="Email" class="form-control" name="Email" id="Email"></td>' + '<td><input type="Password" class="form-control" name="Password" id="password"></td>' +'<td><input type="text" class="form-control" name="position" id="position"></td>'+
+            '<td><input type="text" class="form-control" name="Type" id="type"></td>' + '<td><input type="text" class="form-control" name="regional" id="regional"></td>' +
+			'<td>' + actions + '</td>' +
+        '</tr>';
+    	$("table").append(row);		
+		$("table tbody tr").eq(index + 1).find(".add, .edit").toggle();
+        $('[data-toggle="tooltip"]').tooltip();
+    });
+	// Add row on add button click
+	$(document).on("click", ".add", function(){
+        var empty = false;
+        var input = $(this).parents("tr").find('input[type="text"]');
+        input.each(function(){
+            if(!$(this).val()){
+                $(this).addClass("error");
+                empty = true;
+            } else{
+                $(this).removeClass("error");
+            }
+        });
+        $(this).parents("tr").find(".error").first().focus();
+        if(!empty){
+            input.each(function(){
+                $(this).parent("td").html($(this).val());
+            });         
+            $(this).parents("tr").find(".add, .edit").toggle();
+            $(".add-new").removeAttr("disabled");
+        }       
+    });
+	// Edit row on edit button click
+	$(document).on("click", ".edit", function(){		
+        $(this).parents("tr").find("td:not(:last-child)").each(function(){
+			$(this).html('<input type="text" class="form-control" value="' + $(this).text() + '">');
+		});		
+		$(this).parents("tr").find(".add, .edit").toggle();
+		$(".add-new").attr("disabled", "disabled");
+    });
+	// Delete row on delete button click
+	$(document).on("click", ".delete", function(){
+        $(this).parents("tr").remove();
+		$(".add-new").removeAttr("disabled");
+    });
+});
+</script>
+</head>
+<body>
 
-
-
-                                                                         <div class="set-1">
-																			<div class="graph-2 general">
-																				<h3 class="inner-tittle two">Create user Form  </h3>
-																					<div class="grid-1">
-																							<div class="form-body">
-																									<form class="form-horizontal"  action="createHospitalAdmin" method="GET">
-																										<div class="form-group">
-																											<label for="focusedinput" class="col-sm-2 control-label">User Name</label>
-																											<div class="col-sm-8">
-																												<input type="text" class="form-control1" name="userName" placeholder="Default Input">
-																											</div>
-																											<div class="col-sm-2">
-																												<p class="help-block">erro displaying place</p>
-																											</div>
-																										</div>
-
-																									<div class="form-group">
-																										<label class="col-md-2 control-label">Password</label>
-																										<div class="col-md-8">
-																											<div class="input-group">
-																												<span class="input-group-addon">
-																													<i class="fa fa-key"></i>
-																												</span>
-																												<input type="password" class="form-control1 icon" name="password" placeholder="Password">
-																											</div>
-																										</div>
-																										<div class="col-sm-2">
-																												<p class="help-block">erro displaying place</p>
-																											</div>
-																									</div>
-																									<div class="form-group">
-																										<label class="col-md-2 control-label">Confirm Password</label>
-																										<div class="col-md-8">
-																											<div class="input-group">
-																												<span class="input-group-addon">
-																													<i class="fa fa-key"></i>
-																												</span>
-																												<input type="password" class="form-control1 icon" id="confirmPassword" placeholder="Password">
-																											</div>
-																										</div>
-																										<div class="col-sm-2">
-																												<p class="help-block">erro displaying place</p>
-																											</div>
-																									</div>
-																									<div class="form-group">
-																										<label class="col-md-2 control-label">Email Address</label>
-																										<div class="col-md-8">
-																											<div class="input-group">							
-																												<span class="input-group-addon">
-																													<i class="fa fa-envelope-o"></i>
-																												</span>
-																												<input type="text" name="email" class="form-control1 icon" placeholder="Email Address">
-																											</div>
-																										</div>
-																										<div class="col-sm-2">
-																												<p class="help-block">erro displaying place</p>
-																											</div>
-																									</div>
-
-																									<div class="form-group">
-																										<label class="col-md-2 control-label">Hospital Name</label>
-																										<div class="col-md-8">
-																											<div class="input-group">							
-																												<span class="input-group-addon">
-																													
-																												</span>
-																												<input type="text" name="name" class="form-control1 icon" placeholder="Name">
-																											</div>
-																										</div>
-																										<div class="col-sm-2">
-																												<p class="help-block">erro displaying place</p>
-																											</div>
-																											</div>
-																										
-
-																						<div class="form-group button-2">
-																						  <button type="submit" class="btn btn-primary">Submit</button>
-																						  <button type="reset" class="btn btn-default">Reset</button>
-																						</div>
-
-
-
-
-																									</form>
-																							</div>
-
-																					</div>
-																				</div>
-																			</div>
-
+	
+	<div id="container">
+	
+		<div id="content">
+		
+			<!--  add our html table here -->
+		
+			<table>
+				<tr>
+					<th>Name</th>
+					<th>Email</th>
+					<th>website</th>
+					<th>type </th>
+					<th>Phone Number </th>
+					<th>Action</th>
+				</tr>
+				
+				<!-- loop over and print our customers -->
+				<c:forEach var="healthTemp" items="${healthcenter}">
+					
+					<c:url var="updateLink" value="/admin/updateHealthCenter">
+						<c:param name="id" value="${healthTemp.id}" />
+					</c:url>					
+					<tr>
+						<td> ${healthTemp.name} </td>
+						<td> ${healthTemp.email} </td>
+						<td> ${healthTemp.website} </td>
+						<td> ${healthTemp.type} </td>
+						<td> ${healthTemp.phoneNumber} </td>
+						<td> 
+								<a href="${updateLink}">Update</a>
+						
+						
+						 </td>
+					</tr>
+				
+				</c:forEach>
+						
+			</table>
+				
+		</div>
+	
+	</div>   
 
 
 
@@ -375,6 +457,14 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 								</div>
 							</div>
 				<!--//content-inner-->
+			<!--/sidebar-menu-->
+				<div class="sidebar-menu">
+					<header class="logo">
+					<a href="#" class="sidebar-icon"> <span class="fa fa-bars"></span> </a> <a href="regionalAdminIndex"> <span id="logo"> <h1>EHRs</h1></span> 
+					<!--<img id="logo" src="" alt="Logo"/>--> 
+				  </a> 
+				</header>
+			<div style="border-top:1px solid rgba(69, 74, 84, 0.7)"></div>
 				<div class="sidebar-menu">
 					<header class="logo">
 					<a href="#" class="sidebar-icon"> <span class="fa fa-bars"></span> </a> <a href="regionalAdminIndex"> <span id="logo"> <h1>NWEHR</h1></span> 
@@ -385,7 +475,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			<!--/down-->
 							<div class="down">	
 									  <a href="regionalAdminIndex"><img src="${pageContext.request.contextPath}/resources/images/in10.jpg"></a>
-									  <a href="regionalAdminIndex"><span class=" name-caret">regional system admin</span></a>
+									  <a href="regionalAdminIndex"><span class=" name-caret">Federal System admin</span></a>
 									 <p>System Administrator in NWEHR</p>
 									<ul>
 									<li><a class="tooltips" href="regionalAdminIndex"><span>Profile</span><i class="lnr lnr-user"></i></a></li>
@@ -394,7 +484,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 										</ul>
 									</div>
 							   <!--//down-->
-                           <div class="menu">
+
+
+								<div class="menu">
 									<ul id="menu" >
 										<li><a href="regionalAdminIndex"><i class="fa fa-tachometer"></i> <span>Home</span></a></li>
 										 <li id="menu-academico" ><a href="showCreateHospital"><i class="fa fa-table"></i> <span>Create Hospital</span> <span class="" style="float: right"></span></a>
@@ -411,7 +503,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 									
 									
 									</ul>
-								 
+								</div>
+							  </div>
+							  <div class="clearfix"></div>		
+							</div>
 							<script>
 							var toggle = true;
 										

@@ -1,5 +1,6 @@
 package com.ehrs.controller;
 
+import java.util.Date;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -10,8 +11,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
+import com.ehrs.dao.HealthCenterDao;
 import com.ehrs.dao.UserDao;
+import com.ehrs.entity.healthcenter;
 import com.ehrs.entity.user;
 import com.ehrs.service.UserService;
 
@@ -26,7 +30,24 @@ public class UserController {
 	private user user;
 	
 	@Autowired
+	private HealthCenterDao healthCenterDao;
+	
+	@Autowired
 	private UserDao userDao;
+	
+	
+	@RequestMapping("/showAllHospitalUser")
+	public String showAllHospitalUser(Model theModel)
+	{
+		List<user> user = userDao.showAllUser();
+		theModel.addAttribute("users", user);
+		return "showAllHospitalUser";
+	}
+	@RequestMapping("/createUser")
+	public String createUser()
+	{
+		return "createUser";
+	}
 	
 	@RequestMapping("/showUserLoginForm")
 	public String showUserLoginForm()
@@ -34,10 +55,58 @@ public class UserController {
 		return "userLoginForm";
 	}
 	
-	@RequestMapping("/showUserAddForm")
-	public String showUserAddForm()
+	@RequestMapping("/doctorIndex")
+	public String doctorIndex()
 	{
-		return "userAddForm";
+		
+		return "doctorIndex";
+		
+	}
+	
+	@RequestMapping("/hoIndex")
+	public String hoIndex()
+	{
+		
+		return "hoIndex";
+		
+	}
+	
+	@RequestMapping("/nurseIndex")
+	public String nurseIndex()
+	{
+		
+		return "nurseIndex";
+		
+	}
+	
+	@RequestMapping("/pharmacistIndex")
+	public String pharmacistIndex()
+	{
+		
+		return "pharmacistIndex";
+		
+	}
+	
+	@RequestMapping("/laboratoristIndex")
+	public String laboratoristIndex()
+	{
+		
+		return "laboratoristIndex";
+		
+	}
+	
+	@RequestMapping("/hospitalAdmin")
+	public String hospitalAdmin()
+	{
+		
+		return "hospitalAdmin";
+		
+	}
+	
+	@RequestMapping("/showAddUser")
+	public String showAddUser()
+	{
+		return "showAddUser";
 	}
 	
 	@RequestMapping("/showUserUpdateForm")
@@ -73,32 +142,32 @@ public class UserController {
 		   else if(user.getPosition().equals("doctor"))
 		   {
 			   session.setAttribute("user", user);
-			   return "user/doctorIndex";
+			   return "doctorIndex";
 		   }
 		   else if(user.getPosition().equals("ho"))
 		   {
 			   session.setAttribute("user", user); 
-			   return "user/hoIndex";
+			   return "hoIndex";
 		   }
 		   else if(user.getPosition().equals("nurse"))
 		   {
 			   session.setAttribute("user", user);
-			   return "user/nurseIndex";
+			   return "nurseIndex";
 		   }
 		   else if(user.getPosition().equals("pharmacist"))
 		   {
 			   session.setAttribute("user", user);
-			   return "user/pharmacistIndex";
+			   return "pharmacistIndex";
 		   }
 		   else if(user.getPosition().equals("laboratorist"))
 		   {
 			   session.setAttribute("user", user);
-			   return "user/laboratoristIndex";
+			   return "laboratoristIndex";
 		   }
-		   else if(user.getPosition().equals("health center admin"))
+		   else if(user.getPosition().equals("hospital admin"))
 		   {
 			   session.setAttribute("user", user);
-			   return "user/healthCenterAdminIndex";
+			   return "hospitalAdmin";
 		   }
 		   else {
 			   return "userLoginForm";
@@ -106,6 +175,26 @@ public class UserController {
 	   }
 	   
 	@RequestMapping("/addUser")
+	public String addUser(HttpServletRequest request,HttpServletResponse response)
+	{
+		Date date = new Date();
+		
+		user.setEmail(request.getParameter("email"));
+		user.setPassword(request.getParameter("password"));
+		user.setName(request.getParameter("userName"));
+		String hName = request.getParameter("name");
+		healthcenter hc = healthCenterDao.getHealthCenter(hName);
+		user.setOrganizationId(hc);
+		user.setCreatedAt(date.toString());
+		user.setUpdatedAt("updatedAt");
+		user.setPosition(request.getParameter("position"));
+		user.setStatus("1");
+		userService.addUser(user);
+		return "redirect:/user/showAllHospitalUser";
+
+	}
+	
+	//@RequestMapping("/addUser")
 	public void addUser(user user)
 	{
 		
@@ -139,13 +228,12 @@ public class UserController {
 	}
 	
 	@RequestMapping("/deleteUser")
-	public void deleteUser(HttpServletRequest request,HttpServletResponse response)
+	public String deleteUser(@RequestParam("id") int id,Model theModel)
 	{
-		user.setId(Integer.parseInt(request.getParameter("id")));
+		user.setId(id);
 		
 		userService.deleteUser(user);
-		
-		// finished
+		return "redirect:/user/showAllHospitalUser";
 	}
 	
 	@RequestMapping("/showHealthCenterAdmins")

@@ -9,7 +9,7 @@
 <!-- Required meta tags -->
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<link rel="icon" href="${pageContext.request.contextPath}/resources/${pageContext.request.contextPath}/resources/img/favicon.png" type="image/png">
+	<link rel="icon" href="${pageContext.request.contextPath}/resources/img/favicon.png" type="image/png">
 	<title>Medicare Medical</title>
 	<!-- Bootstrap CSS -->
 	<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css1/bootstrap.css">
@@ -21,9 +21,6 @@
 	<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/vendors1/animate-css/animate.css">
 	<!-- main css -->
 	<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css1/style.css">
-
-
-
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -191,9 +188,6 @@
 										
 												<div class="graph">
 														 <div class="block-page">
-														
-
-
 
                                                                          <div class="set-1">
 																			<div class="graph-2 general">
@@ -202,7 +196,7 @@
 																							<div class="form-body">
 																									<form:form class="form-horizontal" modelAttribute="admins" action="addAdmin" method="GET">
 																									
-																									<form:hidden path="id"/>
+																								<%-- 	//<form:hidden path="id"/> --%>
 																										<div class="form-group">
 																											<label for="focusedinput" class="col-sm-2 control-label">User Name</label>
 																											<div class="col-sm-8">
@@ -277,14 +271,6 @@
 																					</div>
 																				</div>
 																			</div>
-
-
-
-
-
-
-
-                                                        
 														  
 										    </div>
 										</div>
@@ -357,10 +343,6 @@
 										 <li id="menu-academico" ><a href="showAllRegionalAdmins"><i class="fa fa-file-text-o"></i> <span>Show All Regional Admins</span> <span class="" style="float: right"></span></a>
 											 
 										 </li>
-									
-									
-									
-								 
 							<script>
 							var toggle = true;
 										

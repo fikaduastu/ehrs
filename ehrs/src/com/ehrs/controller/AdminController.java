@@ -59,17 +59,40 @@ public class AdminController {
 		   	
 		   	Date date = new Date();
 		   	
+		   	
+		   	
 		   	@RequestMapping("/showAdminLoginForm")
 		   	public String showLoginForm()
 		   	{
 		   		return "login";
 		   	}
 		   	
-		   	@RequestMapping("/showAllHospital")
-		   	public String showAllHospital()
+		   	@RequestMapping("/showAllHospitals")
+		   	public String showAllHospital(Model theModel)
 		   	{
-		   		return "showAllHospital";
+		   		List<healthcenter> hc = healthCenterDao.getHealthCenters("SNNPR");
+		   		theModel.addAttribute("healthcenter", hc);
+		   		return "showAllHospitals";
 		   	}
+		   	
+		   	@RequestMapping("/updateHealthCenter")
+		   	public String healthCenterUpdate(@RequestParam("id") int id,Model theModel)
+		   	{
+
+		   		healthcenter hc = healthCenterDao.getHealthCenters(id);
+		   		System.out.print(hc);
+		   		theModel.addAttribute("healthCenter",hc );
+		   		return "updateHealthCenter";
+		   		
+		   	}
+		   	
+		   	@RequestMapping("/adminUpdateForm")
+			public String adminUpdateForm(@RequestParam("id") int id,Model theModel)
+			{
+		   		admin ad = adminDao.getAdmin(id);
+		   		theModel.addAttribute("admins", ad);
+				return "updateRegionalAdmin";
+			}
 		   	
 		   	@RequestMapping("/createRegionalAdmin")
 		   	public String showCreateRegionalAdmin(Model theModel)
@@ -108,11 +131,15 @@ public class AdminController {
 		   		}
 		   		
 		   	}
+		   	
 		   	@RequestMapping("/showCreateHospitalAdmin")
-		   	public String showCreateHospitalAdmin()
+		   	public String showCreateHospitalAdmin(Model theModel)
 		   	{
+		   		
+		   		theModel.addAttribute("hospitalAdmin", user);
 		   		return "createHospitalAdmin";
 		   	}
+		   	
 		   	@RequestMapping("/showCreateHospital")
 		   	public String showCreateHospital()
 		   	{
@@ -131,19 +158,16 @@ public class AdminController {
 				return "adminAddForm";
 			}
 		   	
-		   	@RequestMapping("/adminUpdateForm")
-			public String adminUpdateForm(@RequestParam("id") int id,Model theModel)
-			{
-		   		admin ad = adminDao.getAdmin(id);
-		   		theModel.addAttribute("admins", ad);
-				return "createRegionalAdmin";
-			}
-		   	
 		   	@RequestMapping("/adminShowForm")
 			public String adminShowForm()
 			{
 				return "adminShowForm";
 			}   	
+		   	@RequestMapping("/regionalAdminIndex")
+		   	public String regionalAdminIndex()
+		   	{
+		   		return "regionalAdminIndex";
+		   	}
 		   	
 				
 			@RequestMapping(value="/addAdmin", method=RequestMethod.GET)

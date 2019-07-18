@@ -219,12 +219,15 @@ Girma'ye, [09.07.19 02:06]
          <th>Last name</th>
          <th>Email</th>
          <th>Phone number</th>
-         <th>Websit</th>
+         <th>Website</th>
          <th>Type</th>
          <th>Woreda Id</th>
       </tr>
 <!-- Loop over and print our customer -->
      <c:forEach var="healthCenter" items="${healthCenter}">
+     					<c:url var="updateLink" value="/admin/updateHealthCenter">
+						<c:param name="id" value="${healthCenter.id}" />
+					</c:url>
             <tr>
                 <td> ${healthCenter.fistName} </td>
                 <td> ${healthCenter.lastName} </td>
@@ -233,6 +236,10 @@ Girma'ye, [09.07.19 02:06]
                 <td> ${healthCenter.webSit} </td>
                 <td> ${healthCenter.type} </td>
                 <td> ${healthCenter.woredaId} </td>
+						<td> 
+								<a href="${updateLink}">Update</a> |
+								
+						 </td>
             </tr>
      </c:forEach>
     </table>

@@ -496,7 +496,7 @@ $(document).ready(function(){
 								<div class="menu">
 									<ul id="menu" >
 											<li><a href="federalAdminIndex"><i class="fa fa-tachometer"></i> <span>Home</span></a></li>
-										 <li id="menu-academico" ><a href="showAllFederalAdmins"><i class="fa fa-table"></i> <span>Show All Federal Admins</span> <span class="" style="float: right"></span></a>
+										 <li id="menu-academico" ><a href="createRegionalAdmin"><i class="fa fa-table"></i> <span>create Regional admin</span> <span class="" style="float: right"></span></a>
 										   <ul id="menu-academico-sub" >
 											
 										  </ul>
