@@ -34,4 +34,10 @@ public class BirthRecordDao {
 		return ad;
 	}
 	
+	@Transactional
+	public void addBirthRecord1(birthrecord birthRecord) {
+		Session session = sessionFactory.getCurrentSession();
+		session.saveOrUpdate(birthRecord);
+
+	}
 }

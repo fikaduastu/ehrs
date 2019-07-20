@@ -8,6 +8,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.ehrs.entity.birthrecord;
+import com.ehrs.entity.deathrecord;
 import com.ehrs.service.BirthRecordService;
 
 
@@ -67,5 +68,11 @@ public class BirthRecordController {
 		
 		birthRecordService.showBirthRecord(birthRecord);
 
+	}
+
+
+	public void addBirthRecord(birthrecord birthRecord) {
+		birthRecordService.addBirthRecord(birthRecord);
+		
 	}
 }

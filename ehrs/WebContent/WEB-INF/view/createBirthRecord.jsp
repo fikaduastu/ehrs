@@ -270,74 +270,74 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 																				<h3 class="inner-tittle two">Create user For hospital  </h3>
 																					<div class="grid-1">
 																							<div class="form-body">
-																									<form class="form-horizontal"  action="addPatient" method="GET">
+																									<form class="form-horizontal"  action="addBirthRecord" method="GET">
 																										<div class="form-group">
-																											<label for="focusedinput" class="col-sm-2 control-label">First Name</label>
+																											<label for="focusedinput" class="col-sm-2 control-label">Id</label>
 																											<div class="col-sm-8">
-																												<input type="text" class="form-control1" name="firstName" placeholder="Default Input">
+																												<input type="text" class="form-control1" name="id" placeholder="Default Input">
 																											</div>
 																											<div class="col-sm-2">
 																												<p class="help-block">erro displaying place</p>
 																											</div>
 																										</div>
 																										<div class="form-group">
-																											<label for="focusedinput" class="col-sm-2 control-label">Middle Name</label>
+																											<label for="focusedinput" class="col-sm-2 control-label">Child Name</label>
 																											<div class="col-sm-8">
-																												<input type="text" class="form-control1" name="middleName" placeholder="Default Input">
+																												<input type="text" class="form-control1" name="childName" placeholder="Default Input">
 																											</div>
 																											<div class="col-sm-2">
 																												<p class="help-block">erro displaying place</p>
 																											</div>
 																										</div>
 																										<div class="form-group">
-																											<label for="focusedinput" class="col-sm-2 control-label">Last Name</label>
+																											<label for="focusedinput" class="col-sm-2 control-label">Date of Birth</label>
 																											<div class="col-sm-8">
-																												<input type="text" class="form-control1" name="lastName" placeholder="Default Input">
+																												<input type="text" class="form-control1" name="dateOfBirth" placeholder="Default Input">
 																											</div>
 																											<div class="col-sm-2">
 																												<p class="help-block">erro displaying place</p>
 																											</div>
 																										</div>
 																										<div class="form-group">
-																											<label for="focusedinput" class="col-sm-2 control-label">Emmergency Contact Name</label>
+																											<label for="focusedinput" class="col-sm-2 control-label">Father Name</label>
 																											<div class="col-sm-8">
-																												<input type="text" class="form-control1" name="emmergencyContactName" placeholder="Default Input">
+																												<input type="text" class="form-control1" name="fatherName" placeholder="Default Input">
 																											</div>
 																											<div class="col-sm-2">
 																												<p class="help-block">erro displaying place</p>
 																											</div>
 																										</div>
 																										<div class="form-group">
-																											<label for="focusedinput" class="col-sm-2 control-label">Emmergency Contact Phone</label>
+																											<label for="focusedinput" class="col-sm-2 control-label">Mother Name</label>
 																											<div class="col-sm-8">
-																												<input type="text" class="form-control1" name="emmergencyContactPhone" placeholder="Default Input">
+																												<input type="text" class="form-control1" name="motherName" placeholder="Default Input">
 																											</div>
 																											<div class="col-sm-2">
 																												<p class="help-block">erro displaying place</p>
 																											</div>
 																										</div>
 																										<div class="form-group">
-																											<label for="focusedinput" class="col-sm-2 control-label">Mobile Number</label>
+																											<label for="focusedinput" class="col-sm-2 control-label">Weight</label>
 																											<div class="col-sm-8">
-																												<input type="text" class="form-control1" name="mobileNumber" placeholder="Default Input">
+																												<input type="text" class="form-control1" name="weight" placeholder="Default Input">
 																											</div>
 																											<div class="col-sm-2">
 																												<p class="help-block">erro displaying place</p>
 																											</div>
 																										</div>
 																										<div class="form-group">
-																											<label for="focusedinput" class="col-sm-2 control-label">House Number</label>
+																											<label for="focusedinput" class="col-sm-2 control-label">Remark</label>
 																											<div class="col-sm-8">
-																												<input type="text" class="form-control1" name="houseNumber" placeholder="Default Input">
+																												<input type="text" class="form-control1" name="remark" placeholder="Default Input">
 																											</div>
 																											<div class="col-sm-2">
 																												<p class="help-block">erro displaying place</p>
 																											</div>
 																										</div>
 																										<div class="form-group">
-																											<label for="focusedinput" class="col-sm-2 control-label">Occupation</label>
+																											<label for="focusedinput" class="col-sm-2 control-label">Health Center</label>
 																											<div class="col-sm-8">
-																												<input type="text" class="form-control1" name="occupation" placeholder="Default Input">
+																												<input type="text" class="form-control1" name="healthCenter" placeholder="Default Input">
 																											</div>
 																											<div class="col-sm-2">
 																												<p class="help-block">erro displaying place</p>

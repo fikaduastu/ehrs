@@ -65,4 +65,9 @@ public class BiologicalDetailController {
 				biologicalDetailService.deleteBiologicalDetail(biologicalDetail);
 			}
 
+			public void addBiologicalDetail(biologicaldetail biologicalDetail2) {
+				biologicalDetailService.addBiologicalDetail(biologicalDetail2);
+				
+			}
+
 }

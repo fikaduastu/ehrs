@@ -33,5 +33,10 @@ public class BiologicalDetailDao {
 		ad = null;
 		return ad;
 	}
-
+	
+	@Transactional
+	public void addBiologicalDetail1(biologicaldetail biologicalDetail) {
+		Session session = sessionFactory.getCurrentSession();
+		session.saveOrUpdate(biologicalDetail);
+	}
 }

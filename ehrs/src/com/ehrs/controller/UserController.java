@@ -390,13 +390,40 @@ public class UserController {
 	@RequestMapping("/addBirthRecord")
 	public void addBirthRecord(HttpServletRequest request,HttpServletResponse response)
 	{
+		birthRecord.setId(Integer.parseInt(request.getParameter("id")));
+		birthRecord.setDateOfBirth(request.getParameter("dateOfBirth"));
+		birthRecord.setMotherName(request.getParameter("motherName"));
+		birthRecord.setFatherName(request.getParameter("fatherName"));
+		birthRecord.setChildName(request.getParameter("childName"));
+		birthRecord.setGender(request.getParameter("gender"));
+		birthRecord.setWeight(Integer.parseInt(request.getParameter("weight")));
+		birthRecord.setRemark(request.getParameter("remark"));
 		
+		String woreda = request.getParameter("woreda");
+		woreda wor = woredaDao.getWoreda(woreda);
+		String org = request.getParameter("healthCenter");
+		healthcenter hc = healthCenterDao.getHealthCenter(org);
+		
+		birthRecord.setWoredaId(wor);
+		birthRecord.setHealthCenter(hc);
+		birthRecord.setHealthCenter(hc);
+		
+		birthRecordController.addBirthRecord(birthRecord);
 	}
 	
 	@RequestMapping("/addBiologicalDetail")
 	public void addBiologicalDetail(HttpServletRequest request,HttpServletResponse response)
 	{
+		biologicalDetail.setId(Integer.parseInt(request.getParameter("id")));
+		biologicalDetail.setBloodType(request.getParameter("bloodType"));
+		biologicalDetail.setDisability(request.getParameter("disability"));
+		biologicalDetail.setEyeColor(request.getParameter("eyeColor"));
+		biologicalDetail.setHeight(Integer.parseInt(request.getParameter("height")));
+		biologicalDetail.setWeight(Integer.parseInt(request.getParameter("weight")));
+		biologicalDetail.setSkinColor(request.getParameter("skinColor"));
+		biologicalDetail.setHairColor(request.getParameter("hairColor"));
 		
+		biologicalDetailController.addBiologicalDetail(biologicalDetail);
 	}
 	
 	@RequestMapping("/addExaminationAssesment")
