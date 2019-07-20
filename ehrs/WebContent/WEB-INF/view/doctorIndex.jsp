@@ -695,20 +695,17 @@
                            <div class="menu">
 									<ul id="menu" >
 										<li><a href="doctorIndex"><i class="fa fa-tachometer"></i> <span>Home</span></a></li>
-										 <li id="menu-academico" ><a href="createProfile"><i class="fa fa-table"></i> <span>create Patient</span> <span class="" style="float: right"></span></a>
+										 <li id="menu-academico" ><a href="createPatient"><i class="fa fa-table"></i> <span>create Patient</span> <span class="" style="float: right"></span></a>
 										   <ul id="menu-academico-sub" >
 											
 										  </ul>
 										</li>
-										 <li id="menu-academico" ><a href="showAllHospitalProfile"><i class="fa fa-file-text-o"></i> <span>show all hospital profile</span> <span class="" style="float: right"></span></a>	 
-										 </li>	
-										 <li id="menu-academico" ><a href="physicalExamination"><i class="fa fa-file-text-o"></i> <span>Physical Examination</span> <span class="" style="float: right"></span></a>	 
+										 <li id="menu-academico" ><a href="createPhysicalExamination"><i class="fa fa-file-text-o"></i> <span>Physical Examination</span> <span class="" style="float: right"></span></a>	 
 										 </li>				
-										 <li id="menu-academico" ><a href="ExaminationAssesment"><i class="fa fa-file-text-o"></i> <span>Examination Assesment</span> <span class="" style="float: right"></span></a></li>
-										 <li id="menu-academico" ><a href="Biological Detail"><i class="fa fa-file-text-o"></i> <span>Biological Detailt</span> <span class="" style="float: right"></span></a></li>
-										<li id="menu-academico" ><a href="Birth Record"><i class="fa fa-file-text-o"></i> <span>Birth Record</span> <span class="" style="float: right"></span></a></li>
-										 <li id="menu-academico" ><a href="ExaminationAssesment"><i class="fa fa-file-text-o"></i> <span>Examination Assesment</span> <span class="" style="float: right"></span></a></li>
-										 <li id="menu-academico" ><a href="Death Record"><i class="fa fa-file-text-o"></i> <span>Death Record</span> <span class="" style="float: right"></span></a></li>
+										 <li id="menu-academico" ><a href="createExaminationAssesment"><i class="fa fa-file-text-o"></i> <span>Examination Assesment</span> <span class="" style="float: right"></span></a></li>
+										 <li id="menu-academico" ><a href="createBiologicalDetail"><i class="fa fa-file-text-o"></i> <span>Biological Detailt</span> <span class="" style="float: right"></span></a></li>
+										<li id="menu-academico" ><a href="createBirthRecord"><i class="fa fa-file-text-o"></i> <span>Birth Record</span> <span class="" style="float: right"></span></a></li>
+										 <li id="menu-academico" ><a href="createDeathRecord"><i class="fa fa-file-text-o"></i> <span>Death Record</span> <span class="" style="float: right"></span></a></li>
 								 </ul>
 							<script>
 							var toggle = true;

@@ -15,7 +15,7 @@ import com.ehrs.service.ProfileService;
 public class ProfileController {
 	
 	@Autowired
-	private profile profile;
+	 private profile profile;
 	
 	@Autowired
 	private ProfileService profileService;
@@ -45,18 +45,8 @@ public class ProfileController {
 	}
 	
 	@RequestMapping("/addProfile")
-	public void addProfile(HttpServletRequest request,HttpServletResponse response)
+	public void addProfile(profile profile)
 	{
-		profile.setFirstName(request.getParameter("firstName"));
-		profile.setLastName(request.getParameter("lastName"));
-		profile.setMiddleName(request.getParameter("middleName"));
-		profile.setGender(request.getParameter("gender"));
-		profile.setOccupation(request.getParameter("occupation"));
-		profile.setHouseNumber(request.getParameter("houseNumber"));
-		profile.setMobileNumber(request.getParameter("mobileNumber"));
-		profile.setEmmergencyContactName(request.getParameter("emmergencyContactName"));
-		profile.setEmmergencyContactPhone(request.getParameter("emmergencyContactPhone"));
-		profile.setStatus(request.getParameter("status"));
 		
 		profileService.addProfile(profile);
 

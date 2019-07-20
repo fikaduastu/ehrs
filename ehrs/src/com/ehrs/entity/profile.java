@@ -2,14 +2,16 @@ package com.ehrs.entity;
 
 
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
+
 import javax.persistence.Table;
 
 import org.springframework.stereotype.Component;
@@ -214,10 +216,44 @@ public class profile {
 				+ ", woreda=" + woreda + "]";
 	}
 
+	public profile(String firstName, String middleName, String lastName, String gender, String occupation,
+			String houseNumber, String mobileNumber, String emmergencyContactName, String emmergencyContactPhone,
+			String status) {
+		this.firstName = firstName;
+		this.middleName = middleName;
+		this.lastName = lastName;
+		this.gender = gender;
+		this.occupation = occupation;
+		this.houseNumber = houseNumber;
+		this.mobileNumber = mobileNumber;
+		this.emmergencyContactName = emmergencyContactName;
+		this.emmergencyContactPhone = emmergencyContactPhone;
+		this.status = status;
+	}
 
+	public profile(String firstName, String middleName, String lastName, String gender, String occupation,
+			String houseNumber, String mobileNumber, String emmergencyContactName, String emmergencyContactPhone,
+			String status, biologicaldetail biologicalDetail, birthrecord birthRecord, deathrecord deathRecord,
+			com.ehrs.entity.user user, com.ehrs.entity.woreda woreda) {
+		this.firstName = firstName;
+		this.middleName = middleName;
+		this.lastName = lastName;
+		this.gender = gender;
+		this.occupation = occupation;
+		this.houseNumber = houseNumber;
+		this.mobileNumber = mobileNumber;
+		this.emmergencyContactName = emmergencyContactName;
+		this.emmergencyContactPhone = emmergencyContactPhone;
+		this.status = status;
+		this.biologicalDetail = biologicalDetail;
+		this.birthRecord = birthRecord;
+		this.deathRecord = deathRecord;
+		this.user = user;
+		this.woreda = woreda;
+	}
 
-
-	
+	public profile() {
+	}
 
 	
 }

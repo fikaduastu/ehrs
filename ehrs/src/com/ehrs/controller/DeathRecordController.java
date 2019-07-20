@@ -59,5 +59,10 @@ public class DeathRecordController {
 		
 		deathRecordService.deleteDeathRecord(deathRecord);
 	}
+
+	public void addDeathRecord(deathrecord deathRecord2) {
+		deathRecordService.addDeathRecord(deathRecord2);
+		
+	}
 }
 

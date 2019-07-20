@@ -41,8 +41,7 @@ public class biologicaldetail {
 	
 	@Column(name="disability")
 	private String disability;
-
-
+	
 
 	@Override
 	public String toString() {
@@ -113,6 +112,20 @@ public class biologicaldetail {
 
 	public void setDisability(String disability) {
 		this.disability = disability;
+	}
+
+	public biologicaldetail(String eyeColor, String skinColor, String hairColor, String bloodType, float height,
+			float weight, String disability) {
+		this.eyeColor = eyeColor;
+		this.skinColor = skinColor;
+		this.hairColor = hairColor;
+		this.bloodType = bloodType;
+		this.height = height;
+		this.weight = weight;
+		this.disability = disability;
+	}
+
+	public biologicaldetail() {
 	}
 
 

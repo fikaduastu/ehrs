@@ -80,4 +80,27 @@ public class UserDao {
 		return us;
 	}
 
+	@Transactional
+	public user addUser1(user user) {
+		user ad;
+		Session session = sessionFactory.getCurrentSession();
+		session.saveOrUpdate(user);
+		List<?> lst = session.createQuery("FROM user").list(); 
+		
+		for (Iterator<?> iterator = lst.iterator(); iterator.hasNext();)
+		{
+				 ad = (user) iterator.next(); 
+				//System.out.println(ad);
+        
+				if(ad.getName().equals("name"))
+				{
+				//System.out.println(ad);
+					return ad;
+					
+				}
+		}	
+		ad = null;
+		return ad;
+	}
+
 }

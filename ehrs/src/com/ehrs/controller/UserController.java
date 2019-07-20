@@ -13,10 +13,19 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.ehrs.dao.BiologicalDetailDao;
+import com.ehrs.dao.BirthRecordDao;
+import com.ehrs.dao.DeathRecordDao;
 import com.ehrs.dao.HealthCenterDao;
 import com.ehrs.dao.UserDao;
+import com.ehrs.dao.WoredaDao;
+import com.ehrs.entity.biologicaldetail;
+import com.ehrs.entity.birthrecord;
+import com.ehrs.entity.deathrecord;
 import com.ehrs.entity.healthcenter;
+import com.ehrs.entity.profile;
 import com.ehrs.entity.user;
+import com.ehrs.entity.woreda;
 import com.ehrs.service.UserService;
 
 @Controller
@@ -26,14 +35,53 @@ public class UserController {
 	@Autowired
 	private UserService userService;
 	
+	// insert birth record, death record, biological detail, user id
+	@Autowired
+	private birthrecord birthRecord;
+	
+	@Autowired
+	private deathrecord deathRecord;
+	
+	@Autowired
+	private biologicaldetail biologicalDetail;
+	
 	@Autowired
 	private user user;
 	
+	@Autowired
+	private profile profile;
+	
+
 	@Autowired
 	private HealthCenterDao healthCenterDao;
 	
 	@Autowired
 	private UserDao userDao;
+	
+	@Autowired
+	private WoredaDao woredaDao;
+	
+	@Autowired 
+	private BirthRecordDao birthRecordDao;
+	
+	@Autowired 
+	private BirthRecordController birthRecordController;
+	
+	@Autowired
+	private DeathRecordDao deathRecordDao;
+	
+	@Autowired
+	private DeathRecordController deathRecordController;
+	
+	@Autowired
+	private BiologicalDetailDao biologicalDetailDao;
+	
+	@Autowired
+	private BiologicalDetailController biologicalDetailController;
+	
+	@Autowired
+	private ProfileController profileController;
+	
 	
 	
 	@RequestMapping("/showAllHospitalUser")
@@ -47,6 +95,42 @@ public class UserController {
 	public String createUser()
 	{
 		return "createUser";
+	}
+	
+	@RequestMapping("/createPatient")
+	public String createPatient()
+	{
+		return "createPatient";
+	}	
+	
+	@RequestMapping("/createBirthRecord")
+	public String createBirthRecord()
+	{
+		return "createBirthRecord";
+	}
+	
+	@RequestMapping("/createDeathRecord")
+	public String createDeathRecord()
+	{
+		return "createDeathRecord";
+	}
+	
+	@RequestMapping("/createBiologicalDetail")
+	public String createBiologicalDetail()
+	{
+		return "createBiologicalDetail";
+	}
+	
+	@RequestMapping("/createPhysicalExamination")
+	public String createPhysicalExamination()
+	{
+		return "createPhysicalExamination";
+	}
+	
+	@RequestMapping("/createExaminationAssesment")
+	public String createExaminationAssesment()
+	{
+		return "createExaminationAssesment";
 	}
 	
 	@RequestMapping("/showUserLoginForm")
@@ -243,5 +327,87 @@ public class UserController {
 		theModel.addAttribute("users", ad);
 		return "showHealthCenterAdmins";
 		// this is for regional admins
+	}
+	
+	@RequestMapping("/addPatient")
+	public void addPatient(HttpServletRequest request, HttpServletResponse response)
+	{	
+		// insert birth record, death record, biological detail, user id
+		
+		//birthrecord birthRecord 
+		
+		biologicalDetail.setBloodType("A");
+		deathRecord.setFuneralPlace("somewhere");
+		birthRecord.setChildName("mama");
+		user.setName("name");
+		
+		biologicaldetail bd = biologicalDetailDao.addBiologicalDetail(biologicalDetail);
+		deathrecord dr = deathRecordDao.addDeathRecord(deathRecord);
+		birthrecord br = birthRecordDao.addBirthRecord(birthRecord);
+		user us = userDao.addUser1(user);
+		
+		profile.setBiologicalDetail(bd);
+		profile.setDeathRecord(dr);
+		profile.setBirthRecord(br);
+		profile.setUser(us);
+		
+		profile.setEmmergencyContactName(request.getParameter("emmergencyContactName"));
+		profile.setEmmergencyContactPhone(request.getParameter("emmergencyContactPhone"));
+		profile.setFirstName(request.getParameter("firstName"));
+		profile.setLastName(request.getParameter("lastName"));
+		profile.setMiddleName(request.getParameter("middleName"));
+		profile.setMobileNumber(request.getParameter("mobileNumber"));
+		profile.setOccupation(request.getParameter("occupation"));
+		profile.setHouseNumber(request.getParameter("houseNumber"));
+		profile.setGender(request.getParameter("gender"));
+		profile.setStatus("active");
+		String woreda = request.getParameter("woreda");
+		woreda wor = woredaDao.getWoreda(woreda);
+		profile.setWoreda(wor);
+		profileController.addProfile(profile);
+		
+	}
+	
+	@RequestMapping("/addDeathRecord")
+	public void addDeathRecord(HttpServletRequest request,HttpServletResponse response)
+	{
+		deathRecord.setId(Integer.parseInt(request.getParameter("id")));
+		deathRecord.setDateOfDeath(request.getParameter("dateOfDeath"));
+		deathRecord.setFuneralDate(request.getParameter("funeralDate"));
+		deathRecord.setFuneralPlace(request.getParameter("funeralPlace"));	
+		deathRecord.setReasonForDeath(request.getParameter("reasonForDeath"));
+		String woreda = request.getParameter("woreda");
+		woreda wor = woredaDao.getWoreda(woreda);
+		deathRecord.setWoreda(wor);
+		String org = request.getParameter("healthCenter");
+		healthcenter hc = healthCenterDao.getHealthCenter(org);
+		deathRecord.setOrganizationId(hc);
+		//System.out.println(deathRecord);
+		deathRecordController.addDeathRecord(deathRecord);
+		
+	}
+	
+	@RequestMapping("/addBirthRecord")
+	public void addBirthRecord(HttpServletRequest request,HttpServletResponse response)
+	{
+		
+	}
+	
+	@RequestMapping("/addBiologicalDetail")
+	public void addBiologicalDetail(HttpServletRequest request,HttpServletResponse response)
+	{
+		
+	}
+	
+	@RequestMapping("/addExaminationAssesment")
+	public void addExaminationAssesment(HttpServletRequest request,HttpServletResponse response)
+	{
+		
+	}
+	
+	@RequestMapping("/addPhysicalExamination")
+	public void addPhysicalExamination(HttpServletRequest request,HttpServletResponse response)
+	{
+		
 	}
 }

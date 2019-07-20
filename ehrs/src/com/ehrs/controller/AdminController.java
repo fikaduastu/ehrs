@@ -31,8 +31,8 @@ public class AdminController {
 		   	@Autowired
 			private AdminService adminService;
 		   	
-		   	@Autowired
-		   	private UserController userController;
+		   	
+		   	UserController userController = new UserController();
 		   	
 		   	@Autowired
 			private admin adm;
