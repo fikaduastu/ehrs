@@ -347,6 +347,11 @@ public class UserController {
 			   session.setAttribute("user", user);
 			   return "hospitalAdmin";
 		   }
+		   else if(user.getPosition().equals("data encoder"))
+		   {
+			   session.setAttribute("user", user);
+			   return "dataEncoderIndex";
+		   }
 		   else {
 			   return "userLoginForm";
 		   }

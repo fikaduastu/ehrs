@@ -43,7 +43,6 @@ public class AdminController {
 		   	@Autowired
 		   	private AdminDao adminDao;
 		   	
-		   	
 		   	@Autowired
 		   	private healthcenter healthCenter;
 		   	
@@ -173,16 +172,7 @@ public class AdminController {
 			@RequestMapping(value="/addAdmin", method=RequestMethod.GET)
 			public String addAdmin(@ModelAttribute("admins") admin theAdmin)
 			{	
-		/*
-		 * //String type = request.getParameter("type");
-		 * adm.setType("regional system admin");
-		 * adm.setUserName(request.getParameter("userName"));
-		 * adm.setEmail(request.getParameter("email"));
-		 * adm.setPassword(request.getParameter("password"));
-		 * adm.setRegion(request.getParameter("region")); //System.out.println(type);
-		 * adminService.addAdmin(adm);
-		 * 
-		 */		theAdmin.setType("regional system admin");
+				theAdmin.setType("regional system admin");
 				adminService.addAdmin(theAdmin);
 				return "redirect:/admin/showAllRegionalAdmins";
 				
