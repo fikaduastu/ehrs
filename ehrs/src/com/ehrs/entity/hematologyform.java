@@ -7,9 +7,18 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import org.springframework.stereotype.Component;
+
+@Component
 @Entity
 @Table(name="hematologyform")
 public class hematologyform {
+
+	@Override
+	public String toString() {
+		return "hematologyform [id=" + id + ", bloodGroup=" + bloodGroup + ", cbc=" + cbc + ", rbc=" + rbc + ", mcv="
+				+ mcv + ", mov=" + mov + ", esr=" + esr + ", platletCount=" + platletCount + "]";
+	}
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)

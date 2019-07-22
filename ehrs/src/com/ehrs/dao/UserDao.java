@@ -59,6 +59,15 @@ public class UserDao {
 		session.delete(us);
 		//finished
 	}
+	
+	@Transactional
+	public user getUser(int id)
+	{
+		Session session = sessionFactory.getCurrentSession();
+		user us = (user)session.get(user.class, id);
+		return us;
+	}
+	
 	@Transactional
 	public void updateUser(user user) {
 		Session session = sessionFactory.getCurrentSession();

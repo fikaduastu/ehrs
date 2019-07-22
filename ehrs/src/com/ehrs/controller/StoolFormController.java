@@ -14,8 +14,9 @@ import com.ehrs.service.StoolFormService;
 @RequestMapping("/stoolForm")
 public class StoolFormController {
 	
-	
+	@Autowired
 	private stoolform stoolForm;
+	
 	@Autowired
 	private StoolFormService stoolFormService;
 	
@@ -28,6 +29,11 @@ public class StoolFormController {
 		stoolForm.setOccultBloodCell(request.getParameter("occultBloodCell"));
 		stoolForm.setHpyloriStoolAgent(request.getParameter("hpyloriStoolAgent"));
 		
+		stoolFormService.addStoolForm(stoolForm);
+	}
+	
+	public void addStoolForm(stoolform stoolForm)
+	{
 		stoolFormService.addStoolForm(stoolForm);
 	}
 	

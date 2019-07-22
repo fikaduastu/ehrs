@@ -14,6 +14,7 @@ import com.ehrs.service.HematologyFormService;
 @RequestMapping("/hematologyForm")
 public class HematologyFormController {
 	
+	@Autowired
 	private hematologyform hematologyForm;
 	
 	@Autowired
@@ -29,6 +30,13 @@ public class HematologyFormController {
 		hematologyForm.setMov(request.getParameter("mov"));
 		hematologyForm.setEsr(request.getParameter("esr"));
 		hematologyForm.setPlatletCount(request.getParameter("platletCount"));
+		
+		hematologyFormService.addHematologyForm(hematologyForm);
+	}
+	
+	public void addHematologyForm(hematologyform hematologyForm)
+	{
+
 		
 		hematologyFormService.addHematologyForm(hematologyForm);
 	}

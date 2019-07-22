@@ -267,103 +267,164 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
                                                                          <div class="set-1">
 																			<div class="graph-2 general">
-																				<h3 class="inner-tittle two">Create user For hospital  </h3>
+																				<h3 class="inner-tittle two">Create Physical Examination  </h3>
 																					<div class="grid-1">
 																							<div class="form-body">
-																									<form class="form-horizontal"  action="addPatient" method="GET">
+																									<form class="form-horizontal"  action="addPhysicalExamination" method="GET">
 																										<div class="form-group">
-																											<label for="focusedinput" class="col-sm-2 control-label">First Name</label>
+																											<label for="focusedinput" class="col-sm-2 control-label">Id</label>
 																											<div class="col-sm-8">
-																												<input type="text" class="form-control1" name="firstName" placeholder="Default Input">
+																												<input type="text" class="form-control1" name="id" placeholder="Default Input">
 																											</div>
 																											<div class="col-sm-2">
 																												<p class="help-block">erro displaying place</p>
 																											</div>
 																										</div>
 																										<div class="form-group">
-																											<label for="focusedinput" class="col-sm-2 control-label">Middle Name</label>
+																											<label for="focusedinput" class="col-sm-2 control-label">Abdomen</label>
 																											<div class="col-sm-8">
-																												<input type="text" class="form-control1" name="middleName" placeholder="Default Input">
+																												<input type="text" class="form-control1" name="abdomen" placeholder="Default Input">
 																											</div>
 																											<div class="col-sm-2">
 																												<p class="help-block">erro displaying place</p>
 																											</div>
 																										</div>
 																										<div class="form-group">
-																											<label for="focusedinput" class="col-sm-2 control-label">Last Name</label>
+																											<label for="focusedinput" class="col-sm-2 control-label">Blood Pressure</label>
 																											<div class="col-sm-8">
-																												<input type="text" class="form-control1" name="lastName" placeholder="Default Input">
+																												<input type="text" class="form-control1" name="bp" placeholder="Default Input">
 																											</div>
 																											<div class="col-sm-2">
 																												<p class="help-block">erro displaying place</p>
 																											</div>
 																										</div>
 																										<div class="form-group">
-																											<label for="focusedinput" class="col-sm-2 control-label">Emmergency Contact Name</label>
+																											<label for="focusedinput" class="col-sm-2 control-label">Chest</label>
 																											<div class="col-sm-8">
-																												<input type="text" class="form-control1" name="emmergencyContactName" placeholder="Default Input">
+																												<input type="text" class="form-control1" name="chest" placeholder="Default Input">
 																											</div>
 																											<div class="col-sm-2">
 																												<p class="help-block">erro displaying place</p>
 																											</div>
 																										</div>
 																										<div class="form-group">
-																											<label for="focusedinput" class="col-sm-2 control-label">Emmergency Contact Phone</label>
+																											<label for="focusedinput" class="col-sm-2 control-label">Cns</label>
 																											<div class="col-sm-8">
-																												<input type="text" class="form-control1" name="emmergencyContactPhone" placeholder="Default Input">
+																												<input type="text" class="form-control1" name="cns" placeholder="Default Input">
 																											</div>
 																											<div class="col-sm-2">
 																												<p class="help-block">erro displaying place</p>
 																											</div>
 																										</div>
 																										<div class="form-group">
-																											<label for="focusedinput" class="col-sm-2 control-label">Mobile Number</label>
+																											<label for="focusedinput" class="col-sm-2 control-label">Cvs</label>
 																											<div class="col-sm-8">
-																												<input type="text" class="form-control1" name="mobileNumber" placeholder="Default Input">
+																												<input type="text" class="form-control1" name="cvs" placeholder="Default Input">
 																											</div>
 																											<div class="col-sm-2">
 																												<p class="help-block">erro displaying place</p>
 																											</div>
 																										</div>
 																										<div class="form-group">
-																											<label for="focusedinput" class="col-sm-2 control-label">House Number</label>
+																											<label for="focusedinput" class="col-sm-2 control-label">Genito Urinary</label>
 																											<div class="col-sm-8">
-																												<input type="text" class="form-control1" name="houseNumber" placeholder="Default Input">
+																												<input type="text" class="form-control1" name="genitoUrinary" placeholder="Default Input">
 																											</div>
 																											<div class="col-sm-2">
 																												<p class="help-block">erro displaying place</p>
 																											</div>
 																										</div>
 																										<div class="form-group">
-																											<label for="focusedinput" class="col-sm-2 control-label">Occupation</label>
+																											<label for="focusedinput" class="col-sm-2 control-label">Gland</label>
 																											<div class="col-sm-8">
-																												<input type="text" class="form-control1" name="occupation" placeholder="Default Input">
+																												<input type="text" class="form-control1" name="gland" placeholder="Default Input">
 																											</div>
 																											<div class="col-sm-2">
 																												<p class="help-block">erro displaying place</p>
 																											</div>
 																										</div>
 																										<div class="form-group">
-																											<label for="focusedinput" class="col-sm-2 control-label">Woreda</label>
+																											<label for="focusedinput" class="col-sm-2 control-label">Heet</label>
 																											<div class="col-sm-8">
-																												<input type="text" class="form-control1" name="woreda" placeholder="Default Input">
+																												<input type="text" class="form-control1" name="heet" placeholder="Default Input">
 																											</div>
 																											<div class="col-sm-2">
 																												<p class="help-block">erro displaying place</p>
 																											</div>
 																										</div>
-																			
+																										<div class="form-group">
+																											<label for="focusedinput" class="col-sm-2 control-label">Impression</label>
+																											<div class="col-sm-8">
+																												<input type="text" class="form-control1" name="impression" placeholder="Default Input">
+																											</div>
+																											<div class="col-sm-2">
+																												<p class="help-block">erro displaying place</p>
+																											</div>
+																										</div>		
+																										<div class="form-group">
+																											<label for="focusedinput" class="col-sm-2 control-label">Melto</label>
+																											<div class="col-sm-8">
+																												<input type="text" class="form-control1" name="melto" placeholder="Default Input">
+																											</div>
+																											<div class="col-sm-2">
+																												<p class="help-block">erro displaying place</p>
+																											</div>
+																										</div>	
+																										<div class="form-group">
+																											<label for="focusedinput" class="col-sm-2 control-label">Musclo Skeletal</label>
+																											<div class="col-sm-8">
+																												<input type="text" class="form-control1" name="muscloSkeletal" placeholder="Default Input">
+																											</div>
+																											<div class="col-sm-2">
+																												<p class="help-block">erro displaying place</p>
+																											</div>
+																										</div>	
+																											<div class="form-group">
+																											<label for="focusedinput" class="col-sm-2 control-label">Respiration</label>
+																											<div class="col-sm-8">
+																												<input type="text" class="form-control1" name="resp" placeholder="Default Input">
+																											</div>
+																											<div class="col-sm-2">
+																												<p class="help-block">erro displaying place</p>
+																											</div>
+																										</div>	
+																										<div class="form-group">
+																											<label for="focusedinput" class="col-sm-2 control-label">Skin</label>
+																											<div class="col-sm-8">
+																												<input type="text" class="form-control1" name="skin" placeholder="Default Input">
+																											</div>
+																											<div class="col-sm-2">
+																												<p class="help-block">erro displaying place</p>
+																											</div>
+																										</div>	
+																																																				<div class="form-group">
+																											<label for="focusedinput" class="col-sm-2 control-label">Tempreture</label>
+																											<div class="col-sm-8">
+																												<input type="text" class="form-control1" name="tempreture" placeholder="Default Input">
+																											</div>
+																											<div class="col-sm-2">
+																												<p class="help-block">erro displaying place</p>
+																											</div>
+																										</div>		
+																																																				<div class="form-group">
+																											<label for="focusedinput" class="col-sm-2 control-label">Sensor</label>
+																											<div class="col-sm-8">
+																												<input type="text" class="form-control1" name="sensor" placeholder="Default Input">
+																											</div>
+																											<div class="col-sm-2">
+																												<p class="help-block">erro displaying place</p>
+																											</div>
+																										</div>		
+																																																				<div class="form-group">
+																											<label for="focusedinput" class="col-sm-2 control-label">Vital Sign</label>
+																											<div class="col-sm-8">
+																												<input type="text" class="form-control1" name="vitalSign" placeholder="Default Input">
+																											</div>
+																											<div class="col-sm-2">
+																												<p class="help-block">erro displaying place</p>
+																											</div>
+																										</div>		
 																							
-																										<div class="form-group">
-																											<label for="selector1" class="col-sm-2 control-label">Gender</label>
-																												<div class="col-sm-8"><select path="gender" name="gender" id="gender" class="form-control1" >
-																												<option>Female</option>
-																												<option>Male</option>
-																												</select></div>
-																											<div class="col-sm-2">
-																											<p class="help-block">erro displaying place</p>
-																											</div>
-																										</div>
 
 																						<div class="form-group button-2">
 																						  <button type="submit" class="btn btn-primary">Submit</button>

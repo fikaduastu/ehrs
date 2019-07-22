@@ -675,35 +675,28 @@
 			<!--/sidebar-menu-->
 				<div class="sidebar-menu">
 					<header class="logo">
-					<a href="#" class="sidebar-icon"> <span class="fa fa-bars"></span> </a> <a href="nurseIndex"> <span id="logo"> <h1>NWEHR</h1></span> 
+					<a href="#" class="sidebar-icon"> <span class="fa fa-bars"></span> </a> <a href="laboratoristIndex"> <span id="logo"> <h1>NWEHR</h1></span> 
 					<!--<img id="logo" src="" alt="Logo"/>--> 
 				  </a> 
 				</header>
 			<div style="border-top:1px solid rgba(69, 74, 84, 0.7)"></div>
 			<!--/down-->
 							<div class="down">	
-									  <a href="nurseIndex"><img src="${pageContext.request.contextPath}/resources/images/in10.jpg"></a>
-									  <a href="nurseIndex"><span class=" name-caret">Nurse</span></a>
-									 <p>Nurse in NWEHR</p>
+									  <a href="laboratoristIndex"><img src="${pageContext.request.contextPath}/resources/images/in10.jpg"></a>
+									  <a href="laboratoristIndex"><span class=" name-caret">Laboratorist</span></a>
+									 <p>Laboratorist in NWEHR</p>
 									<ul>
-									<li><a class="tooltips" href="nurseIndex"><span>Profile</span><i class="lnr lnr-user"></i></a></li>
-										<li><a class="tooltips" href="nurseIndex"><span>Settings</span><i class="lnr lnr-cog"></i></a></li>
-										<li><a class="tooltips" href="nurseIndex"><span>Log out</span><i class="lnr lnr-power-switch"></i></a></li>
+									<li><a class="tooltips" href="laboratoristIndex"><span>Profile</span><i class="lnr lnr-user"></i></a></li>
+										<li><a class="tooltips" href="laboratoristIndex"><span>Settings</span><i class="lnr lnr-cog"></i></a></li>
+										<li><a class="tooltips" href="laboratoristIndex"><span>Log out</span><i class="lnr lnr-power-switch"></i></a></li>
 										</ul>
 									</div>
 							   <!--//down-->
                            <div class="menu">
 									<ul id="menu" >
-										<li><a href="nurseIndex"><i class="fa fa-tachometer"></i> <span>Home</span></a></li>
-										 
-										 <li id="menu-academico" ><a href="createPhysicalExamination"><i class="fa fa-file-text-o"></i> <span>Physical Examination</span> <span class="" style="float: right"></span></a>	 
-										 </li>				
-										
-										 <li id="menu-academico" ><a href="createBiologicalDetail"><i class="fa fa-file-text-o"></i> <span>Biological Detailt</span> <span class="" style="float: right"></span></a></li>
-										<li id="menu-academico" ><a href="createBirthRecord"><i class="fa fa-file-text-o"></i> <span>Birth Record</span> <span class="" style="float: right"></span></a></li>
-										 <li id="menu-academico" ><a href="createDeathRecord"><i class="fa fa-file-text-o"></i> <span>Death Record</span> <span class="" style="float: right"></span></a></li>
-										  
-										
+										 <li id="menu-academico" ><a href="createStoolForm"><i class="fa fa-file-text-o"></i> <span>Stool Form</span> <span class="" style="float: right"></span></a></li>
+										  <li id="menu-academico" ><a href="createHematologyForm"><i class="fa fa-file-text-o"></i> <span>Hematology Form</span> <span class="" style="float: right"></span></a></li>
+										 <li id="menu-academico" ><a href="createUrineForm"><i class="fa fa-file-text-o"></i> <span>Urine Form</span> <span class="" style="float: right"></span></a></li>
 								 </ul>
 							<script>
 							var toggle = true;

@@ -19,6 +19,7 @@ public class PhysicalExaminationController {
 	@Autowired
 	private PhysicalExaminationService physicalExaminationService;
 	
+	@Autowired
 	private physicalexamination physicalExamination;
 	
 	
@@ -83,5 +84,10 @@ public class PhysicalExaminationController {
 		physicalExamination.setId(Integer.parseInt(request.getParameter("id")));
 		
 		physicalExaminationService.deletePhysicalExamination(physicalExamination);
+	}
+
+	public void addPhysicalExamination(physicalexamination physicalExamination2) {
+		
+		physicalExaminationService.addPhysicalExamination(physicalExamination2);
 	}
 }

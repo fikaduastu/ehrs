@@ -18,8 +18,7 @@ public class ProfileDao {
 	public void addProfile(profile profile)
 	{
 		Session session = sessionFactory.getCurrentSession();
-		System.out.println(profile);
-		session.persist(profile);
+		session.saveOrUpdate(profile);
 	}
 	
 	@Transactional	
@@ -35,5 +34,13 @@ public class ProfileDao {
 		Session session = sessionFactory.getCurrentSession();
 		profile profile = (profile) session.get(profile.class, id);
 		session.delete(profile);
+	}
+	
+	@Transactional
+	public profile getProfile(int id)
+	{
+		Session session = sessionFactory.getCurrentSession();
+		profile profile = (profile) session.get(profile.class, id);
+		return profile;
 	}
 }

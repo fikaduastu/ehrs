@@ -15,7 +15,9 @@ import com.ehrs.service.UrineFormService;
 @RequestMapping("/urineForm")
 public class UrineFormController {
 	
+	@Autowired
 	private urineform urineForm;
+	
 	@Autowired
 	private UrineFormService urineFormService;
 
@@ -64,5 +66,10 @@ public class UrineFormController {
 		urineForm.setId(Integer.parseInt(request.getParameter("id")));
 		
 		urineFormService.deleteUrineForm(urineForm);	
+	}
+
+	public void addUrineForm(urineform urineForm2) {
+		urineFormService.addUrineForm(urineForm2);
+		
 	}
 }

@@ -1,13 +1,17 @@
 package com.ehrs.service;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.ehrs.dao.HematologyFormDao;
 import com.ehrs.entity.hematologyform;
 
 @Service
 public class HematologyFormService {
 	
 
+	@Autowired
+	private HematologyFormDao hematologyFormDao;
 
 	public void updateHematologyForm(hematologyform hematologyForm)
 	{
@@ -18,7 +22,8 @@ public class HematologyFormService {
 		
 	}
 	public void addHematologyForm(hematologyform hematologyForm) {
-		// TODO Auto-generated method stub
+		
+		hematologyFormDao.addHematologyForm1(hematologyForm);
 		
 	}
 	public void showHematologyForm(hematologyform hematologyForm) {

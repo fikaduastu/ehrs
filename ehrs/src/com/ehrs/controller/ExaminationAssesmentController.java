@@ -4,17 +4,19 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.ehrs.entity.examinationassesment;
 import com.ehrs.service.ExaminationAssesmentService;
 
+@Component
 @Controller
 @RequestMapping("/examinationAssesment")
 public class ExaminationAssesmentController {
 
-	
+	@Autowired
 	private examinationassesment examinationAssesment;
 	
 	@Autowired
@@ -67,6 +69,11 @@ public class ExaminationAssesmentController {
 		examinationAssesment.setId(Integer.parseInt(request.getParameter("id")));
 		
 		examinationAssesmentService.deleteExaminationAssesment(examinationAssesment);
+	}
+
+	public void addExaminationAssesment(examinationassesment examinationAssesment2) {
+		
+		examinationAssesmentService.addExaminationAssesment(examinationAssesment);
 	}
 
 }

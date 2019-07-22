@@ -270,9 +270,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 																				<h3 class="inner-tittle two">Create user For hospital  </h3>
 																					<div class="grid-1">
 																							<div class="form-body">
-																									<form class="form-horizontal"  action="addExaminationAssesment" method="GET">
+																									<form class="form-horizontal"  action="addHematologyForm" method="GET">
 																										<div class="form-group">
-																											<label for="focusedinput" class="col-sm-2 control-label">Profile Id</label>
+																											<label for="focusedinput" class="col-sm-2 control-label">profile Id</label>
 																											<div class="col-sm-8">
 																												<input type="text" class="form-control1" name="id" placeholder="Default Input">
 																											</div>
@@ -281,86 +281,69 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 																											</div>
 																										</div>
 																										<div class="form-group">
-																											<label for="focusedinput" class="col-sm-2 control-label">Health Center</label>
+																											<label for="focusedinput" class="col-sm-2 control-label">Blood Group</label>
 																											<div class="col-sm-8">
-																												<input type="text" class="form-control1" name="healthCenter" placeholder="Default Input">
+																												<input type="text" class="form-control1" name="bloodGroup" placeholder="Default Input">
 																											</div>
 																											<div class="col-sm-2">
 																												<p class="help-block">erro displaying place</p>
 																											</div>
 																										</div>
 																										<div class="form-group">
-																											<label for="focusedinput" class="col-sm-2 control-label">Mrn</label>
+																											<label for="focusedinput" class="col-sm-2 control-label">Esr</label>
 																											<div class="col-sm-8">
-																												<input type="text" class="form-control1" name="mrn" placeholder="Default Input">
+																												<input type="text" class="form-control1" name="esr" placeholder="Default Input">
 																											</div>
 																											<div class="col-sm-2">
 																												<p class="help-block">erro displaying place</p>
 																											</div>
 																										</div>
 																										<div class="form-group">
-																											<label for="focusedinput" class="col-sm-2 control-label">Date</label>
+																											<label for="focusedinput" class="col-sm-2 control-label">Cbs</label>
 																											<div class="col-sm-8">
-																												<input type="text" class="form-control1" name="date" placeholder="Default Input">
+																												<input type="text" class="form-control1" name="cbc" placeholder="Default Input">
 																											</div>
 																											<div class="col-sm-2">
 																												<p class="help-block">erro displaying place</p>
 																											</div>
 																										</div>
 																										<div class="form-group">
-																											<label for="focusedinput" class="col-sm-2 control-label">Presenting Compliant</label>
+																											<label for="focusedinput" class="col-sm-2 control-label">Mcv</label>
 																											<div class="col-sm-8">
-																												<input type="text" class="form-control1" name="presentingCompliant" placeholder="Default Input">
+																												<input type="text" class="form-control1" name="mcv" placeholder="Default Input">
 																											</div>
 																											<div class="col-sm-2">
 																												<p class="help-block">erro displaying place</p>
 																											</div>
 																										</div>
 																										<div class="form-group">
-																											<label for="focusedinput" class="col-sm-2 control-label">History of Presenting Compliant</label>
+																											<label for="focusedinput" class="col-sm-2 control-label">Mov</label>
 																											<div class="col-sm-8">
-																												<input type="text" class="form-control1" name="historyOfPresentingCompliant" placeholder="Default Input">
+																												<input type="text" class="form-control1" name="mov" placeholder="Default Input">
 																											</div>
 																											<div class="col-sm-2">
 																												<p class="help-block">erro displaying place</p>
 																											</div>
 																										</div>
 																										<div class="form-group">
-																											<label for="focusedinput" class="col-sm-2 control-label">Past Medical History</label>
+																											<label for="focusedinput" class="col-sm-2 control-label">Platlet Count</label>
 																											<div class="col-sm-8">
-																												<input type="text" class="form-control1" name="pastMedicalHistory" placeholder="Default Input">
+																												<input type="text" class="form-control1" name="platletCount" placeholder="Default Input">
 																											</div>
 																											<div class="col-sm-2">
 																												<p class="help-block">erro displaying place</p>
 																											</div>
 																										</div>
 																										<div class="form-group">
-																											<label for="focusedinput" class="col-sm-2 control-label">Drug History</label>
+																											<label for="focusedinput" class="col-sm-2 control-label">Rbc</label>
 																											<div class="col-sm-8">
-																												<input type="text" class="form-control1" name="drugHistory" placeholder="Default Input">
+																												<input type="text" class="form-control1" name="rbc" placeholder="Default Input">
 																											</div>
 																											<div class="col-sm-2">
 																												<p class="help-block">erro displaying place</p>
 																											</div>
 																										</div>
-																										<div class="form-group">
-																											<label for="focusedinput" class="col-sm-2 control-label">Family History</label>
-																											<div class="col-sm-8">
-																												<input type="text" class="form-control1" name="familyHistory" placeholder="Default Input">
-																											</div>
-																											<div class="col-sm-2">
-																												<p class="help-block">erro displaying place</p>
-																											</div>
-																										</div>
-																										<div class="form-group">
-																											<label for="focusedinput" class="col-sm-2 control-label">Personal Social History</label>
-																											<div class="col-sm-8">
-																												<input type="text" class="form-control1" name="personalSocialHistory" placeholder="Default Input">
-																											</div>
-																											<div class="col-sm-2">
-																												<p class="help-block">erro displaying place</p>
-																											</div>
-																										</div>
+																									
 
 																						<div class="form-group button-2">
 																						  <button type="submit" class="btn btn-primary">Submit</button>
@@ -396,37 +379,28 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				<!--//content-inner-->
 				<div class="sidebar-menu">
 					<header class="logo">
-					<a href="#" class="sidebar-icon"> <span class="fa fa-bars"></span> </a> <a href="doctorIndex"> <span id="logo"> <h1>NWEHR</h1></span> 
+					<a href="#" class="sidebar-icon"> <span class="fa fa-bars"></span> </a> <a href="laboratoristIndex"> <span id="logo"> <h1>NWEHR</h1></span> 
 					<!--<img id="logo" src="" alt="Logo"/>--> 
 				  </a> 
 				</header>
 			<div style="border-top:1px solid rgba(69, 74, 84, 0.7)"></div>
 			<!--/down-->
 							<div class="down">	
-									  <a href="doctorIndex"><img src="${pageContext.request.contextPath}/resources/images/in10.jpg"></a>
-									  <a href="doctorIndex"><span class=" name-caret">hospital admin</span></a>
-									 <p>System Administrator in NWEHR</p>
+									  <a href="laboratoristIndex"><img src="${pageContext.request.contextPath}/resources/images/in10.jpg"></a>
+									  <a href="laboratoristIndex"><span class=" name-caret">Laboratorist</span></a>
+									 <p>Laboratorist in NWEHR</p>
 									<ul>
-									<li><a class="tooltips" href="doctorIndex"><span>Profile</span><i class="lnr lnr-user"></i></a></li>
-										<li><a class="tooltips" href="doctorIndex"><span>Settings</span><i class="lnr lnr-cog"></i></a></li>
-										<li><a class="tooltips" href="doctorIndex"><span>Log out</span><i class="lnr lnr-power-switch"></i></a></li>
+									<li><a class="tooltips" href="laboratoristIndex"><span>Profile</span><i class="lnr lnr-user"></i></a></li>
+										<li><a class="tooltips" href="laboratoristIndex"><span>Settings</span><i class="lnr lnr-cog"></i></a></li>
+										<li><a class="tooltips" href="laboratoristIndex"><span>Log out</span><i class="lnr lnr-power-switch"></i></a></li>
 										</ul>
 									</div>
 							   <!--//down-->
                            <div class="menu">
-									<ul id="menu" >
-										<li><a href="doctorIndex"><i class="fa fa-tachometer"></i> <span>Home</span></a></li>
-										 <li id="menu-academico" ><a href="createPatient"><i class="fa fa-table"></i> <span>create Patient</span> <span class="" style="float: right"></span></a>
-										   <ul id="menu-academico-sub" >
-											
-										  </ul>
-										</li>
-										 <li id="menu-academico" ><a href="createPhysicalExamination"><i class="fa fa-file-text-o"></i> <span>Physical Examination</span> <span class="" style="float: right"></span></a>	 
-										 </li>				
-										 <li id="menu-academico" ><a href="createExaminationAssesment"><i class="fa fa-file-text-o"></i> <span>Examination Assesment</span> <span class="" style="float: right"></span></a></li>
-										 <li id="menu-academico" ><a href="createBiologicalDetail"><i class="fa fa-file-text-o"></i> <span>Biological Detailt</span> <span class="" style="float: right"></span></a></li>
-										<li id="menu-academico" ><a href="createBirthRecord"><i class="fa fa-file-text-o"></i> <span>Birth Record</span> <span class="" style="float: right"></span></a></li>
-										 <li id="menu-academico" ><a href="createDeathRecord"><i class="fa fa-file-text-o"></i> <span>Death Record</span> <span class="" style="float: right"></span></a></li>
+											<ul id="menu" >
+										 <li id="menu-academico" ><a href="createStoolForm"><i class="fa fa-file-text-o"></i> <span>Stool Form</span> <span class="" style="float: right"></span></a></li>
+										  <li id="menu-academico" ><a href="createHematologyForm"><i class="fa fa-file-text-o"></i> <span>Hematology Form</span> <span class="" style="float: right"></span></a></li>
+										 <li id="menu-academico" ><a href="createUrineForm"><i class="fa fa-file-text-o"></i> <span>Urine Form</span> <span class="" style="float: right"></span></a></li>
 								 </ul>
 								 
 							<script>

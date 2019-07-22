@@ -267,10 +267,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
                                                                          <div class="set-1">
 																			<div class="graph-2 general">
-																				<h3 class="inner-tittle two">Create user For hospital  </h3>
+																				<h3 class="inner-tittle two">Insert profile Id for showing patient history</h3>
 																					<div class="grid-1">
 																							<div class="form-body">
-																									<form class="form-horizontal"  action="addExaminationAssesment" method="GET">
+																									<form class="form-horizontal"  action="showGeneratedPatientHistory" method="GET">
 																										<div class="form-group">
 																											<label for="focusedinput" class="col-sm-2 control-label">Profile Id</label>
 																											<div class="col-sm-8">
@@ -280,87 +280,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 																												<p class="help-block">erro displaying place</p>
 																											</div>
 																										</div>
-																										<div class="form-group">
-																											<label for="focusedinput" class="col-sm-2 control-label">Health Center</label>
-																											<div class="col-sm-8">
-																												<input type="text" class="form-control1" name="healthCenter" placeholder="Default Input">
-																											</div>
-																											<div class="col-sm-2">
-																												<p class="help-block">erro displaying place</p>
-																											</div>
-																										</div>
-																										<div class="form-group">
-																											<label for="focusedinput" class="col-sm-2 control-label">Mrn</label>
-																											<div class="col-sm-8">
-																												<input type="text" class="form-control1" name="mrn" placeholder="Default Input">
-																											</div>
-																											<div class="col-sm-2">
-																												<p class="help-block">erro displaying place</p>
-																											</div>
-																										</div>
-																										<div class="form-group">
-																											<label for="focusedinput" class="col-sm-2 control-label">Date</label>
-																											<div class="col-sm-8">
-																												<input type="text" class="form-control1" name="date" placeholder="Default Input">
-																											</div>
-																											<div class="col-sm-2">
-																												<p class="help-block">erro displaying place</p>
-																											</div>
-																										</div>
-																										<div class="form-group">
-																											<label for="focusedinput" class="col-sm-2 control-label">Presenting Compliant</label>
-																											<div class="col-sm-8">
-																												<input type="text" class="form-control1" name="presentingCompliant" placeholder="Default Input">
-																											</div>
-																											<div class="col-sm-2">
-																												<p class="help-block">erro displaying place</p>
-																											</div>
-																										</div>
-																										<div class="form-group">
-																											<label for="focusedinput" class="col-sm-2 control-label">History of Presenting Compliant</label>
-																											<div class="col-sm-8">
-																												<input type="text" class="form-control1" name="historyOfPresentingCompliant" placeholder="Default Input">
-																											</div>
-																											<div class="col-sm-2">
-																												<p class="help-block">erro displaying place</p>
-																											</div>
-																										</div>
-																										<div class="form-group">
-																											<label for="focusedinput" class="col-sm-2 control-label">Past Medical History</label>
-																											<div class="col-sm-8">
-																												<input type="text" class="form-control1" name="pastMedicalHistory" placeholder="Default Input">
-																											</div>
-																											<div class="col-sm-2">
-																												<p class="help-block">erro displaying place</p>
-																											</div>
-																										</div>
-																										<div class="form-group">
-																											<label for="focusedinput" class="col-sm-2 control-label">Drug History</label>
-																											<div class="col-sm-8">
-																												<input type="text" class="form-control1" name="drugHistory" placeholder="Default Input">
-																											</div>
-																											<div class="col-sm-2">
-																												<p class="help-block">erro displaying place</p>
-																											</div>
-																										</div>
-																										<div class="form-group">
-																											<label for="focusedinput" class="col-sm-2 control-label">Family History</label>
-																											<div class="col-sm-8">
-																												<input type="text" class="form-control1" name="familyHistory" placeholder="Default Input">
-																											</div>
-																											<div class="col-sm-2">
-																												<p class="help-block">erro displaying place</p>
-																											</div>
-																										</div>
-																										<div class="form-group">
-																											<label for="focusedinput" class="col-sm-2 control-label">Personal Social History</label>
-																											<div class="col-sm-8">
-																												<input type="text" class="form-control1" name="personalSocialHistory" placeholder="Default Input">
-																											</div>
-																											<div class="col-sm-2">
-																												<p class="help-block">erro displaying place</p>
-																											</div>
-																										</div>
+			
 
 																						<div class="form-group button-2">
 																						  <button type="submit" class="btn btn-primary">Submit</button>
@@ -427,6 +347,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 										 <li id="menu-academico" ><a href="createBiologicalDetail"><i class="fa fa-file-text-o"></i> <span>Biological Detailt</span> <span class="" style="float: right"></span></a></li>
 										<li id="menu-academico" ><a href="createBirthRecord"><i class="fa fa-file-text-o"></i> <span>Birth Record</span> <span class="" style="float: right"></span></a></li>
 										 <li id="menu-academico" ><a href="createDeathRecord"><i class="fa fa-file-text-o"></i> <span>Death Record</span> <span class="" style="float: right"></span></a></li>
+										  <li id="menu-academico" ><a href="generatePatientHistory"><i class="fa fa-file-text-o"></i> <span>Generate Patient History</span> <span class="" style="float: right"></span></a></li>
+										 <li id="menu-academico" ><a href="generateMedicalCertificate"><i class="fa fa-file-text-o"></i> <span>Generate Medical Certificate</span> <span class="" style="float: right"></span></a></li>
 								 </ul>
 								 
 							<script>
