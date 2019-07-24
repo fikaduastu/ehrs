@@ -67,11 +67,17 @@ public class AdminController {
 		   	}
 		   	
 		   	@RequestMapping("/showAllHospitals")
-		   	public String showAllHospital(Model theModel)
+		   	public String showAllHospital(HttpServletRequest request,HttpServletResponse response,Model theModel)
 		   	{
-		   		List<healthcenter> hc = healthCenterDao.getHealthCenters("SNNPR");
+		   		HttpSession session = request.getSession();
+		   		String region = (String) session.getAttribute("region");
+		   		List<healthcenter> hc = healthCenterDao.getHealthCenters(region);
 		   		theModel.addAttribute("healthcenter", hc);
+		   		
+		   		if(session.getAttribute("admin") != null)
 		   		return "showAllHospitals";
+		   		return "redirect:/";
+		   			
 		   	}
 		   	
 		   	@RequestMapping("/updateHealthCenter")
@@ -94,60 +100,86 @@ public class AdminController {
 			}
 		   	
 		   	@RequestMapping("/createRegionalAdmin")
-		   	public String showCreateRegionalAdmin(Model theModel)
+		   	public String showCreateRegionalAdmin(HttpServletRequest request,HttpServletResponse response,Model theModel)
 		   	{
+		   		
+		   		HttpSession sess = (HttpSession) request.getSession();
 		   		theModel.addAttribute("admins",adm);
-		   		return "createRegionalAdmin";
+		   		if(sess.getAttribute("admin") != null)
+		   		{
+		   			
+		   			return "createRegionalAdmin";
+		   		}
+		   		return "redirect:/";
 		   	}
 		   	
 		   	@RequestMapping(value="/adminLogin", method=RequestMethod.GET)
 		   	public String adminLogin(HttpServletRequest request,HttpServletResponse response,HttpSession session)
 		   	{	
-		   		//HttpSession session = (HttpSession) request.getSession();
+		   		HttpSession sess = (HttpSession) request.getSession();
 		   		String email = request.getParameter("email");
 		   		String password = request.getParameter("password");
 		   		adm = adminService.adminLogin(email,password);
 
-		   		//System.out.println(adm);
+		   		
 		   		if (adm == null) {
-		   			session.setAttribute("ErrorMessage", "UserName/Password does not exist");
-					return "login";
+		   			
+		   			return "redirect:/";
 		   		}
 		   		
 		   		else if(adm.getType().equals("federal system admin")){
-		   			addAdminInSession(adm, session);
-		   			//System.out.println("federal system admin");
+		   			sess.setAttribute("admin",adm);
+		   			addAdminInSession(adm, sess);
 		   			return "federalAdminIndex";
 		   		}
 		   		
 		   		else if(adm.getType().equals("regional system admin")){
-		   			addAdminInSession(adm, session);
+		   			sess.setAttribute("admin",adm);
+		   			addAdminInSession(adm, sess);
 		   			return "regionalAdminIndex";
 		   		}
 		   		
 		   		else {
-		   			return "view/login";
+		   			return "redirect:/";
 		   		}
 		   		
 		   	}
 		   	
 		   	@RequestMapping("/showCreateHospitalAdmin")
-		   	public String showCreateHospitalAdmin(Model theModel)
+		   	public String showCreateHospitalAdmin(HttpServletRequest request,HttpServletResponse response,Model theModel)
 		   	{
 		   		
 		   		theModel.addAttribute("hospitalAdmin", user);
-		   		return "createHospitalAdmin";
+		   		HttpSession session = request.getSession();
+		   		if (session.getAttribute("admin") != null)
+		   		return 
+		   				"createHospitalAdmin";
+		   		else 
+		   			return "redirect:/";
+		   		
 		   	}
 		   	
 		   	@RequestMapping("/showCreateHospital")
-		   	public String showCreateHospital()
+		   	public String showCreateHospital(HttpServletRequest request,HttpServletResponse response)
 		   	{
+		   		HttpSession session = request.getSession();
+		   		if (session.getAttribute("admin") != null)
 		   		return "createHospital";
+		   		else 
+		   			return "redirect:/";
 		   	}
 		   	@RequestMapping("/federalAdminIndex")
-		   	public String adminIndex()
+		   	public String adminIndex(HttpServletRequest request,HttpServletResponse response)
 		   	{
-		   		return "federalAdminIndex";
+		   		HttpSession sess = (HttpSession) request.getSession();
+		   		if(sess.getAttribute("admin") != null)
+		   		{
+		   			
+		   			return "federalAdminIndex";
+		   		}
+		   		else
+		   		return "redirect:/";
+		   		
 		   	}
 		   	
 		   	@RequestMapping("/adminAddForm")
@@ -163,9 +195,15 @@ public class AdminController {
 				return "adminShowForm";
 			}   	
 		   	@RequestMapping("/regionalAdminIndex")
-		   	public String regionalAdminIndex()
+		   	public String regionalAdminIndex(HttpServletRequest request,HttpServletResponse response)
 		   	{
-		   		return "regionalAdminIndex";
+		   		HttpSession session = request.getSession();
+		   		if(session.getAttribute("admin") != null)
+		   		{
+		   			return "regionalAdminIndex";
+		   		}
+		   		
+		   		return "redirect:/";
 		   	}
 		   	
 				
@@ -183,7 +221,6 @@ public class AdminController {
 			public String updateAdmin(HttpServletRequest request,HttpServletResponse response,HttpSession session)
 			{
 				adm.setId(Integer.parseInt(request.getParameter("id")));
-				//int id =  (int) session.getAttribute("id");
 				adm.setType(request.getParameter("type"));;
 				adm.setUserName(request.getParameter("userName"));
 				adm.setEmail(request.getParameter("email"));
@@ -191,10 +228,7 @@ public class AdminController {
 				adm.setRegion(request.getParameter("region"));
 				
 				adminService.updateAdmin(adm);
-				//return "redirect:/admin/listadmin";
 				return null;
-				
-				//finished
 			}
 			
 			@RequestMapping("/deleteAdmin")
@@ -209,14 +243,23 @@ public class AdminController {
 			
 			
 			@RequestMapping("/showAllRegionalAdmins")
-			public String showRegionalAdmins(Model theModel)
+			public String showRegionalAdmins(HttpServletRequest request,HttpServletResponse response,Model theModel)
 			{
 				List<admin> ad = adminDao.showRegionalAdmins();
 				theModel.addAttribute("admins", ad);
 				
-				return "showAllRegionalAdmins";
-				// finished
-				// this is for national admin
+				
+				
+				
+		   		HttpSession sess = (HttpSession) request.getSession();
+		   		if(sess.getAttribute("admin") != null)
+		   		{
+		   			
+		   			return "showAllRegionalAdmins";
+		   		}
+		   		else
+		   		return "redirect:/";
+				
 				
 			}
 			
@@ -228,7 +271,7 @@ public class AdminController {
 
 				
 				return "showAllFederalAdmins";
-				// finished
+				
 			}
 			public void addAdminInSession(admin ad,HttpSession session) {
 				
@@ -241,8 +284,9 @@ public class AdminController {
 			}
 			
 			@RequestMapping("/createHospital")
-			public void createHospital(HttpServletRequest request,HttpServletResponse response)
+			public String createHospital(HttpServletRequest request,HttpServletResponse response)
 			{
+				
 				healthCenter.setName(request.getParameter("name"));
 				healthCenter.setEmail(request.getParameter("email"));
 				healthCenter.setPhoneNumber(request.getParameter("phoneNumber"));
@@ -252,6 +296,7 @@ public class AdminController {
 				woreda wor = woredaDao.getWoreda(woreda);
 				healthCenter.setWoredaId(wor);
 				healthCenterController.addHealthCenter(healthCenter);
+				return "redirect:/admin/showAllHospitals";
 			}
 			
 			@RequestMapping("/createHospitalAdmin")
@@ -268,6 +313,15 @@ public class AdminController {
 				user.setCreatedAt(date.toString());
 				user.setUpdatedAt("updatedAt");
 				userController.addUser(user);
-				return null;
+				return "redirect:/admin/regionalAdminIndex";
+			}
+			
+			@RequestMapping("/logout")
+			public String logout(HttpServletRequest request,HttpServletResponse response)
+			{
+				
+				HttpSession session = request.getSession();
+				session.invalidate();
+				return "redirect:/";
 			}
 }

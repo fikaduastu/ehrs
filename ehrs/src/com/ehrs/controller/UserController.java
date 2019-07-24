@@ -25,6 +25,7 @@ import com.ehrs.dao.StoolFormDao;
 import com.ehrs.dao.UrineFormDao;
 import com.ehrs.dao.UserDao;
 import com.ehrs.dao.WoredaDao;
+import com.ehrs.entity.admin;
 import com.ehrs.entity.biologicaldetail;
 import com.ehrs.entity.birthrecord;
 import com.ehrs.entity.deathrecord;
@@ -39,10 +40,7 @@ import com.ehrs.entity.user;
 import com.ehrs.entity.woreda;
 import com.ehrs.service.UserService;
 
-/**
- * @author FIKA
- *
- */
+
 @Controller
 @RequestMapping("/user")
 public class UserController {
@@ -148,8 +146,9 @@ public class UserController {
 	
 	
 	@RequestMapping("/showAllHospitalUser")
-	public String showAllHospitalUser(Model theModel)
+	public String showAllHospitalUser(Model theModel,HttpServletRequest request,HttpServletResponse response)
 	{
+		HttpSession session = request.getSession();
 		List<user> user = userDao.showAllUser();
 		theModel.addAttribute("users", user);
 		return "showAllHospitalUser";
@@ -159,10 +158,16 @@ public class UserController {
 	public String showGeneratedMedicalCertificate(Model theModel)
 	{
 
-		return "";
+		return "showGeneratedMedicalCertificate";
 	}
 	
+	@RequestMapping("showGeneratedMedicalCertificateHo")
+	public String showGeneratedMedicalCertificateHo(Model theModel)
+	{
 
+		return "showGeneratedMedicalCertificateHo";
+	}
+	
 	@RequestMapping("/showGeneratedPatientHistory")
 	public String showGeneratedPatientHistory(@RequestParam("id") int id,Model theModel)
 	{
@@ -170,6 +175,15 @@ public class UserController {
 		List<examinationassesment> examinationAssesment = examinationAssesmentDao.showAllExaminationAssesment(pro);
 		theModel.addAttribute("examinationAssesment", examinationAssesment);
 		return "showGeneratedPatientHistory";
+	}
+	
+	@RequestMapping("/showGeneratedPatientHistoryHo")
+	public String showGeneratedPatientHistoryHo(@RequestParam("id") int id,Model theModel)
+	{
+		profile pro = profileDao.getProfile(id);
+		List<examinationassesment> examinationAssesment = examinationAssesmentDao.showAllExaminationAssesment(pro);
+		theModel.addAttribute("examinationAssesment", examinationAssesment);
+		return "showGeneratedPatientHistoryHo";
 	}
 	
 	@RequestMapping("/createUser")
@@ -184,16 +198,63 @@ public class UserController {
 		return "createPatient";
 	}	
 	
+	@RequestMapping("/createPatientHo")
+	public String createPatientHo()
+	{
+		return "createPatientHo";
+	}	
+	
+	@RequestMapping("/createPatientEncoder")
+	public String createPatientEncoder()
+	{
+		return "createPatientEncoder";
+	}	
+	
+	
+	@RequestMapping("/createBirthRecordHo")
+	public String createBirthRecordHo()
+	{
+		return "createBirthRecordHo";
+	}
+	
+	@RequestMapping("/createBirthRecordEncoder")
+	public String createBirthRecordEncoder()
+	{
+		return "createBirthRecordEncoder";
+	}
 	@RequestMapping("/createBirthRecord")
 	public String createBirthRecord()
 	{
 		return "createBirthRecord";
 	}
 	
+	@RequestMapping("/createBirthRecordNurse")
+	public String createBirthRecordNurse()
+	{
+		return "createBirthRecordNurse";
+	}
+	
 	@RequestMapping("/createDeathRecord")
 	public String createDeathRecord()
 	{
 		return "createDeathRecord";
+	}
+	@RequestMapping("/createDeathRecordEncoder")
+	public String createDeathRecordEncoder()
+	{
+		return "createDeathRecordEncoder";
+	}
+	
+	@RequestMapping("/createDeathRecordNurse")
+	public String createDeathRecordNurse()
+	{
+		return "createDeathRecordNurse";
+	}
+	
+	@RequestMapping("/createDeathRecordHo")
+	public String createDeathRecordHo()
+	{
+		return "createDeathRecordHo";
 	}
 	
 	@RequestMapping("/createBiologicalDetail")
@@ -202,10 +263,34 @@ public class UserController {
 		return "createBiologicalDetail";
 	}
 	
+	@RequestMapping("/createBiologicalDetailNurse")
+	public String createBiologicalDetailNurse()
+	{
+		return "createBiologicalDetailNurse";
+	}
+	
+	@RequestMapping("/createBiologicalDetailHo")
+	public String createBiologicalDetailHo()
+	{
+		return "createBiologicalDetailHo";
+	}
+	
+	@RequestMapping("/createBiologicalDetailEncoder")
+	public String createBiologicalDetailEncoder()
+	{
+		return "createBiologicalDetailEncoder";
+	}
+	
 	@RequestMapping("/generateMedicalCertificate")
 	public String generateMedicalCertificate()
 	{
 		return "generateMedicalCertificate";
+	}
+	
+	@RequestMapping("/generateMedicalCertificateHo")
+	public String generateMedicalCertificateHo()
+	{
+		return "generateMedicalCertificateHo";
 	}
 	
 	@RequestMapping("/generatePatientHistory")
@@ -214,11 +299,32 @@ public class UserController {
 		return "generatePatientHistory";
 	}
 	
+	@RequestMapping("/generatePatientHistoryHo")
+	public String generatePatientHistoryHo()
+	{
+		return "generatePatientHistoryHo";
+	}
 	
 	@RequestMapping("/createPhysicalExamination")
 	public String createPhysicalExamination()
 	{
 		return "createPhysicalExamination";
+	}
+	@RequestMapping("/createPhysicalExaminationHo")
+	public String createPhysicalExaminationHo()
+	{
+		return "createPhysicalExaminationHo";
+	}
+	@RequestMapping("/createPhysicalExaminationNurse")
+	public String createPhysicalExaminationNurse()
+	{
+		return "createPhysicalExaminationNurse";
+	}
+	
+	@RequestMapping("/createPhysicalExaminationEncoder")
+	public String createPhysicalExaminationEncoder()
+	{
+		return "createPhysicalExaminationEncoder";
 	}
 	
 	@RequestMapping("/createExaminationAssesment")
@@ -227,6 +333,17 @@ public class UserController {
 		return "createExaminationAssesment";
 	}
 	
+	@RequestMapping("/createExaminationAssesmentHo")
+	public String createExaminationAssesmentHo()
+	{
+		return "createExaminationAssesmentHo";
+	}
+	
+	@RequestMapping("/createExaminationAssesmentEncoder")
+	public String createExaminationAssesmentEncoder()
+	{
+		return "createExaminationAssesmentEncoder";
+	}
 	@RequestMapping("/showUserLoginForm")
 	public String showUserLoginForm()
 	{
@@ -234,55 +351,73 @@ public class UserController {
 	}
 	
 	@RequestMapping("/doctorIndex")
-	public String doctorIndex()
+	public String doctorIndex(HttpServletRequest request,HttpServletResponse response)
 	{
-		
+		HttpSession session = request.getSession();
+		String position = (String)session.getAttribute("position");
+		if (position.equals("doctor"))
 		return "doctorIndex";
+		else
+			return "redirect:/";
 		
 	}
 	
 	@RequestMapping("/hoIndex")
-	public String hoIndex()
+	public String hoIndex(HttpServletRequest request,HttpServletResponse response)
 	{
-		
+		HttpSession session = request.getSession();
+		String position = (String)session.getAttribute("position");
+		if (position.equals("ho"))
 		return "hoIndex";
+		return "redirect:/";
 		
 	}
 	
 	@RequestMapping("/nurseIndex")
-	public String nurseIndex()
+	public String nurseIndex(HttpServletRequest request,HttpServletResponse response)
 	{
-		
+		HttpSession session = request.getSession();
+		String position = (String)session.getAttribute("position");
+		if (position.equals("nurse"))
 		return "nurseIndex";
-		
+		return "redirect:/";
 	}
 	
-	@RequestMapping("/pharmacistIndex")
-	public String pharmacistIndex()
+
+	@RequestMapping("/dataEncoderIndex")
+	public String dataEncoderIndex(HttpServletRequest request,HttpServletResponse response)
 	{
-		
-		return "pharmacistIndex";
+		HttpSession session = request.getSession();
+		String position = (String)session.getAttribute("position");
+	//	if (position.equals("data encoder"))
+		return "dataEncoderIndex";
+	//	return "redirect:/user/logout";
 		
 	}
-	
 	@RequestMapping("/laboratoristIndex")
-	public String laboratoristIndex()
+	public String laboratoristIndex(HttpServletRequest request,HttpServletResponse response)
 	{
-		
+		HttpSession session = request.getSession();
+		String position = (String)session.getAttribute("position");
+		if (position.equals("laboratorist"))
 		return "laboratoristIndex";
+		return "redirect:/";
 		
 	}
 	
 	@RequestMapping("/hospitalAdmin")
-	public String hospitalAdmin()
+	public String hospitalAdmin(HttpServletRequest request,HttpServletResponse response)
 	{
-		
+		HttpSession session = request.getSession();
+		String position = (String)session.getAttribute("position");
+		if (position.equals("hospital admin"))
 		return "hospitalAdmin";
+		else return "redirect:/";
 		
 	}
 	
 	@RequestMapping("/showAddUser")
-	public String showAddUser()
+	public String showAddUser(HttpServletRequest request,HttpServletResponse response)
 	{
 		return "showAddUser";
 	}
@@ -320,36 +455,44 @@ public class UserController {
 		   else if(user.getPosition().equals("doctor"))
 		   {
 			   session.setAttribute("user", user);
+			   addAdminInSession(user,session);
 			   return "doctorIndex";
 		   }
 		   else if(user.getPosition().equals("ho"))
 		   {
-			   session.setAttribute("user", user); 
+			   session.setAttribute("user", user);
+			   addAdminInSession(user,session);
 			   return "hoIndex";
 		   }
 		   else if(user.getPosition().equals("nurse"))
 		   {
 			   session.setAttribute("user", user);
+			   addAdminInSession(user,session);
 			   return "nurseIndex";
 		   }
 		   else if(user.getPosition().equals("pharmacist"))
 		   {
 			   session.setAttribute("user", user);
+			   addAdminInSession(user,session);
 			   return "pharmacistIndex";
 		   }
 		   else if(user.getPosition().equals("laboratorist"))
 		   {
 			   session.setAttribute("user", user);
+			   addAdminInSession(user,session);
 			   return "laboratoristIndex";
 		   }
 		   else if(user.getPosition().equals("hospital admin"))
 		   {
 			   session.setAttribute("user", user);
+			   addAdminInSession(user,session);
 			   return "hospitalAdmin";
 		   }
 		   else if(user.getPosition().equals("data encoder"))
 		   {
 			   session.setAttribute("user", user);
+			   addAdminInSession(user,session);
+			   
 			   return "dataEncoderIndex";
 		   }
 		   else {
@@ -360,6 +503,9 @@ public class UserController {
 	@RequestMapping("/addUser")
 	public String addUser(HttpServletRequest request,HttpServletResponse response)
 	{
+		HttpSession session = request.getSession();
+		String position = (String)session.getAttribute("position");
+		if (position.equals("hospital admin")) {
 		Date date = new Date();
 		
 		user.setEmail(request.getParameter("email"));
@@ -374,6 +520,9 @@ public class UserController {
 		user.setStatus("1");
 		userService.addUser(user);
 		return "redirect:/user/showAllHospitalUser";
+		}
+		else
+			return "redirect:/";
 
 	}
 	
@@ -388,9 +537,14 @@ public class UserController {
 	@RequestMapping("/showUser")
 	public void showUser(HttpServletRequest request,HttpServletResponse response)
 	{
+		HttpSession session = request.getSession();
+		String position = (String)session.getAttribute("position");
+		if (position.equals("hospital admin")) {
 		user.setId(Integer.parseInt(request.getParameter("id")));
 		
 		userService.showUser(user);
+		}
+		
 	}
 	
 	@RequestMapping("/updateUser")
@@ -429,12 +583,13 @@ public class UserController {
 	}
 	
 	@RequestMapping("/addPatient")
-	public void addPatient(HttpServletRequest request, HttpServletResponse response)
+	public String addPatient(HttpServletRequest request, HttpServletResponse response)
 	{	
-		// insert birth record, death record, biological detail, user id
+		HttpSession session = request.getSession();
+		String position = (String)session.getAttribute("position");
 		
-		//birthrecord birthRecord 
-		
+		if (session.getAttribute("user") != null)
+		{
 		biologicalDetail.setBloodType("A");
 		deathRecord.setFuneralPlace("somewhere");
 		birthRecord.setChildName("mama");
@@ -464,7 +619,10 @@ public class UserController {
 		woreda wor = woredaDao.getWoreda(woreda);
 		profile.setWoreda(wor);
 		profileController.addProfile(profile);
+		return null;
+		}
 		
+		else return "redirect:/";
 	}
 	
 	@RequestMapping("/addDeathRecord")
@@ -564,43 +722,7 @@ public class UserController {
 		examinationAssesmentController.addExaminationAssesment(examinationAssesment);
 	}
 	
-	/*
-	 * @RequestMapping("/addPhysicalExamination") public void
-	 * addPhysicalExamination(HttpServletRequest request,HttpServletResponse
-	 * response) { int idnum = Integer.parseInt(request.getParameter("id"));
-	 * physicalexamination pe =
-	 * physicalExaminationDao.getPhysicalExamination(idnum); hematologyform hf =
-	 * pe.getHematologyForm(); urineform uf = pe.getUrineForm(); stoolform sf =
-	 * pe.getStoolForm();
-	 * 
-	 * physicalExamination.setId(Integer.parseInt(request.getParameter("id")));
-	 * 
-	 * 
-	 * physicalExamination.setVitalSign(request.getParameter("vitalSign"));
-	 * physicalExamination.setTempreture(request.getParameter("tempreture"));
-	 * physicalExamination.setBp(request.getParameter("bp"));
-	 * physicalExamination.setResp(request.getParameter("resp"));
-	 * physicalExamination.setHeet(request.getParameter("heet"));
-	 * physicalExamination.setGland(request.getParameter("gland"));
-	 * physicalExamination.setChest(request.getParameter("chest"));
-	 * physicalExamination.setCvs(request.getParameter("cvs"));
-	 * physicalExamination.setGenitoUrinary(request.getParameter("genitoUrinary"));
-	 * physicalExamination.setMuscloSkeletal(request.getParameter("muscloSkeletal"))
-	 * ; physicalExamination.setSkin(request.getParameter("skin"));
-	 * physicalExamination.setCns(request.getParameter("cns"));
-	 * physicalExamination.setMelto(request.getParameter("melto"));
-	 * physicalExamination.setSensor(request.getParameter("sensor"));
-	 * physicalExamination.setImpression(request.getParameter("impression"));
-	 * physicalExamination.setAbdomen(request.getParameter("abdomen"));
-	 * 
-	 * physicalExamination.setHematologyForm(hf);
-	 * physicalExamination.setUrineForm(uf); physicalExamination.setStoolForm(sf);
-	 * 
-	 * physicalExaminationController.addPhysicalExamination(physicalExamination);
-	 * 
-	 * 
-	 * }
-	 */
+	
 	@RequestMapping("/createHematologyForm")
 	public String createHematologyForm()
 	{
@@ -717,5 +839,35 @@ public class UserController {
 		physicalExamination.setStoolForm(sf);
 		physicalExamination.setUrineForm(uf);
 		physicalExaminationController.addPhysicalExamination(physicalExamination);
+	}
+	
+	@RequestMapping("/showGenerateMedicalCertificateHo")
+	public void showGenerateMedicalCertificateHo(@RequestParam("id") int id,Model theModel)
+	{
+		
+	}
+	@RequestMapping("/showGenerateMedicalCertificate")
+	public void showGenerateMedicalCertificate(@RequestParam("id") int id,Model theModel)
+	{
+		
+	}
+	
+	@RequestMapping("/logout")
+	public String logout(HttpServletRequest request,HttpServletResponse response)
+	{
+		
+		HttpSession session = request.getSession();
+		session.invalidate();
+		return "redirect:/";
+	}
+	
+	public void addAdminInSession(user ad,HttpSession session) {
+		
+		session.setAttribute("user", ad);
+		session.setAttribute("id", ad.getId());
+		session.setAttribute("email", ad.getEmail());
+		session.setAttribute("password", ad.getPassword());
+		session.setAttribute("position", ad.getPosition());
+		session.setAttribute("organization", ad.getOrganizationId());
 	}
 }

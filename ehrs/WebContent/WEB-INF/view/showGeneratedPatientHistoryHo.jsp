@@ -124,7 +124,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
    <!--/content-inner-->
 	<div class="left-content">
 	   <div class="inner-content">
-			<!-- header-starts -->
+		<!-- header-starts -->
 			<div class="header-section">
 						<!--menu-right-->
 						<div class="top_menu">
@@ -206,7 +206,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 									  <div class="sub-heard-part">
 									    <ol class="breadcrumb m-b-0">
                       <li><a href="doctorIndex">Home</a></li>
-                      <li class="active">Show all regional admins</li>
+                      <li class="active">show generated patient history</li>
                     </ol>
 									   </div>
 								  <!--//sub-heard-part-->
@@ -309,11 +309,10 @@ $(document).ready(function(){
 			<!--/down-->
 							<div class="down">	
 									  <a href="doctorIndex"><img src="${pageContext.request.contextPath}/resources/images/in10.jpg"></a>
-									  <a href="doctorIndex"><span class=" name-caret">Federal System admin</span></a>
-									 <p>System Administrator in NWEHR</p>
+									  <a href="doctorIndex"><span class=" name-caret">Health Officer</span></a>
+									 <p>Health Officer in NWEHR</p>
 									<ul>
-									
-										<li><a class="tooltips" href="logout"><span>Log out</span><i class="lnr lnr-power-switch"></i></a></li>
+								<li><a class="tooltips" href="logout"><span>Log out</span><i class="lnr lnr-power-switch"></i></a></li>
 										</ul>
 									</div>
 							   <!--//down-->
@@ -321,20 +320,20 @@ $(document).ready(function(){
 
 								<div class="menu">
 								<ul id="menu" >
-										<li><a href="doctorIndex"><i class="fa fa-tachometer"></i> <span>Home</span></a></li>
-										 <li id="menu-academico" ><a href="createPatient"><i class="fa fa-table"></i> <span>create Patient</span> <span class="" style="float: right"></span></a>
+										<li><a href="hoIndex"><i class="fa fa-tachometer"></i> <span>Home</span></a></li>
+										 <li id="menu-academico" ><a href="createPatientHo"><i class="fa fa-table"></i> <span>create Patient</span> <span class="" style="float: right"></span></a>
 										   <ul id="menu-academico-sub" >
 											
 										  </ul>
 										</li>
-										 <li id="menu-academico" ><a href="createPhysicalExamination"><i class="fa fa-file-text-o"></i> <span>Physical Examination</span> <span class="" style="float: right"></span></a>	 
+										 <li id="menu-academico" ><a href="createPhysicalExaminationHo"><i class="fa fa-file-text-o"></i> <span>Physical Examination</span> <span class="" style="float: right"></span></a>	 
 										 </li>				
-										 <li id="menu-academico" ><a href="createExaminationAssesment"><i class="fa fa-file-text-o"></i> <span>Examination Assesment</span> <span class="" style="float: right"></span></a></li>
-										 <li id="menu-academico" ><a href="createBiologicalDetail"><i class="fa fa-file-text-o"></i> <span>Biological Detailt</span> <span class="" style="float: right"></span></a></li>
-										<li id="menu-academico" ><a href="createBirthRecord"><i class="fa fa-file-text-o"></i> <span>Birth Record</span> <span class="" style="float: right"></span></a></li>
-										 <li id="menu-academico" ><a href="createDeathRecord"><i class="fa fa-file-text-o"></i> <span>Death Record</span> <span class="" style="float: right"></span></a></li>
-										  <li id="menu-academico" ><a href="generatePatientHistory"><i class="fa fa-file-text-o"></i> <span>Generate Patient History</span> <span class="" style="float: right"></span></a></li>
-										 <li id="menu-academico" ><a href="generateMedicalCertificate"><i class="fa fa-file-text-o"></i> <span>Generate Medical Certificate</span> <span class="" style="float: right"></span></a></li>
+										 <li id="menu-academico" ><a href="createExaminationAssesmentHo"><i class="fa fa-file-text-o"></i> <span>Examination Assesment</span> <span class="" style="float: right"></span></a></li>
+										 <li id="menu-academico" ><a href="createBiologicalDetailHo"><i class="fa fa-file-text-o"></i> <span>Biological Detailt</span> <span class="" style="float: right"></span></a></li>
+										<li id="menu-academico" ><a href="createBirthRecordHo"><i class="fa fa-file-text-o"></i> <span>Birth Record</span> <span class="" style="float: right"></span></a></li>
+										 <li id="menu-academico" ><a href="createDeathRecordHo"><i class="fa fa-file-text-o"></i> <span>Death Record</span> <span class="" style="float: right"></span></a></li>
+										  <li id="menu-academico" ><a href="generatePatientHistoryHo"><i class="fa fa-file-text-o"></i> <span>Generate Patient History</span> <span class="" style="float: right"></span></a></li>
+										 <li id="menu-academico" ><a href="generateMedicalCertificateHo"><i class="fa fa-file-text-o"></i> <span>Generate Medical Certificate</span> <span class="" style="float: right"></span></a></li>
 								 </ul>
 								</div>
 							  </div>

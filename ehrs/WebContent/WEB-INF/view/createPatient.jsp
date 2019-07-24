@@ -3,7 +3,7 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-<title>federal admin index</title>
+<title>Doctor index</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="keywords" content="Augment Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
@@ -28,32 +28,17 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	<div class="left-content">
 	   <div class="inner-content">
 		<!-- header-starts -->
+			<!-- header-starts -->
 			<div class="header-section">
 						<!--menu-right-->
 						<div class="top_menu">
-						        <div class="main-search">
-											<form action="search.html">
-											   <input type="text" value="Search" onFocus="this.value = '';" onBlur="if (this.value == '') {this.value = 'Search';}" class="text"/>
-												<input type="submit" value=""/>
-											</form>
-									<div class="close"><img src="images/cross.png" /></div>
-								</div>
-									<div class="srch"><button></button></div>
-									<script type="text/javascript">
-										 $('.main-search').hide();
-										$('button').click(function (){
-											$('.main-search').show();
-											$('.main-search text').focus();
-										}
-										);
-										$('.close').click(function(){
-											$('.main-search').hide();
-										});
-									</script>
+						       
+								
 							<!--/profile_details-->
 								<div class="profile_details_left">
 									<ul class="nofitications-dropdown">
 											<li class="dropdown note dra-down">
+													   
 																		<script type="text/javascript">
 			
 																	function DropDown(el) {
@@ -100,143 +85,15 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 																	});
 
 																</script>
-										
-										</li>
-									
-										<li class="dropdown note">
-											<a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="fa fa-envelope-o"></i> <span class="badge">3</span></a>
-
-												
-													<ul class="dropdown-menu two first">
-														<li>
-															<div class="notification_header">
-																<h3>You have 3 new messages  </h3> 
-															</div>
-														</li>
-														<li><a href="#">
-														   <div class="user_img"><img src="images/1.jpg" alt=""></div>
-														   <div class="notification_desc">
-															<p>Lorem ipsum dolor sit amet</p>
-															<p><span>1 hour ago</span></p>
-															</div>
-														   <div class="clearfix"></div>	
-														 </a></li>
-														 <li class="odd"><a href="#">
-															<div class="user_img"><img src="images/in.jpg" alt=""></div>
-														   <div class="notification_desc">
-															<p>Lorem ipsum dolor sit amet </p>
-															<p><span>1 hour ago</span></p>
-															</div>
-														  <div class="clearfix"></div>	
-														 </a></li>
-														<li><a href="#">
-														   <div class="user_img"><img src="images/in1.jpg" alt=""></div>
-														   <div class="notification_desc">
-															<p>Lorem ipsum dolor sit amet </p>
-															<p><span>1 hour ago</span></p>
-															</div>
-														   <div class="clearfix"></div>	
-														</a></li>
-														<li>
-															<div class="notification_bottom">
-																<a href="#">See all messages</a>
-															</div> 
-														</li>
-													</ul>
-										</li>
+										    </li>
+									  
 										
 							<li class="dropdown note">
-								<a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="fa fa-bell-o"></i> <span class="badge">5</span></a>
+								<a href=""   aria-expanded="false"> </a>
 
-									<ul class="dropdown-menu two">
-										<li>
-											<div class="notification_header">
-												<h3>You have 5 new notification</h3>
-											</div>
-										</li>
-										<li><a href="#">
-											<div class="user_img"><img src="images/in.jpg" alt=""></div>
-										   <div class="notification_desc">
-											<p>Lorem ipsum dolor sit amet</p>
-											<p><span>1 hour ago</span></p>
-											</div>
-										  <div class="clearfix"></div>	
-										 </a></li>
-										 <li class="odd"><a href="#">
-											<div class="user_img"><img src="images/in5.jpg" alt=""></div>
-										   <div class="notification_desc">
-											<p>Lorem ipsum dolor sit amet </p>
-											<p><span>1 hour ago</span></p>
-											</div>
-										   <div class="clearfix"></div>	
-										 </a></li>
-										 <li><a href="#">
-											<div class="user_img"><img src="images/in8.jpg" alt=""></div>
-										   <div class="notification_desc">
-											<p>Lorem ipsum dolor sit amet </p>
-											<p><span>1 hour ago</span></p>
-											</div>
-										   <div class="clearfix"></div>	
-										 </a></li>
-										 <li>
-											<div class="notification_bottom">
-												<a href="#">See all notification</a>
-											</div> 
-										</li>
-									</ul>
+									
 							</li>	
-						<li class="dropdown note">
-								<a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="fa fa-tasks"></i> <span class="badge blue1">9</span></a>
-										<ul class="dropdown-menu two">
-										<li>
-											<div class="notification_header">
-												<h3>You have 9 pending task</h3>
-											</div>
-										</li>
-										<li><a href="#">
-												<div class="task-info">
-												<span class="task-desc">Database update</span><span class="percentage">40%</span>
-												<div class="clearfix"></div>	
-											   </div>
-												<div class="progress progress-striped active">
-												 <div class="bar yellow" style="width:40%;"></div>
-											</div>
-										</a></li>
-										<li><a href="#">
-											<div class="task-info">
-												<span class="task-desc">EHRs done</span><span class="percentage">90%</span>
-											   <div class="clearfix"></div>	
-											</div>
-										   
-											<div class="progress progress-striped active">
-												 <div class="bar green" style="width:90%;"></div>
-											</div>
-										</a></li>
-										<li><a href="#">
-											<div class="task-info">
-												<span class="task-desc">Mobile App</span><span class="percentage">33%</span>
-												<div class="clearfix"></div>	
-											</div>
-										   <div class="progress progress-striped active">
-												 <div class="bar red" style="width: 33%;"></div>
-											</div>
-										</a></li>
-										<li><a href="#">
-											<div class="task-info">
-												<span class="task-desc">Issues fixed</span><span class="percentage">80%</span>
-											   <div class="clearfix"></div>	
-											</div>
-											<div class="progress progress-striped active">
-												 <div class="bar  blue" style="width: 80%;"></div>
-											</div>
-										</a></li>
-										<li>
-											<div class="notification_bottom">
-												<a href="#">See all pending task</a>
-											</div> 
-										</li>
-									</ul>
-							</li>		   							   		
+						   							   		
 							<div class="clearfix"></div>	
 								</ul>
 							</div>
@@ -253,7 +110,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 									  <div class="sub-heard-part">
 									   <ol class="breadcrumb m-b-0">
 											<li><a href="index.html">Home</a></li>
-											<li class="active"> create User</li>
+											<li class="active"> create Patient</li>
 										</ol>
 									   </div>
 								  <!--//sub-heard-part-->
@@ -267,90 +124,72 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
                                                                          <div class="set-1">
 																			<div class="graph-2 general">
-																				<h3 class="inner-tittle two">Create user For hospital  </h3>
+																				
 																					<div class="grid-1">
 																							<div class="form-body">
 																									<form class="form-horizontal"  action="addPatient" method="GET">
 																										<div class="form-group">
 																											<label for="focusedinput" class="col-sm-2 control-label">First Name</label>
 																											<div class="col-sm-8">
-																												<input type="text" class="form-control1" name="firstName" placeholder="Default Input">
+																												<input type="text" required="required" class="form-control1" name="firstName" placeholder="Default Input">
 																											</div>
-																											<div class="col-sm-2">
-																												<p class="help-block">erro displaying place</p>
-																											</div>
+																											
 																										</div>
 																										<div class="form-group">
 																											<label for="focusedinput" class="col-sm-2 control-label">Middle Name</label>
 																											<div class="col-sm-8">
-																												<input type="text" class="form-control1" name="middleName" placeholder="Default Input">
+																												<input type="text" required="required" class="form-control1" name="middleName" placeholder="Default Input">
 																											</div>
-																											<div class="col-sm-2">
-																												<p class="help-block">erro displaying place</p>
-																											</div>
+																											
 																										</div>
 																										<div class="form-group">
 																											<label for="focusedinput" class="col-sm-2 control-label">Last Name</label>
 																											<div class="col-sm-8">
-																												<input type="text" class="form-control1" name="lastName" placeholder="Default Input">
+																												<input type="text" required="required" class="form-control1" name="lastName" placeholder="Default Input">
 																											</div>
-																											<div class="col-sm-2">
-																												<p class="help-block">erro displaying place</p>
-																											</div>
+																											
 																										</div>
 																										<div class="form-group">
 																											<label for="focusedinput" class="col-sm-2 control-label">Emmergency Contact Name</label>
 																											<div class="col-sm-8">
-																												<input type="text" class="form-control1" name="emmergencyContactName" placeholder="Default Input">
+																												<input type="text" required="required" class="form-control1" name="emmergencyContactName" placeholder="Default Input">
 																											</div>
-																											<div class="col-sm-2">
-																												<p class="help-block">erro displaying place</p>
-																											</div>
+																											
 																										</div>
 																										<div class="form-group">
 																											<label for="focusedinput" class="col-sm-2 control-label">Emmergency Contact Phone</label>
 																											<div class="col-sm-8">
-																												<input type="text" class="form-control1" name="emmergencyContactPhone" placeholder="Default Input">
+																												<input type="text" required="required" class="form-control1" name="emmergencyContactPhone" placeholder="Default Input">
 																											</div>
-																											<div class="col-sm-2">
-																												<p class="help-block">erro displaying place</p>
-																											</div>
+																											
 																										</div>
 																										<div class="form-group">
 																											<label for="focusedinput" class="col-sm-2 control-label">Mobile Number</label>
 																											<div class="col-sm-8">
-																												<input type="text" class="form-control1" name="mobileNumber" placeholder="Default Input">
+																												<input type="text" required="required" class="form-control1" name="mobileNumber" placeholder="Default Input">
 																											</div>
-																											<div class="col-sm-2">
-																												<p class="help-block">erro displaying place</p>
-																											</div>
+																											
 																										</div>
 																										<div class="form-group">
 																											<label for="focusedinput" class="col-sm-2 control-label">House Number</label>
 																											<div class="col-sm-8">
-																												<input type="text" class="form-control1" name="houseNumber" placeholder="Default Input">
+																												<input type="text" required="required" class="form-control1" name="houseNumber" placeholder="Default Input">
 																											</div>
-																											<div class="col-sm-2">
-																												<p class="help-block">erro displaying place</p>
-																											</div>
+																											
 																										</div>
 																										<div class="form-group">
 																											<label for="focusedinput" class="col-sm-2 control-label">Occupation</label>
 																											<div class="col-sm-8">
-																												<input type="text" class="form-control1" name="occupation" placeholder="Default Input">
+																												<input type="text" required="required" class="form-control1" name="occupation" placeholder="Default Input">
 																											</div>
-																											<div class="col-sm-2">
-																												<p class="help-block">erro displaying place</p>
-																											</div>
+																											
 																										</div>
 																										<div class="form-group">
 																											<label for="focusedinput" class="col-sm-2 control-label">Woreda</label>
 																											<div class="col-sm-8">
-																												<input type="text" class="form-control1" name="woreda" placeholder="Default Input">
+																												<input type="text" required="required" class="form-control1" name="woreda" placeholder="Default Input">
 																											</div>
-																											<div class="col-sm-2">
-																												<p class="help-block">erro displaying place</p>
-																											</div>
+																											
 																										</div>
 																			
 																							
@@ -360,9 +199,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 																												<option>Female</option>
 																												<option>Male</option>
 																												</select></div>
-																											<div class="col-sm-2">
-																											<p class="help-block">erro displaying place</p>
-																											</div>
+																											
 																										</div>
 
 																						<div class="form-group button-2">
@@ -407,17 +244,16 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			<!--/down-->
 							<div class="down">	
 									  <a href="doctorIndex"><img src="${pageContext.request.contextPath}/resources/images/in10.jpg"></a>
-									  <a href="doctorIndex"><span class=" name-caret">hospital admin</span></a>
-									 <p>System Administrator in NWEHR</p>
+									  <a href="doctorIndex"><span class=" name-caret">Doctor</span></a>
+									 <p>Doctor in NWEHR</p>
 									<ul>
-									<li><a class="tooltips" href="doctorIndex"><span>Profile</span><i class="lnr lnr-user"></i></a></li>
-										<li><a class="tooltips" href="doctorIndex"><span>Settings</span><i class="lnr lnr-cog"></i></a></li>
-										<li><a class="tooltips" href="doctorIndex"><span>Log out</span><i class="lnr lnr-power-switch"></i></a></li>
+									
+										<li><a class="tooltips" href="logout"><span>Log out</span><i class="lnr lnr-power-switch"></i></a></li>
 										</ul>
 									</div>
 							   <!--//down-->
                            <div class="menu">
-									<ul id="menu" >
+					<ul id="menu" >
 										<li><a href="doctorIndex"><i class="fa fa-tachometer"></i> <span>Home</span></a></li>
 										 <li id="menu-academico" ><a href="createPatient"><i class="fa fa-table"></i> <span>create Patient</span> <span class="" style="float: right"></span></a>
 										   <ul id="menu-academico-sub" >
@@ -430,7 +266,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 										 <li id="menu-academico" ><a href="createBiologicalDetail"><i class="fa fa-file-text-o"></i> <span>Biological Detailt</span> <span class="" style="float: right"></span></a></li>
 										<li id="menu-academico" ><a href="createBirthRecord"><i class="fa fa-file-text-o"></i> <span>Birth Record</span> <span class="" style="float: right"></span></a></li>
 										 <li id="menu-academico" ><a href="createDeathRecord"><i class="fa fa-file-text-o"></i> <span>Death Record</span> <span class="" style="float: right"></span></a></li>
-								 </ul>
+										  <li id="menu-academico" ><a href="generatePatientHistory"><i class="fa fa-file-text-o"></i> <span>Generate Patient History</span> <span class="" style="float: right"></span></a></li>
+										 <li id="menu-academico" ><a href="generateMedicalCertificate"><i class="fa fa-file-text-o"></i> <span>Generate Medical Certificate</span> <span class="" style="float: right"></span></a></li>
+									 </ul>				
 								 
 							<script>
 							var toggle = true;

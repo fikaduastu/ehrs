@@ -3,7 +3,7 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-<title>Doctor index</title>
+<title>federal admin index</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="keywords" content="Augment Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
@@ -28,7 +28,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	<div class="left-content">
 	   <div class="inner-content">
 		<!-- header-starts -->
-			<!-- header-starts -->
 			<div class="header-section">
 						<!--menu-right-->
 						<div class="top_menu">
@@ -110,7 +109,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 									  <div class="sub-heard-part">
 									   <ol class="breadcrumb m-b-0">
 											<li><a href="index.html">Home</a></li>
-											<li class="active"> create biological detail</li>
+											<li class="active"> create birth record encoder</li>
 										</ol>
 									   </div>
 								  <!--//sub-heard-part-->
@@ -124,64 +123,81 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
                                                                          <div class="set-1">
 																			<div class="graph-2 general">
-																				
+																				<h3 class="inner-tittle two">Create user For hospital  </h3>
 																					<div class="grid-1">
 																							<div class="form-body">
-																									<form class="form-horizontal"  action="addBiologicalDetail" method="GET">
+																									<form class="form-horizontal"  action="addBirthRecord" method="GET">
 																										<div class="form-group">
 																											<label for="focusedinput" class="col-sm-2 control-label">Id</label>
 																											<div class="col-sm-8">
-																												<input type="text" class="form-control1" required="required" name="id" placeholder="Default Input">
+																												<input type="text" required="required" class="form-control1" name="id" placeholder="Default Input">
 																											</div>
 																											
 																										</div>
 																										<div class="form-group">
-																											<label for="focusedinput" class="col-sm-2 control-label">Blood Type</label>
+																											<label for="focusedinput" class="col-sm-2 control-label">Child Name</label>
 																											<div class="col-sm-8">
-																												<input type="text" required="required" class="form-control1" name="bloodType" placeholder="Default Input">
+																												<input type="text" required="required" class="form-control1" name="childName" placeholder="Default Input">
 																											</div>
 																											
 																										</div>
 																										<div class="form-group">
-																											<label for="focusedinput" class="col-sm-2 control-label">Eye Color</label>
+																											<label for="focusedinput" class="col-sm-2 control-label">Date of Birth</label>
 																											<div class="col-sm-8">
-																												<input type="text" required="required" class="form-control1" name="eyeColor" placeholder="Default Input">
+																												<input type="text" required="required" class="form-control1" name="dateOfBirth" placeholder="Default Input">
 																											</div>
 																											
 																										</div>
 																										<div class="form-group">
-																											<label for="focusedinput" class="col-sm-2 control-label">Hair Color</label>
+																											<label for="focusedinput" class="col-sm-2 control-label">Father Name</label>
 																											<div class="col-sm-8">
-																												<input type="text" required="required" class="form-control1" name="hairColor" placeholder="Default Input">
+																												<input type="text" required="required" class="form-control1" name="fatherName" placeholder="Default Input">
 																											</div>
 																											
 																										</div>
 																										<div class="form-group">
-																											<label for="focusedinput" class="col-sm-2 control-label">Skin Color</label>
+																											<label for="focusedinput" class="col-sm-2 control-label">Mother Name</label>
 																											<div class="col-sm-8">
-																												<input type="text" required="required" class="form-control1" name="skinColor" placeholder="Default Input">
+																												<input type="text" required="required" class="form-control1" name="motherName" placeholder="Default Input">
 																											</div>
 																											
 																										</div>
 																										<div class="form-group">
 																											<label for="focusedinput" class="col-sm-2 control-label">Weight</label>
-																											<div class="col-sm-8"> 
+																											<div class="col-sm-8">
 																												<input type="text" required="required" class="form-control1" name="weight" placeholder="Default Input">
 																											</div>
 																											
 																										</div>
 																										<div class="form-group">
-																											<label for="focusedinput" class="col-sm-2 control-label">Height</label>
+																											<label for="focusedinput" class="col-sm-2 control-label">Remark</label>
 																											<div class="col-sm-8">
-																												<input type="text" required="required" class="form-control1" name="height" placeholder="Default Input">
+																												<input type="text" required="required" class="form-control1" name="remark" placeholder="Default Input">
 																											</div>
 																											
 																										</div>
 																										<div class="form-group">
-																											<label for="focusedinput" class="col-sm-2 control-label">Disability</label>
+																											<label for="focusedinput" class="col-sm-2 control-label">Health Center</label>
 																											<div class="col-sm-8">
-																												<input type="text" required="required" class="form-control1" name="disability" placeholder="Default Input">
+																												<input type="text" required="required" class="form-control1" name="healthCenter" placeholder="Default Input">
 																											</div>
+																											
+																										</div>
+																										<div class="form-group">
+																											<label for="focusedinput" class="col-sm-2 control-label">Woreda</label>
+																											<div class="col-sm-8">
+																												<input type="text" required="required" class="form-control1" name="woreda" placeholder="Default Input">
+																											</div>
+																											
+																										</div>
+																			
+																							
+																										<div class="form-group">
+																											<label for="selector1" class="col-sm-2 control-label">Gender</label>
+																												<div class="col-sm-8"><select path="gender" name="gender" id="gender" class="form-control1" >
+																												<option>Female</option>
+																												<option>Male</option>
+																												</select></div>
 																											
 																										</div>
 
@@ -227,32 +243,29 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			<!--/down-->
 							<div class="down">	
 									  <a href="doctorIndex"><img src="${pageContext.request.contextPath}/resources/images/in10.jpg"></a>
-									  <a href="doctorIndex"><span class=" name-caret">Doctor</span></a>
-									 <p>Doctor in NWEHR</p>
+									  <a href="doctorIndex"><span class=" name-caret">Data Encoder</span></a>
+									 <p>Data Encoder in NWEHR</p>
 									<ul>
-									
+								
 										<li><a class="tooltips" href="logout"><span>Log out</span><i class="lnr lnr-power-switch"></i></a></li>
 										</ul>
 									</div>
 							   <!--//down-->
                            <div class="menu">
-																		<ul id="menu" >
-										<li><a href="doctorIndex"><i class="fa fa-tachometer"></i> <span>Home</span></a></li>
-										 <li id="menu-academico" ><a href="createPatient"><i class="fa fa-table"></i> <span>create Patient</span> <span class="" style="float: right"></span></a>
+									<ul id="menu" >
+										<li><a href="dataEncoderIndex"><i class="fa fa-tachometer"></i> <span>Home</span></a></li>
+										 <li id="menu-academico" ><a href="createPatientEncoder"><i class="fa fa-table"></i> <span>create Patient</span> <span class="" style="float: right"></span></a>
 										   <ul id="menu-academico-sub" >
 											
 										  </ul>
 										</li>
-										 <li id="menu-academico" ><a href="createPhysicalExamination"><i class="fa fa-file-text-o"></i> <span>Physical Examination</span> <span class="" style="float: right"></span></a>	 
+										 <li id="menu-academico" ><a href="createPhysicalExaminationEncoder"><i class="fa fa-file-text-o"></i> <span>Physical Examination</span> <span class="" style="float: right"></span></a>	 
 										 </li>				
-										 <li id="menu-academico" ><a href="createExaminationAssesment"><i class="fa fa-file-text-o"></i> <span>Examination Assesment</span> <span class="" style="float: right"></span></a></li>
-										 <li id="menu-academico" ><a href="createBiologicalDetail"><i class="fa fa-file-text-o"></i> <span>Biological Detailt</span> <span class="" style="float: right"></span></a></li>
-										<li id="menu-academico" ><a href="createBirthRecord"><i class="fa fa-file-text-o"></i> <span>Birth Record</span> <span class="" style="float: right"></span></a></li>
-										 <li id="menu-academico" ><a href="createDeathRecord"><i class="fa fa-file-text-o"></i> <span>Death Record</span> <span class="" style="float: right"></span></a></li>
-										  <li id="menu-academico" ><a href="generatePatientHistory"><i class="fa fa-file-text-o"></i> <span>Generate Patient History</span> <span class="" style="float: right"></span></a></li>
-										 <li id="menu-academico" ><a href="generateMedicalCertificate"><i class="fa fa-file-text-o"></i> <span>Generate Medical Certificate</span> <span class="" style="float: right"></span></a></li>
-									 </ul>
-								 
+										 <li id="menu-academico" ><a href="createExaminationAssesmentEncoder"><i class="fa fa-file-text-o"></i> <span>Examination Assesment</span> <span class="" style="float: right"></span></a></li>
+										 <li id="menu-academico" ><a href="createBiologicalDetailEncoder"><i class="fa fa-file-text-o"></i> <span>Biological Detailt</span> <span class="" style="float: right"></span></a></li>
+										<li id="menu-academico" ><a href="createBirthRecordEncoder"><i class="fa fa-file-text-o"></i> <span>Birth Record</span> <span class="" style="float: right"></span></a></li>
+										 <li id="menu-academico" ><a href="createDeathRecordEncoder"><i class="fa fa-file-text-o"></i> <span>Death Record</span> <span class="" style="float: right"></span></a></li>
+										  </ul>
 							<script>
 							var toggle = true;
 										

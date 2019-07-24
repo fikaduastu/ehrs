@@ -686,28 +686,26 @@
 									  <a href="hoIndex"><span class=" name-caret">Health Officer</span></a>
 									 <p>Health Officer in NWEHR</p>
 									<ul>
-									<li><a class="tooltips" href="hoIndex"><span>Profile</span><i class="lnr lnr-user"></i></a></li>
-										<li><a class="tooltips" href="hoIndex"><span>Settings</span><i class="lnr lnr-cog"></i></a></li>
-										<li><a class="tooltips" href="hoIndex"><span>Log out</span><i class="lnr lnr-power-switch"></i></a></li>
+									<li><a class="tooltips" href="logout"><span>Log out</span><i class="lnr lnr-power-switch"></i></a></li>
 										</ul>
 									</div>
 							   <!--//down-->
                            <div class="menu">
 									<ul id="menu" >
 										<li><a href="hoIndex"><i class="fa fa-tachometer"></i> <span>Home</span></a></li>
-										 <li id="menu-academico" ><a href="createPatient"><i class="fa fa-table"></i> <span>create Patient</span> <span class="" style="float: right"></span></a>
+										 <li id="menu-academico" ><a href="createPatientHo"><i class="fa fa-table"></i> <span>create Patient</span> <span class="" style="float: right"></span></a>
 										   <ul id="menu-academico-sub" >
 											
 										  </ul>
 										</li>
-										 <li id="menu-academico" ><a href="createPhysicalExamination"><i class="fa fa-file-text-o"></i> <span>Physical Examination</span> <span class="" style="float: right"></span></a>	 
+										 <li id="menu-academico" ><a href="createPhysicalExaminationHo"><i class="fa fa-file-text-o"></i> <span>Physical Examination</span> <span class="" style="float: right"></span></a>	 
 										 </li>				
-										 <li id="menu-academico" ><a href="createExaminationAssesment"><i class="fa fa-file-text-o"></i> <span>Examination Assesment</span> <span class="" style="float: right"></span></a></li>
-										 <li id="menu-academico" ><a href="createBiologicalDetail"><i class="fa fa-file-text-o"></i> <span>Biological Detailt</span> <span class="" style="float: right"></span></a></li>
-										<li id="menu-academico" ><a href="createBirthRecord"><i class="fa fa-file-text-o"></i> <span>Birth Record</span> <span class="" style="float: right"></span></a></li>
-										 <li id="menu-academico" ><a href="createDeathRecord"><i class="fa fa-file-text-o"></i> <span>Death Record</span> <span class="" style="float: right"></span></a></li>
-										  <li id="menu-academico" ><a href="generatePatientHistory"><i class="fa fa-file-text-o"></i> <span>Generate Patient History</span> <span class="" style="float: right"></span></a></li>
-										 <li id="menu-academico" ><a href="generateMedicalCertificate"><i class="fa fa-file-text-o"></i> <span>Generate Medical Certificate</span> <span class="" style="float: right"></span></a></li>
+										 <li id="menu-academico" ><a href="createExaminationAssesmentHo"><i class="fa fa-file-text-o"></i> <span>Examination Assesment</span> <span class="" style="float: right"></span></a></li>
+										 <li id="menu-academico" ><a href="createBiologicalDetailHo"><i class="fa fa-file-text-o"></i> <span>Biological Detailt</span> <span class="" style="float: right"></span></a></li>
+										<li id="menu-academico" ><a href="createBirthRecordHo"><i class="fa fa-file-text-o"></i> <span>Birth Record</span> <span class="" style="float: right"></span></a></li>
+										 <li id="menu-academico" ><a href="createDeathRecordHo"><i class="fa fa-file-text-o"></i> <span>Death Record</span> <span class="" style="float: right"></span></a></li>
+										  <li id="menu-academico" ><a href="generatePatientHistoryHo"><i class="fa fa-file-text-o"></i> <span>Generate Patient History</span> <span class="" style="float: right"></span></a></li>
+										 <li id="menu-academico" ><a href="generateMedicalCertificateHo"><i class="fa fa-file-text-o"></i> <span>Generate Medical Certificate</span> <span class="" style="float: right"></span></a></li>
 								 </ul>
 							<script>
 							var toggle = true;

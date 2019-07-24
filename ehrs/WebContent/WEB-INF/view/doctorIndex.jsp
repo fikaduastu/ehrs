@@ -1,4 +1,4 @@
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+﻿<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>  
 <!DOCTYPE HTML>
 <html>
@@ -72,14 +72,7 @@
 								<div class="profile_details_left">
 									<ul class="nofitications-dropdown">
 											<li class="dropdown note dra-down">
-													   <div id="dd" class="wrapper-dropdown-3" tabindex="1">
-																			<span>English</span>
-																			<ul class="dropdown">
-																				<li><a class="amaharic">Amaharic</a></li>
-																				<li><a class="oromifa">Oromifa</a></li>
-																				<li><a class="tigiregna">Tigiregna</a></li>
-																			</ul>
-																		</div>
+													   
 																		<script type="text/javascript">
 			
 																	function DropDown(el) {
@@ -127,41 +120,12 @@
 
 																</script>
 										    </li>
-									       <li class="dropdown note">
-											<a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="fa fa-envelope-o"></i> <span class="badge">3</span></a>
-
-												
-													<ul class="dropdown-menu two first">
-														<li>
-															<div class="notification_header">
-																<h3>You have 3 new messages  </h3> 
-															</div>
-														</li>
-														
-														<li>
-															<div class="notification_bottom">
-																<a href="#">See all messages</a>
-															</div> 
-														</li>
-													</ul>
-										</li>
+									  
 										
 							<li class="dropdown note">
-								<a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="fa fa-bell-o"></i> <span class="badge">5</span></a>
+								<a href=""   aria-expanded="false"> </a>
 
-									<ul class="dropdown-menu two">
-										<li>
-											<div class="notification_header">
-												<h3>You have 5 new notification</h3>
-											</div>
-										</li>
-										
-										 <li>
-											<div class="notification_bottom">
-												<a href="#">See all notification</a>
-											</div> 
-										</li>
-									</ul>
+									
 							</li>	
 						   							   		
 							<div class="clearfix"></div>	
@@ -686,9 +650,8 @@
 									  <a href="doctorIndex"><span class=" name-caret">Doctor</span></a>
 									 <p>Doctor in NWEHR</p>
 									<ul>
-									<li><a class="tooltips" href="doctorIndex"><span>Profile</span><i class="lnr lnr-user"></i></a></li>
-										<li><a class="tooltips" href="doctorIndex"><span>Settings</span><i class="lnr lnr-cog"></i></a></li>
-										<li><a class="tooltips" href="doctorIndex"><span>Log out</span><i class="lnr lnr-power-switch"></i></a></li>
+									
+										<li><a class="tooltips" href="logout"><span>Log out</span><i class="lnr lnr-power-switch"></i></a></li>
 										</ul>
 									</div>
 							   <!--//down-->

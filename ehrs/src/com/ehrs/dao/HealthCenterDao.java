@@ -10,8 +10,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
-
 import com.ehrs.entity.healthcenter;
+
 
 @Repository
 public class HealthCenterDao {
@@ -35,8 +35,6 @@ public class HealthCenterDao {
 		for (Iterator<?> iterator = lst.iterator(); iterator.hasNext();)
 		{
 				 hc = (healthcenter) iterator.next(); 
-				//System.out.println(ad);
-        
 				if(hc.getName().equals(healthCenter))
 				{
 				
@@ -57,7 +55,7 @@ public class HealthCenterDao {
 		for (Iterator<?> iterator = lst.iterator(); iterator.hasNext();)
 		{
 				 hc = (healthcenter) iterator.next(); 
-				//System.out.println(ad);
+				
 				 	if (hc.getId() == id)
 				 		return hc;
 					
@@ -69,11 +67,11 @@ public class HealthCenterDao {
 	@Transactional
 	public List<healthcenter> getHealthCenters(String string) {
 		
+		
 		Session session = sessionFactory.getCurrentSession();	
 		Query<healthcenter> theQuery = session.createQuery("FROM healthcenter",healthcenter.class);
+		
 		List<healthcenter> hc= theQuery.getResultList();
 		return hc;
-		
-		// this is not the end
 	}
 }
