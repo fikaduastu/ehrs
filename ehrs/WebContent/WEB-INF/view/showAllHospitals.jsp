@@ -281,7 +281,7 @@ $(document).ready(function(){
 					<th>website</th>
 					<th>type </th>
 					<th>Phone Number </th>
-					<th>Action</th>
+					<!-- <th>Action</th> -->
 				</tr>
 				
 				<!-- loop over and print our customers -->
@@ -296,11 +296,11 @@ $(document).ready(function(){
 						<td> ${healthTemp.website} </td>
 						<td> ${healthTemp.type} </td>
 						<td> ${healthTemp.phoneNumber} </td>
-						<td> 
+					<%-- 	<td> 
 								<a href="${updateLink}">Update</a>
 						
 						
-						 </td>
+						 </td> --%>
 					</tr>
 				
 				</c:forEach>

@@ -116,9 +116,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 										
 												<div class="graph">
 														 <div class="block-page">
-														
-
-
 
                                                                          <div class="set-1">
 																			<div class="graph-2 general">
@@ -150,20 +147,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 																												<p class="help-block">erro displaying place</p>
 																											</div>
 																									</div>
-																									<div class="form-group">
-																										<label class="col-md-2 control-label">Confirm Password</label>
-																										<div class="col-md-8">
-																											<div class="input-group">
-																												<span class="input-group-addon">
-																													<i class="fa fa-key"></i>
-																												</span>
-																												<input type="password" class="form-control1 icon" id="confirmPassword" placeholder="Password">
-																											</div>
-																										</div>
-																										<div class="col-sm-2">
-																												<p class="help-block">erro displaying place</p>
-																											</div>
-																									</div>
+																									
 																									<div class="form-group">
 																										<label class="col-md-2 control-label">Email Address</label>
 																										<div class="col-md-8">
@@ -199,10 +183,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 																						  <button type="submit" class="btn btn-primary">Submit</button>
 																						  <button type="reset" class="btn btn-default">Reset</button>
 																						</div>
-
-
-
-
 																									</form>
 																							</div>
 

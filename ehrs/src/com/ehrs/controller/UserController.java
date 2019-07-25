@@ -25,7 +25,7 @@ import com.ehrs.dao.StoolFormDao;
 import com.ehrs.dao.UrineFormDao;
 import com.ehrs.dao.UserDao;
 import com.ehrs.dao.WoredaDao;
-import com.ehrs.entity.admin;
+
 import com.ehrs.entity.biologicaldetail;
 import com.ehrs.entity.birthrecord;
 import com.ehrs.entity.deathrecord;
@@ -148,16 +148,24 @@ public class UserController {
 	@RequestMapping("/showAllHospitalUser")
 	public String showAllHospitalUser(Model theModel,HttpServletRequest request,HttpServletResponse response)
 	{
-		HttpSession session = request.getSession();
+		
 		List<user> user = userDao.showAllUser();
 		theModel.addAttribute("users", user);
 		return "showAllHospitalUser";
 	}
 	
 	@RequestMapping("showGeneratedMedicalCertificate")
-	public String showGeneratedMedicalCertificate(Model theModel)
+	public String showGeneratedMedicalCertificate(@RequestParam("id") int id,Model theModel,HttpServletRequest request,HttpServletResponse response)
 	{
-
+		HttpSession session = request.getSession();
+		profile profile = profileDao.getProfile(id);
+		birthrecord br = profile.getBirthRecord();
+		String dob = br.getDateOfBirth();
+		
+		String patient = profile.getFirstName() +" "+ profile.getMiddleName();
+		session.setAttribute("patient",patient);
+		session.setAttribute("dob", dob);
+		
 		return "showGeneratedMedicalCertificate";
 	}
 	
@@ -169,16 +177,17 @@ public class UserController {
 	}
 	
 	@RequestMapping("/showGeneratedPatientHistory")
-	public String showGeneratedPatientHistory(@RequestParam("id") int id,Model theModel)
+	public String showGeneratedPatientHistory(@RequestParam("id") int id,Model theModel) throws Exception
 	{
 		profile pro = profileDao.getProfile(id);
-		List<examinationassesment> examinationAssesment = examinationAssesmentDao.showAllExaminationAssesment(pro);
-		theModel.addAttribute("examinationAssesment", examinationAssesment);
+		System.out.println(pro);
+		List<examinationassesment> ea = examinationAssesmentDao.showAllExaminationAssesment(pro);
+		theModel.addAttribute("examinationassesment", ea);
 		return "showGeneratedPatientHistory";
 	}
 	
 	@RequestMapping("/showGeneratedPatientHistoryHo")
-	public String showGeneratedPatientHistoryHo(@RequestParam("id") int id,Model theModel)
+	public String showGeneratedPatientHistoryHo(@RequestParam("id") int id,Model theModel) throws Exception
 	{
 		profile pro = profileDao.getProfile(id);
 		List<examinationassesment> examinationAssesment = examinationAssesmentDao.showAllExaminationAssesment(pro);
@@ -187,7 +196,7 @@ public class UserController {
 	}
 	
 	@RequestMapping("/createUser")
-	public String createUser()
+	public String createUser(HttpServletRequest request, HttpServletResponse reponse)
 	{
 		return "createUser";
 	}
@@ -354,11 +363,14 @@ public class UserController {
 	public String doctorIndex(HttpServletRequest request,HttpServletResponse response)
 	{
 		HttpSession session = request.getSession();
-		String position = (String)session.getAttribute("position");
-		if (position.equals("doctor"))
+		/*
+		 * String position = (String)session.getAttribute("position"); if
+		 * (position.equals("doctor"))
+		 */
 		return "doctorIndex";
-		else
-			return "redirect:/";
+		/*
+		 * else return "redirect:/";
+		 */
 		
 	}
 	
@@ -454,7 +466,7 @@ public class UserController {
 		   }
 		   else if(user.getPosition().equals("doctor"))
 		   {
-			   session.setAttribute("user", user);
+			   
 			   addAdminInSession(user,session);
 			   return "doctorIndex";
 		   }
@@ -501,11 +513,9 @@ public class UserController {
 	   }
 	   
 	@RequestMapping("/addUser")
-	public String addUser(HttpServletRequest request,HttpServletResponse response)
+	public String addUser(HttpServletRequest request,HttpServletResponse response) throws Exception
 	{
-		HttpSession session = request.getSession();
-		String position = (String)session.getAttribute("position");
-		if (position.equals("hospital admin")) {
+	
 		Date date = new Date();
 		
 		user.setEmail(request.getParameter("email"));
@@ -520,16 +530,13 @@ public class UserController {
 		user.setStatus("1");
 		userService.addUser(user);
 		return "redirect:/user/showAllHospitalUser";
-		}
-		else
-			return "redirect:/";
+		
 
 	}
 	
-	//@RequestMapping("/addUser")
-	public void addUser(user user)
+	
+	public void addUser1(user user) 
 	{
-		
 		userService.addUser(user);
 
 	}
@@ -583,7 +590,7 @@ public class UserController {
 	}
 	
 	@RequestMapping("/addPatient")
-	public String addPatient(HttpServletRequest request, HttpServletResponse response)
+	public void addPatient(HttpServletRequest request, HttpServletResponse response)
 	{	
 		HttpSession session = request.getSession();
 		String position = (String)session.getAttribute("position");
@@ -619,7 +626,8 @@ public class UserController {
 		woreda wor = woredaDao.getWoreda(woreda);
 		profile.setWoreda(wor);
 		profileController.addProfile(profile);
-		return null;
+		
+		
 		}
 		
 		else return "redirect:/";
@@ -684,7 +692,7 @@ public class UserController {
 	}
 	
 	@RequestMapping("/addExaminationAssesment")
-	public void addExaminationAssesment(HttpServletRequest request,HttpServletResponse response)
+	public void addExaminationAssesment(HttpServletRequest request,HttpServletResponse response) throws Exception
 	{
 		stoolForm.setDirectToolExam("normal");
 		hematologyForm.setBloodGroup("A");
@@ -743,7 +751,7 @@ public class UserController {
 	
 	
 	@RequestMapping("/addHematologyForm")
-	public void addHematologyForm(HttpServletRequest request, HttpServletResponse response)
+	public void addHematologyForm(HttpServletRequest request, HttpServletResponse response) throws Exception
 	{
 		int id = Integer.parseInt(request.getParameter("id"));
 		profile pro = profileDao.getProfile(id);
@@ -764,7 +772,7 @@ public class UserController {
 		hematologyFormController.addHematologyForm(hematologyForm);
 	}
 	@RequestMapping("/addStoolForm")
-	public void addStoolForm(HttpServletRequest request, HttpServletResponse response)
+	public void addStoolForm(HttpServletRequest request, HttpServletResponse response) throws Exception
 	{
 		int id = Integer.parseInt(request.getParameter("id"));
 		profile pro = profileDao.getProfile(id);
@@ -783,7 +791,7 @@ public class UserController {
 		stoolFormController.addStoolForm(stoolForm);
 	}
 	@RequestMapping("/addUrineForm")
-	public void addUrineForm(HttpServletRequest request, HttpServletResponse response)
+	public void addUrineForm(HttpServletRequest request, HttpServletResponse response) throws Exception
 	{
 		int id = Integer.parseInt(request.getParameter("id"));
 		profile pro = profileDao.getProfile(id);
@@ -807,7 +815,7 @@ public class UserController {
 	}
 	
 	@RequestMapping("/addPhysicalExamination")
-	public void addPhysicalExamination1(HttpServletRequest request, HttpServletResponse response)
+	public void addPhysicalExamination1(HttpServletRequest request, HttpServletResponse response) throws Exception
 	{
 		int id = Integer.parseInt(request.getParameter("id"));
 		profile pro = profileDao.getProfile(id);
@@ -864,10 +872,15 @@ public class UserController {
 	public void addAdminInSession(user ad,HttpSession session) {
 		
 		session.setAttribute("user", ad);
+		session.setAttribute("name",user.getName());
 		session.setAttribute("id", ad.getId());
 		session.setAttribute("email", ad.getEmail());
 		session.setAttribute("password", ad.getPassword());
 		session.setAttribute("position", ad.getPosition());
 		session.setAttribute("organization", ad.getOrganizationId());
+		healthcenter hcd = ad.getOrganizationId();
+		String name = hcd.getName();
+		session.setAttribute("organization", ad.getOrganizationId());
+		session.setAttribute("org",name);
 	}
 }

@@ -72,7 +72,7 @@ public class UserDao {
 	public void updateUser(user user) {
 		Session session = sessionFactory.getCurrentSession();
 		session.update(user);
-		//finished
+		
 	}
 
 	@Transactional

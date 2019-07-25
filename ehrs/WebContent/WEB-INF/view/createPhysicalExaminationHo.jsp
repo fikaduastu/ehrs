@@ -123,7 +123,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
                                                                          <div class="set-1">
 																			<div class="graph-2 general">
-																				<h3 class="inner-tittle two">Create Physical Examination  </h3>
+																				
 																					<div class="grid-1">
 																							<div class="form-body">
 																									<form class="form-horizontal"  action="addPhysicalExamination" method="GET">

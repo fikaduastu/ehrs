@@ -123,7 +123,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
                                                                          <div class="set-1">
 																			<div class="graph-2 general">
-																				<h3 class="inner-tittle two">Create user For hospital  </h3>
+																				
 																					<div class="grid-1">
 																							<div class="form-body">
 																									<form class="form-horizontal"  action="addBirthRecord" method="GET">
@@ -144,7 +144,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 																										<div class="form-group">
 																											<label for="focusedinput" class="col-sm-2 control-label">Date of Birth</label>
 																											<div class="col-sm-8">
-																												<input type="text" required="required" class="form-control1" name="dateOfBirth" placeholder="Default Input">
+																												<input type="date" required="required" class="form-control1" name="dateOfBirth" placeholder="Default Input">
 																											</div>
 																											
 																										</div>

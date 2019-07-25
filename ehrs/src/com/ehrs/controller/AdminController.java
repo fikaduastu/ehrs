@@ -31,8 +31,8 @@ public class AdminController {
 		   	@Autowired
 			private AdminService adminService;
 		   	
-		   	
-		   	UserController userController = new UserController();
+		   	@Autowired
+		   	private UserController userController;
 		   	
 		   	@Autowired
 			private admin adm;
@@ -312,7 +312,8 @@ public class AdminController {
 				user.setOrganizationId(hc);
 				user.setCreatedAt(date.toString());
 				user.setUpdatedAt("updatedAt");
-				userController.addUser(user);
+				System.out.println(user + "admin con");
+				userController.addUser1(user);
 				return "redirect:/admin/regionalAdminIndex";
 			}
 			

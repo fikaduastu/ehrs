@@ -280,7 +280,7 @@ $(document).ready(function(){
 					<th>Region </th>
 					<th>Email</th>
 					<th>Role of the admin</th>
-					<th>Password</th>
+					
 					<th>Action</th>
 				</tr>
 				
@@ -300,7 +300,7 @@ $(document).ready(function(){
 						<td> ${tempAdmin.region} </td>
 						<td> ${tempAdmin.email} </td>
 						<td> ${tempAdmin.type} </td>
-						<td> ${tempAdmin.password} </td>
+						
 						<td> 
 								<a href="${updateLink}">Update</a> |
 								<a href="${deleteLink}"

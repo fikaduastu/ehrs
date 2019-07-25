@@ -268,9 +268,74 @@ $(document).ready(function(){
 <body>
 
 	
- 
+	<div id="container">
 	
-	${examinationAssesment}
+		<div id="content">
+		
+			<!--  add our html table here -->
+		Examination Assesment
+			<table>
+				<tr>
+
+					<th>Date</th>
+					<th>Drug History</th>
+					<th>Family History</th>
+					<th>History of presenting complaints </th>
+					<th>Past medical history</th>
+					<th>personal Social history</th>
+					<th>presenting Compliant</th>
+					<th>vital</th>
+					<!-- <th>Action</th> -->
+				</tr>
+				
+				<c:forEach var="exass" items="${examinationassesment}">
+				<tr>
+				<td>${exass.date}</td>
+				<td>${exass.drugHistory}</td>
+				<td>${exass.familyHistory}</td>
+ 				<td>${exass.historyOfPresentingCompliant}</td>
+				<td>${exass.pastMedicalHistory}</td>
+				<td>${exass.personalSocialHistory}</td>
+				<td>${exass.presentingCompliant}</td> 
+				<td>${exass.physicalExamination.id}</td> 
+				</tr>
+				</c:forEach>
+				
+			</table>
+			<br><br><br><br><br><br><br><br><br><br>
+			
+			physical examination
+			<table>
+				<tr>
+
+					<th>vitalSign</th>
+					<th>bp</th>
+					<th>tempreture</th>
+					<th>respiration </th>
+					<th>heet</th>
+					<th>gland</th>
+					<th>chest</th>
+					<th>abdomen</th>
+					<!-- <th>Action</th> -->
+				</tr>
+				
+				<c:forEach var="exass" items="${examinationassesment}">
+				<tr>
+				<td>${exass.physicalExamination.vitalSign}</td>
+				<td>${exass.physicalExamination.bp}</td>
+				<td>${exass.physicalExamination.tempreture}</td>
+ 				<td>${exass.physicalExamination.resp}</td>
+				<td>${exass.physicalExamination.heet}</td>
+				<td>${exass.physicalExamination.gland}</td>
+				<td>${exass.physicalExamination.chest}</td> 
+				<td>${exass.physicalExamination.abdomen}</td> 
+				</tr>
+				</c:forEach>
+				
+			</table>
+		</div>
+	
+	</div>   
 
 
 
@@ -290,6 +355,7 @@ $(document).ready(function(){
 									<!--footer section end-->
 								</div>
 							</div>
+				<!--//content-inner-->
 				<!--//content-inner-->
 			<!--/sidebar-menu-->
 				<div class="sidebar-menu">

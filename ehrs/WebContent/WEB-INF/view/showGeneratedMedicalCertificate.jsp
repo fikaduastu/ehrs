@@ -1,5 +1,6 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %> 
+
 <!DOCTYPE HTML>
 <html>
 <head>
@@ -20,19 +21,19 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
- <!-- Bootstrap Core CSS -->
+
 <link href="${pageContext.request.contextPath}/resources/css/bootstrap.min.css" rel='stylesheet' type='text/css' />
-	<!-- Custom CSS -->
+
 <link href="${pageContext.request.contextPath}/resources/css/style.css" rel='stylesheet' type='text/css' />
-	<!-- Graph CSS -->
+
 <link href="${pageContext.request.contextPath}/resources/css/font-awesome.css" rel="stylesheet"> 
-	<!-- jQuery -->
+
 <link href='//fonts.googleapis.com/css?family=Roboto:700,500,300,100italic,100,400' rel='stylesheet' type='text/css'>
-	<!-- lined-icons -->
+
 <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/icon-font.min.css" type='text/css' />
-	<!-- /js -->
+
 <script src="${pageContext.request.contextPath}/resources/js/jquery-1.10.2.min.js"></script>
-<!-- //js-->
+
 <style type="text/css">
     body {
         color: #404E67;
@@ -121,17 +122,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 </head> 
 <body>
    <div class="page-container">
-   <!--/content-inner-->
 	<div class="left-content">
 	   <div class="inner-content">
-		<!-- header-starts -->
-			<!-- header-starts -->
 			<div class="header-section">
-						<!--menu-right-->
 						<div class="top_menu">
-						       
-								
-							<!--/profile_details-->
 								<div class="profile_details_left">
 									<ul class="nofitications-dropdown">
 											<li class="dropdown note dra-down">
@@ -195,22 +189,21 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 								</ul>
 							</div>
 							<div class="clearfix"></div>	
-							<!--//profile_details-->
+							
 						</div>
-						<!--//menu-right-->
+						
 					<div class="clearfix"></div>
 				</div>
-					<!-- //header-ends -->
-						<!--outter-wp-->
+					
 							<div class="outter-wp">
-									<!--sub-heard-part-->
+									
 									  <div class="sub-heard-part">
 									    <ol class="breadcrumb m-b-0">
                       <li><a href="doctorIndex">Home</a></li>
                       <li class="active">Show all regional admins</li>
                     </ol>
 									   </div>
-								  <!--//sub-heard-part-->
+								  
 									<script type="text/javascript">
 $(document).ready(function(){
 	$('[data-toggle="tooltip"]').tooltip();
@@ -268,46 +261,46 @@ $(document).ready(function(){
 </head>
 <body>
 
-	
+	<% session.getAttribute("name"); %>
  
-	
-	${examinationAssesment}
-
-
-
-
-
-
-                                                        
+					<h5 style="align:center">Medical Certificate</h5>
+				<label>I the Designed doctor :    </label><% String name = (String) session.getAttribute("name");  out.print(name);%>     <label> certify that</label> 
+				<br><label>the examination of Mr/Ms :</label><% String patient = (String) session.getAttribute("patient");  out.print(patient);%>
+				<br><label>	date of birth :</label><% String dob = (String) session.getAttribute("dob");  out.print(dob);%>
+		
+				<br><label>	reveals no contradiction for participating in 
+					running compitition.</label>
+				<label>medical certificate is issued in :</label><%= (new java.util.Date()).toLocaleString()%>
+				<%-- <label> hospital name :</label><% String org = (String) session.getAttribute("org");  out.print(org);%> --%>
+                         
 														  
 										    </div>
 										</div>
 									</div>
-									<!--//outer-wp-->
-									 <!--footer section start-->
+								
 										<footer>
 										   <p>&copy 2020 Electronic Health Record System . All Rights Reserved </p>
 										</footer>
-									<!--footer section end-->
+									
 								</div>
 							</div>
-				<!--//content-inner-->
-			<!--/sidebar-menu-->
+				
+			
 				<div class="sidebar-menu">
 					<header class="logo">
 					<a href="#" class="sidebar-icon"> <span class="fa fa-bars"></span> </a> <a href="doctorIndex"> <span id="logo"> <h1>EHRs</h1></span> 
-					<!--<img id="logo" src="" alt="Logo"/>--> 
+					
 				  </a> 
 				</header>
 			<div style="border-top:1px solid rgba(69, 74, 84, 0.7)"></div>
 				<div class="sidebar-menu">
 					<header class="logo">
 					<a href="#" class="sidebar-icon"> <span class="fa fa-bars"></span> </a> <a href="doctorIndex"> <span id="logo"> <h1>NWEHR</h1></span> 
-					<!--<img id="logo" src="" alt="Logo"/>--> 
+					
 				  </a> 
 				</header>
 			<div style="border-top:1px solid rgba(69, 74, 84, 0.7)"></div>
-			<!--/down-->
+			
 							<div class="down">	
 									  <a href="doctorIndex"><img src="${pageContext.request.contextPath}/resources/images/in10.jpg"></a>
 									  <a href="doctorIndex"><span class=" name-caret">Federal System admin</span></a>
@@ -316,7 +309,7 @@ $(document).ready(function(){
 										<li><a class="tooltips" href="logout"><span>Log out</span><i class="lnr lnr-power-switch"></i></a></li>
 									</ul>
 									</div>
-							   <!--//down-->
+							  
 
 
 								<div class="menu">
@@ -360,10 +353,10 @@ $(document).ready(function(){
 											toggle = !toggle;
 										});
 							</script>
-<!--js -->
+
 	<script src="${pageContext.request.contextPath}/resources/js/jquery.nicescroll.js"></script>
 	<script src="${pageContext.request.contextPath}/resources/js/scripts.js"></script>
-<!-- Bootstrap Core JavaScript -->
+
    <script src="${pageContext.request.contextPath}/resources/js/bootstrap.min.js"></script>
 </body>
 </html>

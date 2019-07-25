@@ -20,8 +20,12 @@ public class UserService {
 	{
 		userDao.deleteUser(user);
 	}
-	public void addUser(user user) {
-		userDao.addUser(user);
+	
+	public void addUser(user us)
+	{
+		
+		userDao.addUser(us); 
+		
 		
 	}
 	public void showUser(user user) {

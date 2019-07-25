@@ -28,10 +28,16 @@ public class ExaminationAssesmentDao {
 
 	@Transactional
 	public List<examinationassesment> showAllExaminationAssesment(profile pro) {
-		
+		System.out.println("examination dao "+pro);
 		int id = pro.getId();
+		
 		Session session = sessionFactory.getCurrentSession();
-		List<examinationassesment> ea = (List<examinationassesment>)session.createSQLQuery("SELECT * FROM examinationassesment exam where exam.profileId ='" + id +"'").addEntity(examinationassesment.class).list();
+		
+		//List<examinationassesment> ea = (List<examinationassesment>)session.createSQLQuery("from examinationassesment exam where exam.profileId =:ids").setParameter("ids", id).addEntity(examinationassesment.class).list();
+		List<examinationassesment> ea = (List<examinationassesment>) session.createQuery("from examinationassesment where profileId = :isActive")
+        .setParameter("isActive", id)
+        .list();
+		System.out.println(ea.get(0));
 		return ea;
 
 
@@ -40,7 +46,7 @@ public class ExaminationAssesmentDao {
 	@Transactional
 	public examinationassesment getExaminationAssesment(int id) {
 		Session session = sessionFactory.getCurrentSession();
-		List<examinationassesment> ea = (List<examinationassesment>)session.createSQLQuery("SELECT * FROM examinationassesment exam where exam.profileId ='" + id +"'").addEntity(examinationassesment.class).list();
+		List<examinationassesment> ea = (List<examinationassesment>)session.createSQLQuery("from examinationassesment exam where exam.profileId ='" + id +"'").addEntity(examinationassesment.class).list();
 		int i = ea.lastIndexOf(ea);
 		return ea.get(i+1);
 	}
